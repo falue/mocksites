@@ -5,28 +5,28 @@ document.createElement("article");
 document.createElement("footer");
 
 function hide(id) {
-	for(i=0; i< arguments.length; i++) { 
+	for(i=0; i< arguments.length; i++) {
 		document.getElementById(arguments[i]).style.display = 'none';
 	}
 }
 
 function show(id) {
-	for(i=0; i< arguments.length; i++) { 
+	for(i=0; i< arguments.length; i++) {
 		document.getElementById(arguments[i]).style.display = 'block';
 	}
 }
 
 function delay(step, date) {
 	var popup = document.getElementById('upload_popup');
-	
+
 	var steps = ["<br><br>Please connect your watch&hellip;<br><input type=\"button\" value=\"Ok\" onclick=\"upload(1, 1800, "+date+")\">",
 				 "<div class=\"heart\" id=\"heart\">&#10084;)))</div><span class=\"small\">Connected to '../PulsewatchJonas001-AC'</span><br><br><br><div class=\"result_label\" id=\"result_label\"><div class=\"result_bar\" id=\"result_bar\">&nbsp;</div><div class=\"result_count\" id=\"result_count\">0%</div></div>",
 				 "<br><br>Data successful uploaded!<br><br><a href=\"index.php?s="+date+"\" id=\"okbutton\"><br><br><br><input type=\"button\" value=\"Ok\"></a>"
-				
+
 				];
 
-	popup.innerHTML = "<h1>Add hartrates @ "+timeConverter(date)+"</h1>"+steps[step];
-	
+	popup.innerHTML = "<h1>Add heartrates @ "+timeConverter(date)+"</h1>"+steps[step];
+
 	if (step == 1){
 		setTimeout(function () { inc_up(1, date); }, 1000);
 	}
@@ -35,7 +35,7 @@ function delay(step, date) {
 function upload(step, time, date) {
 	document.getElementById('upload').style.display = "block";
 	document.getElementById('upload_popup').style.display = "block";
-	document.getElementById('upload_popup').innerHTML = "<h1>Add hartrates @ "+timeConverter(date)+"</h1><br><img src=\"tools/loading.gif\" alt=\"\"><br><br>";
+	document.getElementById('upload_popup').innerHTML = "<h1>Add heartrates @ "+timeConverter(date)+"</h1><br><img src=\"tools/loading.gif\" alt=\"\"><br><br>";
 	setTimeout(function () { delay(step, date); }, time);
 }
 
@@ -76,7 +76,7 @@ function inc_up(step, date) {
 			load = "Finishing...";
 			sleep = sleep_total/5;
 		}
-		
+
 		document.getElementById('result_bar').style.width = load;
 		document.getElementById('result_count').innerHTML = load;
 		setTimeout(function () { inc_up(step+1, date); }, sleep);
@@ -103,4 +103,3 @@ function timeConverter(UNIX_timestamp){
   var time = date + '. ' + month + ' ' + year; /* + ' ' + hour + ':' + min + ':' + sec */
   return time;
 }
-

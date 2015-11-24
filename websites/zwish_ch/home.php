@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
   <?
-  
-  if($_GET["p"] == null or $_GET["p"] == "Runner92" ) {
-    $browsertitle = " - Dein Profil Runner92";
-    $id = "Runner92";
+
+  if($_GET["p"] == null or $_GET["p"] == "Runner90" ) {
+    $browsertitle = " - Dein Profil Runner90";
+    $id = "Runner90";
   } elseif($_GET["p"] == "Angelique94" ) {
     $browsertitle = " - Profilansicht Angelique94";
     $id = "Angelique94";
@@ -12,7 +12,7 @@
     $browsertitle = " - Profilansicht Moon_light22";
     $id = "Moon_light22";
   }
-  
+
   if($_GET["s"] == "email") {
     $browsertitle = " - E-Mailadresse best&auml;tigt";
 	$email_confirmed = true;
@@ -20,9 +20,9 @@
     $browsertitle = " - Welcome back!";
 	$welcome_back = true;
   }
-  
+
   $online = isset($_GET["online"]) ? true : false;
-  
+
   ?>
 <title>Zwish.com<? echo $browsertitle; ?></title>
 <link rel="stylesheet" type="text/css" href="tools/stylesheet.css" />
@@ -39,7 +39,7 @@
 
 <!-- favicon -->
 <link rel="icon" type="image/png" href="tools/icons/favicon.png">
-  
+
 </head>
 
 <?
@@ -50,26 +50,26 @@
 	$bodyonload = "";
   }
 
-  
+
   echo "<body $bodyonload>";
 
 	if($email_confirmed ) $class = "email";
     echo "<header class=\"$class\">
-	  <div class=\"header_bar\"><a href=\"home.php?p=Runner92\">
+	  <div class=\"header_bar\"><a href=\"home.php?p=Runner90\">
       <img src=\"tools/icons/logo_big.png\" alt=\"\" class=\"logo\"></a>
 		<img src=\"tools/icons/note.png\" alt=\"\">";
-		
+
 		  if($online) {
 			echo "<span class=\"note-counter\">!</span>";
 		  }
 		  if($email_confirmed ) {
 			echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><center><h1>Danke, dass du deine E-Mail-Adresse best&auml;tigt hast.</h1><br><h2>Du kannst dich ab jetzt mit der von dir best&auml;tigten E-Mail-Adresse auf Zwish.com anmelden.</h2><br><br><hr style=\"background-color:rgba(255,255,255,0.2);\"><br><a href=\"home.php?s=back\"><div style=\"display:inline-box; border-radius:4px; height:30px; border:1px solid rgba(255,255,255,0.2);padding-top: 8px; width:200px;\">Hier gehts los!</div></a></center>";
 		  }
-		echo "<div class=\"admin\"><div style=\"background-image:url('tools/users/runner92.jpg');\" class=\"imgframe imgframe_rot1\">&nbsp;</div><b>Zwish-Mitglied</b><br>24, Bern</div>
+		echo "<div class=\"admin\"><div style=\"background-image:url('tools/users/runner90.jpg');\" class=\"imgframe imgframe_rot1\">&nbsp;</div><b>Zwish-Mitglied</b><br>25, Bern</div>
 	  </div>
     </header>
 	<nav>";
-	
+
 	if($welcome_back) {
 		echo " <div class=\"window\" id=\"window\" onclick=\"document.getElementById('window').style.display = 'none'; document.getElementById('window_popup').style.display = 'none';\">&nbsp;</div>
 	<div class=\"window_popup\" id=\"window_popup\">
@@ -78,7 +78,7 @@
 	</div>";
 	  }
 
-echo $id == "Runner92" ? "<div class=\"navigation\" style=\"background-image: url(tools/icons/nav_home.png);\">" : "<div class=\"navigation\" style=\"background-image: url(tools/icons/nav.png);\">";
+echo $id == "Runner90" ? "<div class=\"navigation\" style=\"background-image: url(tools/icons/nav_home.png);\">" : "<div class=\"navigation\" style=\"background-image: url(tools/icons/nav.png);\">";
 ?>&nbsp;
 	  </div>
 	  <div class="premium">&nbsp;</div>
@@ -88,7 +88,7 @@ echo $id == "Runner92" ? "<div class=\"navigation\" style=\"background-image: ur
     <span class="legal">Datenschutz</span><span class="legal_red">*</span> &middot;
 	<span class="legal">AGB</span> &middot;
 	<span class="legal">Cookies</span><span class="legal_red">*</span> &middot;
-	<span class="legal">Online-Sicherheit</span> &middot; 
+	<span class="legal">Online-Sicherheit</span> &middot;
 	<span class="legal_red">* K&uuml;rzlich aktualisiert</span>
 	  <hr>
 		<span class="legal_sub">
@@ -106,73 +106,73 @@ if($id == "Angelique94") {
   echo "<br><a href=\"javascript:chatdefine();\" style=\"color:rgba(0,0,0,0);\" onmouseover=\"this.style.color='grey';\" onmouseout=\"this.style.color='rgba(0,0,0,0)';\">Chat definieren</a><br>
   <input type=\"hidden\" id=\"chat_def_first\" value=\"".(isset($_GET['f']) ? $_GET['f'] : 7) ."\">
   <input type=\"hidden\" id=\"chat_def_second\" value=\"".(isset($_GET['s']) ? $_GET['s'] : 4) ."\">";
-	  
+
 	echo "</nav>";
-	
-    if($id == "Runner92") {
-	  
+
+    if($id == "Runner90") {
+
       echo "<article>
 	  <div class=\"main_profile\">
 		<div class=\"profile_head\"><h3>Profil</h3>$id</div>
 		<div class=\"profile_filter\" style=\"padding-top:8px;\"><span>Profil ansehen</span><span style=\"color:#bbb;\">|</span><span>Profil bearbeiten</span><span style=\"color:#bbb;\">|</span><span>Statistik</span><span style=\"color:#bbb;\">|</span><span>Logout</span></div>
-	  	  <div style=\"background-image:url(tools/users/runner92.jpg)\" class=\"imgframe imgframe_rot1 imgframe_user\">&nbsp;</div>
+	  	  <div style=\"background-image:url(tools/users/runner90.jpg)\" class=\"imgframe imgframe_rot1 imgframe_user\">&nbsp;</div>
 
-		
-	  
+
+
 	  <div class=\"profile_user_home\"><h3>6 Vorschl&auml;ge f&uuml;r dich!</h3><br>
 	  <div>
 	  <a href=\"#\" onclick=\"gotochat('Moon_light22');\">
 	  <img src=\"tools/users/moonlight.jpg\" alt=\"\"><br><strong>
 	  Moon_light22</strong></a><br>22
 	  </div>
-	  
+
 	  <div>
 	  <a href=\"#\" onclick=\"gotochat('Angelique94&online=true');\">
 	  <img src=\"tools/users/angelique94_preview.jpg\" alt=\"\"><br><strong>
 	  Angelique94</strong></a><br>22
 	  </div>
-	  
+
 	  <div>
 	  <a href=\"#\">
 	  <img src=\"tools/users/debbi.jpg\" alt=\"\"><br><strong>
 	  debbi@su77</strong></a><br>39
 	  </div>
-	  
+
 	  <br><br>
-	  
+
 	  <div>
 	  <a href=\"#\">
 	  <img src=\"tools/users/queen.jpg\" alt=\"\"><br><strong>
 	  queenOFdragons</strong></a><br>22
 	  </div>
-	  
+
 	  <div>
 	  <a href=\"#\">
 	  <img src=\"tools/users/mauschen.jpg\" alt=\"\"><br><strong>
 	  M&auml;uschen97</strong></a><br>19
 	  </div>
-	  
+
 	  <div>
 	  <a href=\"#\">
 	  <img src=\"tools/users/bamboo.jpg\" alt=\"\"><br><strong>
 	  Bamboo_<3</strong></a><br>31
 	  </div>
-	  
-	  
+
+
 	  </div>
 	  <div class=\"profile_more\" style=\"padding: 10px 2.32558% 17px 2.32558%; text-align:center;\">Kostenlosen MEGA FLIRT senden!<br>&#10145; Mehr<br><br></div>
-	  
+
 	  </div>
-	  
+
 	  <br><br>
-	  
+
 	  </article>";
     } elseif($id == "Angelique94") {
       echo "<article>
 	  <div class=\"main_profile\">
 	  <div class=\"profile_head\" style=\"background-image:url(tools/icons/profile_head.png);\">&nbsp;</div>
 	  <div class=\"profile_filter\" style=\"background-image:url(tools/icons/filter.png);\">&nbsp;</div>
-	  
+
 	  <div style=\"background-image:url(tools/users/angelique94.jpg)\" class=\"imgframe imgframe_rot1\">&nbsp;</div>
 		<div class=\"imgframe imgframe_rot2\">&nbsp;</div>
 		<div class=\"imgframe imgframe_rot3\">&nbsp;</div>";
@@ -185,18 +185,18 @@ if($id == "Angelique94") {
 	  <div>22</div><div>Bern</div><div>$id</div><br>
 	  <div class=\"small\">Jahre alt</div><div class=\"small\">(21 km)</div><div class=\"small\">164 cm</div><br>
 	  </div>
-	  
+
 	  <div class=\"profile_chat\">";
 	  if($online) {
 	  echo "<div class=\"chatwindow\">
 		<div id=\"chatwindow\" class=\"chatwindow_content\">";
-		
+
 		if(isset($_GET["email"])) {
 		  echo "<div class=\"speech_left left\">Hey Runner <img src=\"tools/icons/smiley_wink.png\" alt=\"\"></div><br>
 		  <div class=\"speech_left\">wazzup...<img src=\"tools/icons/smiley.png\" alt=\"\">!?</div><br>
-		  <div class=\"speech_left\">Hey Runner92, Ich bin eine begeisterte Bikerin und arbeite wie du in der Gastronomie. Zeigst du mir dein privates Album?</div><br>";
+		  <div class=\"speech_left\">Hey Runner90, Ich bin eine begeisterte Bikerin und arbeite wie du in der Gastronomie. Zeigst du mir dein privates Album?</div><br>";
 		}
-		
+
 		echo "</div>
 	  </div>
 	  <div class=\"writing\" id=\"type\">Angelique94 schreibt&hellip;</div>
@@ -251,19 +251,19 @@ if($id == "Angelique94") {
 	  </div>
 	  </div>
 	  </div>
-	   
+
 	  <footer>
 		<a href=\"#\" onclick=\"gotochat('Moon_light22');\"><img src=\"tools/icons/footer.png\" alt=\"\"></a>
 	  </footer>
-	  
+
 	  </article>";
-      
+
     } elseif($id == "Moon_light22") {
 	  echo "<article>
 	  <div class=\"main_profile\">
 	  <div class=\"profile_head\" style=\"background-image:url(tools/icons/profile_head.png);\">&nbsp;</div>
 	  <div class=\"profile_filter\" style=\"background-image:url(tools/icons/filter.png);\">&nbsp;</div>
-	  
+
 	  <div style=\"background-image:url(tools/users/moonlight_1.jpg)\" class=\"imgframe imgframe_rot1\">&nbsp;</div>
 		<div class=\"imgframe imgframe_rot2\">&nbsp;</div>
 		<div class=\"imgframe imgframe_rot3\">&nbsp;</div>
@@ -272,7 +272,7 @@ if($id == "Angelique94") {
 	  <div>22</div><div>Bern</div><div>$id</div><br>
 	  <div class=\"small\">Jahre alt</div><div class=\"small\">(18 km)</div><div class=\"small\">169 cm</div><br>
 	  </div>
-	  
+
 	  <div class=\"profile_chat\">
 	  <strong>Sternzeichen:</strong> Skorpion<br>
 		<strong>Gr&ouml;sse:</strong> 169 cm<br>
@@ -315,24 +315,24 @@ if($id == "Angelique94") {
 	  </div>
 	  </div>
 	  </div>
-	   
+
 	  <footer>
 		<a href=\"#\" onclick=\"gotochat('Angelique94&online=true');\"><img src=\"tools/icons/footer.png\" alt=\"\">
 	  </footer>
-	  
+
 	  </article>";
 	}
   ?>
-  
-  
-  
 
-    
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DER L&Auml;UFER - zoosk emails
+    <title>DER L&Auml;UFER - zwish emails
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="tools/stylesheet.css" />
@@ -9,7 +9,7 @@
   </head>
 <body>
   <article>
-    <header>"Der L&auml;ufer" – Fake emails zoosk.com
+    <header>"Der L&auml;ufer" – Fake emails zwish.com
     </header>
     <hr>
     <form action="index.php" method="POST">
@@ -39,7 +39,7 @@
 	if(isset($_POST["email"]) && $_POST["email"] == 1 && $_POST["count_email"] == null) {
 		$from = $_POST["sender"];
 		$to = $_POST["receiver"];
-		$subject = "Zoosk.com - Verifikation E-Mail-Adresse";
+		$subject = "Zwish.com - Verifikation E-Mail-Adresse";
 		$body = file_get_contents("emails/email1.html");
 		echo "<br><span style=\"color:green;\">Passiert ist folgendes:</span><br>";
 		smtp_mail($from, $to, $subject, $body);
@@ -48,7 +48,7 @@
 	elseif(isset($_POST["email"]) && $_POST["email"] == 2 && $_POST["count_email"] == null) {
 		$from = $_POST["sender"];
 		$to = $_POST["receiver"];
-		$subject = "Zoosk.com - PM von Angelique94";
+		$subject = "Zwish.com - PM von Angelique94";
 		$body = file_get_contents("emails/email2.html");
 		echo "<br><span style=\"color:green;\">Passiert ist folgendes:</span><br>";
 		smtp_mail($from, $to, $subject, $body);
