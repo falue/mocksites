@@ -34,7 +34,7 @@ foreach($results as $match => $result) {
 			} else {
 				$links = explode(">", $info);
 				$titel = $links[0];
-				$link_show = preg_match("#localhost#", $links[1]) ? "http://www.".strtolower(str_replace(" ", "-", $links[0])).".ch" : $links[1];
+				$link_show = preg_match("#localhost#", $links[1]) || preg_match("#../#", $links[1]) ? "http://www.".strtolower(str_replace(" ", "-", $links[0])).".ch" : $links[1];
 				$text = preg_replace("#\[IMG:(.*?)\]#x", "", "$links[2]");
 				preg_match("#\[IMG:(.*?)\]#x", "$links[2]", $images);
 				#print_r($images);
@@ -58,7 +58,7 @@ foreach($results as $match => $result) {
 
 
 if(isset($resultlist)) {
-	echo "<span class=\"result_stats\">About ".rand(1,20).".000 results (0,".rand(10,99)."seconds)</span><br><br>
+	echo "<span class=\"result_stats\">About ".rand(1,20).".000 results (0,".rand(10,99)." seconds)</span><br><br>
 	$resultlist
 	<br><br><br>
 	<hr><center>
