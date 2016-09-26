@@ -1,0 +1,414 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  color:#222;
+  background-color: #FFF;
+  font-family: arial,sans-serif;
+  font-size:small;
+  line-height:15px;
+  font-weight:normal;
+  font-style: normal;
+}
+
+
+a:link, a:visited, a:focus {
+	text-decoration: none;
+	color: #1a0dab;
+	outline: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+}
+
+img {
+	border:0px;
+	vertical-align: middle;
+}
+
+li {
+  margin-left: 15px;
+}
+
+p {
+}
+
+hr {
+  margin: 0 -8px 16px -8px;
+  background-color: rgba(0,0,0,0.07);
+  border-width: 0;
+  color: rgba(0,0,0,0.07);
+  height: 1px;
+}
+
+header {
+  position: absolute;
+  top: 18px;
+  right: 0px;
+  height: 30px;
+  text-align: right;
+  min-width: 226px;
+  padding-left: 30px;
+  padding-right: 45px;
+  /*background-color: rgba(0,0,0,0.55);*/
+  z-index: 1;
+}
+
+header a {
+  padding-right: 15px;
+}
+
+.home {
+  text-align: center;
+  width:100%;
+  margin-top: 321px;
+  /*background-color: rgba(0,0,0,0.15);*/
+}
+
+.main_logo {
+  cursor: pointer;
+  left:50%;
+  width: 400px;
+  margin-left:-200px;
+  position: absolute;
+  margin-top: -120px;
+  /*background-color: rgba(0,0,0,0.15);*/
+}
+
+.logo_small {
+  display: none;
+  margin-right: 14px;
+}
+
+.country {
+  color:#4285f4;
+  font-size: 16px;
+  text-align: left;
+  position: absolute;
+  width: 120px;
+  margin-top: 0px;
+  bottom: 0px;
+  right:0px;
+  /*background-color: rgba(0,0,0,0.15);*/
+}
+
+.main {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background: #f2f2f2;
+  border-bottom: 1px solid #e4e4e4;
+  line-height: 40px;
+  z-index: 0;
+  padding: 10px 5px 0px 15px;
+}
+
+.search {
+  width: 566px;
+  height: 28px;
+  border: 1px solid #d9d9d9;
+  padding: 5px 10px 5px 10px;
+  font: 16px arial,sans-serif;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.search:hover {
+  border: 1px solid #b9b9b9;
+  border-top-color: #a0a0a0;
+}
+
+.search:focus {
+  border: 1px solid #4d90fe;
+  outline:none;
+}
+
+.search_button {
+  display: none;
+  position: relative;
+  width: 40px;
+  background-image: url(search.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: #4285f4;
+  top: -1px;
+}
+
+.search_button:hover {
+  background-color: #3b78e7;
+}
+
+.prompt {
+  position: absolute;
+  display: none;
+  line-height: 22px;
+  font-size: 16px;
+  width: 586px;
+  top: 49px;
+  left:124px;
+  padding: 0px 0px 5px 0px;
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  border-top-color: #d9d9d9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+
+.prompt:after {
+  content: "Press Enter to search.";
+  position: absolute;
+  left:0px;
+  bottom: -20px;
+  font-size: 10pt;
+  color: #777;
+}
+
+.prompt_row {
+  padding-left: 10px;
+}
+
+.prompt_row:hover {
+  background: #f2f2f2;
+}
+
+.queue {
+  position: relative;
+  top: 60px;
+  display: none;
+  z-index: 2;
+}
+
+.nav {
+  color:#777;
+  position: relative;
+  top: 0px;
+  border-bottom: 1px solid #e4e4e4;
+  line-height: 57px;
+  padding-left: 124px;
+}
+
+.nav div {
+  padding: 0px 8px 0px 8px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.nav div:hover {
+  color:#222;
+}
+
+.nav_chosen {
+  color: #4285f4;
+  font-weight: bold;
+  border-bottom: 3px solid #4285f4;
+}
+
+.nav_buttons {
+  position: absolute;
+  right: 28px;
+  top: 16px;
+}
+
+.nav_sites {
+  margin: 12px;
+  cursor: pointer;
+}
+
+.results {
+  position: relative;
+  top: 0px;
+  padding-left: 124px;
+  max-width: 610px;
+  padding-bottom: 100px;
+}
+
+.result {
+  padding-top: 30px;
+  clear: both;
+}
+
+.result:first-of-type {
+  padding-top: 0px;
+}
+
+.result_stats {
+  color: #808080;
+  line-height: 43px;
+}
+
+.result_titel {
+  font-size: 16px;
+}
+
+.result_link {
+  color:#006621;
+  font-size: 14px;
+}
+
+.result_text {
+  color:#545454;
+  clear: both;
+}
+
+.result_img {
+  float:left;
+  width:117px;
+  height: 65px;
+  margin-right:10px;
+  background-size: cover;
+}
+
+.main_button {
+  cursor: pointer;
+  height: 36px;
+  line-height: 27px;
+  background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
+  -moz-user-select: none;
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  color: #757575;
+  cursor: default;
+  font-family: arial,sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 11px 4px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.main_button:hover {
+  background-image: -moz-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-color: #f8f8f8;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  color: #222;
+}
+
+
+.notific {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.55);
+  background-image: url(g_pm.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 0px;
+  margin-right: 25px;
+}
+
+.notific:hover {
+  background-color: rgba(0,0,0,0.85);
+}
+
+.user {
+  position: absolute;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.55);
+  background-image: url(g_user.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -6px;
+  margin-right: 15px;
+}
+
+.user:hover {
+  opacity: 0.85;
+}
+
+.apps {
+  opacity:.55;
+}
+
+.apps:hover {
+  opacity:1;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  background: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  line-height: 40px;
+}
+
+.result_footer {
+  padding-left:124px;
+  z-index: 5;
+}
+
+.result_footer a {
+  padding-right: 27px;
+}
+
+
+.noresult {
+  font-size: 16px;
+}
+
+.right {
+  position: absolute;
+  right:0px;
+}
+
+.grey {
+  color: #808080;
+}
+
+.imageband {
+  width:100%;
+}
+
+footer a:link, footer a:visited, footer a:focus, header a:link, header a:visited, header a:focus {
+  text-decoration: none;
+  color: #666;
+  outline: none;
+}
+
+footer a:hover, footer a:active, header a:hover, header a:active {
+	text-decoration: underline;
+}
+
+footer a:focus, header a:focus {
+  outline: none;
+}
+
+footer .left {
+  position: absolute;
+  padding-left: 3px;
+}
+footer .left a {
+  padding-left: 27px;
+}
+
+footer .right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-right: 30px;
+}
+
+footer .right a {
+  padding-left: 27px;
+}
