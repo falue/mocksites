@@ -25,17 +25,16 @@
         <a href="#" title="0 Google notifications"><div class="notific">&nbsp;</div></a>&emsp;&emsp;
         <a href="#" title="Google account: <? echo $email; ?>"><div class="user">&nbsp;</div></a>
     </header>
-    
-    
-    
-    
+
+    <form action="javascript:search(document.getElementById('search').value); document.getElementById('search').blur();">
     <article id="main" class="home">           
         <div class="main_logo" id="main_logo">
             <img src="tools/logo_big.png" alt="">
             <div class="country">Switzerland</div>
         </div>
-        <img src="tools/logo_small.png" alt="" class="logo_small" id="logo_small" onclick="window.location.href='index.php';"> 
-        <input id="search" class="search" type="text" onkeydown="swapmenu();" onkeyup="prompt(this.value);" value="<? echo $_GET["q"]; ?>" onclick="prompt(this.value);" autofocus><div id="search_button" class="search_button" onclick="search(document.getElementById('search').value);">&nbsp;</div>
+        <img src="tools/logo_small.png" alt="" class="logo_small" id="logo_small" onclick="window.location.href='index.php';">
+        
+        <input id="search" class="search" type="text" onkeydown="swapmenu();" onkeyup="prompt(this.value);" value="<? echo $_GET["q"]; ?>" onclick="prompt(this.value);" autofocus  autocomplete="off"><div id="search_button" class="search_button" onclick="search(document.getElementById('search').value);">&nbsp;</div>
         <br>
         <div id="homebuttons">
             <input type="button" class="main_button" value="Google Search" onclick="swapmenu(); search(document.getElementById('search').value);">
@@ -44,6 +43,7 @@
             Google.ch offered in: <a href="#">Deutsch</a> <a href="#">Fran&ccedil;ais</a> <a href="#">Italiano</a> <a href="#">Rumantsch</a>
         </div>
     </article>
+    </form>
     
     <div id="prompt" class="prompt"></div>
     

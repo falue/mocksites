@@ -1,3 +1,21 @@
+document.createElement("header");
+document.createElement("nav");
+document.createElement("section");
+document.createElement("article");
+document.createElement("footer");
+
+function hide(id) {
+	for(i=0; i< arguments.length; i++) {
+		document.getElementById(arguments[i]).style.display = 'none';
+	}
+}
+
+function show(id) {
+	for(i=0; i< arguments.length; i++) { 
+		document.getElementById(arguments[i]).style.display = 'block';
+	}
+}
+
 function swapmenu() {
   var status = document.getElementById('main').className;
   if (status == "home") {
@@ -41,18 +59,17 @@ function prompt(str){
 
 
 
-
-document.onkeyup = function(e) { /* orig: onkeydown, aber prompt blieb stehen */
-    /* get enter, global... */
+/*
+document.onkeyup = function(e) { /* orig: onkeydown, aber prompt blieb stehen 
     if(e.keyCode == 13) {
       search(document.getElementById("search").value);
     }
 };
-
+*/
 function search(str) {  
   document.getElementById('prompt').style.display = 'none';
   document.getElementById('queue').style.display = 'block';
-  document.getElementById("results").innerHTML = "pressed enter:"+str+"!!!!";
+  /*document.getElementById("results").innerHTML = "pressed enter:"+str+"!!!!";*/
   
   if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttp=new XMLHttpRequest();

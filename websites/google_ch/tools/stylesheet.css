@@ -1,6 +1,9 @@
 * {
 	margin: 0;
 	padding: 0;
+}
+
+*:not(input[type=text]) {
 	-moz-user-select:none;
 	user-select:none;
 }
@@ -37,6 +40,7 @@ img {
 
 li {
   margin-left: 15px;
+  margin-bottom: 7px;
 }
 
 p {
@@ -162,6 +166,7 @@ header a {
   background-color: #FFF;
   border: 1px solid #ccc;
   border-top-color: #d9d9d9;
+  cursor: default;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 3;
