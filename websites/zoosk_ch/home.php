@@ -136,7 +136,7 @@ if(!$online) {
 	  <div>
 	  <a href=\"#\">
 	  <img src=\"tools/users/angelique94_1.png\" alt=\"\"><br><strong>
-	  Bamboo_3></strong></a><br>31
+	  Bamboo_<3</strong></a><br>31
 	  </div>
 	  
 	  
