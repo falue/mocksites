@@ -1,0 +1,270 @@
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    vertical-align: top;
+}
+
+.fancybox-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8020000;
+}
+
+.fancybox-skin {
+    position: relative;
+    background: #f9f9f9;
+    color: #444;
+    border: solid 1px #000000;
+    text-shadow: none;
+}
+
+.fancybox-opened {
+    /*z-index: 8030;*/
+}
+
+.fancybox-opened .fancybox-skin {
+    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.fancybox-outer, .fancybox-inner {
+    position: relative;
+}
+
+.fancybox-inner {
+    overflow: hidden;
+}
+
+.fancybox-type-iframe .fancybox-inner {
+    -webkit-overflow-scrolling: touch;
+}
+
+.fancybox-error {
+    color: #444;
+    margin: 0;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.fancybox-image, .fancybox-iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.fancybox-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#fancybox-loading, .fancybox-prev span, .fancybox-next span {
+    background-image: url('../i/fancybox_sprite.png');
+}
+
+.fancybox-close {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FJREFUeNrEl81LG0EYxjebNFsJ2gSVgogHFdoG/CQerEa8WG/eTHoo2PbkB3oRhJL2prY9RFD8OtVqe2jqX5CepGv1oKh4iC2oBxEpWEmqiE1MTd8nnZEl3d1sNNAXnjg7s/v+3J3Zd541JRIJwWDcJz0guUlOUj7rPyKFSDLpE2nJUDaAdWQmDZPkhPGQ2TVmvdwmnTt+RHrG7k7Y39+Py7J8try8/Gt7ezseiUQu0G+328Xy8nJLfX39TbfbnVNcXGxh1+MpvCS9V0uuBX5DeoLG5uZmdGpq6nhlZSVq5AnW1dVJXV1deZWVlRLrmiE9NQL+QPLGYrHE2NhYJBAInGawDv4mNZkEr9dr6+vrs1utVhN1BUgP9cBvSR0nJycX/f39P9bW1mLCNaK2ttbq9/sLcnNzRTqcJT1WA3cAHI1GEz09PYcbGxvXgvKorq62TkxMFEqSZGJg/AOCyMbNpAE0RkdHI9mCIpALOdnhAGNdggexerGQ5ufnT4UsB3IiN3tDBpXgJvxMTk4e6y0kp9N5Qw+gNY6cyK1kAdyCqrS7u3u+urqq+cq0t7fb5ubmbg8NDTnUxtGPcZynNo7cYLAK2CKyEigsLCycpVsk+Nva2mpLheMY/crz1ELBaLoEr6+v6xYIn88XDgaDp6lwJRTjOE8rB72enOFGebuL1s7OTjzdIuFJAYIqKiqkoqIiixEogh41Z9wR+S7Da68ROL/zTKApjHxR+E8hsv00ucsYuUA5pwcHB3GtBacWCsYRGl/RKisrs2QCxeNta2v7rrbgtKK0tJQzvonMOQg1NTVSJlA+p1qrXWPT4Az5Etzc3JyTruZqLSQlXK/OKxgy352+oKJ0dnYe6lUvlMRQKHR+lXGXyyVNT08XMk/WwCf7M366u7vzsIlrhR5Ubxw54UqULA5+jutgVzwejy3brw5yVlVVYX63SC+U4N+kV2jArujV26sYAeRkhzB/cSUY8Q7uAE5hZGSkIBtw5EAu5j5mGUPT7MGYebJh9np7e+0M+hEG0oi9neHGDM5hfHz8p1HjB4NHnu0Wm1Mh1eSlA/9j6Pf29uKLi4tJQ4+dLBwOJwu+w+EQUfVg6BsbG3NKSkp4dcJCGtYy9EY+YV6TljL4hFli11iu+gmTGg2oisw43Ev5aNtiFTDIilHa+CPAACfofL2U8Q11AAAAAElFTkSuQmCC");
+}
+
+#fancybox-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -22px;
+    margin-left: -22px;
+    background-position: 0 -108px;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 8060000;
+}
+
+#fancybox-loading div {
+    width: 44px;
+    height: 44px;
+    background: url('../i/fancybox_loading.gif') center center no-repeat;
+}
+
+.fancybox-close {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 8040000;
+}
+
+.fancybox-nav {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent url('../i/blank.gif'); /* helps IE */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    z-index: 8040000;
+}
+
+.fancybox-prev {
+    left: 0;
+}
+
+.fancybox-next {
+    right: 0;
+}
+
+.fancybox-nav span {
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 34px;
+    margin-top: -18px;
+    cursor: pointer;
+    z-index: 8040000;
+    visibility: hidden;
+}
+
+.fancybox-prev span {
+    left: 10px;
+    background-position: 0 -36px;
+}
+
+.fancybox-next span {
+    right: 10px;
+    background-position: 0 -72px;
+}
+
+.fancybox-nav:hover span {
+    visibility: visible;
+}
+
+.fancybox-tmp {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    visibility: hidden;
+    max-width: 99999px;
+    max-height: 99999px;
+    overflow: visible !important;
+}
+
+/* Overlay helper */
+
+.fancybox-lock {
+
+    width: auto;
+}
+
+.fancybox-lock body {
+
+}
+
+.fancybox-lock-test {
+    overflow-y: hidden !important;
+}
+
+.fancybox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    z-index: 8010000;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.fancybox-overlay-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.fancybox-lock .fancybox-overlay {
+
+}
+
+/* Title helper */
+
+.fancybox-title {
+    visibility: hidden;
+    position: relative;
+    text-shadow: none;
+    padding: 5px 10px 10px 10px;
+    z-index: 8050000;
+}
+
+.fancybox-opened .fancybox-title {
+    visibility: visible;
+}
+
+.fancybox-title-float-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    margin-bottom: -35px;
+    z-index: 8050000;
+    text-align: center;
+}
+
+.fancybox-title-float-wrap .child {
+    display: inline-block;
+    margin-right: -100%;
+    padding: 2px 20px;
+    background: transparent; /* Fallback for web browsers that doesn't support RGBa */
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-shadow: 0 1px 2px #222;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.fancybox-title-outside-wrap {
+    position: relative;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.fancybox-title-inside-wrap {
+    padding-top: 10px;
+}
+
+.fancybox-title-over-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    padding: 10px;
+    background: #000;
+    background: rgba(0, 0, 0, .8);
+}
+
+/*Retina graphics!*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+    #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+        background-image: url('../i/fancybox_sprite@2x.png');
+        background-size: 44px 152px; /*The size of the normal image, half the size of the hi-res image*/
+    }
+
+    #fancybox-loading div {
+        background-image: url('../i/fancybox_loading@2x.gif');
+        background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
+    }
+}

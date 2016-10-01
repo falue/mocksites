@@ -1,0 +1,129 @@
+html, body {
+    height: 100%;
+    background: transparent;
+}
+
+.container-fluid {
+    padding: 10px 0 0 0;
+    height: 100%;
+}
+
+#carousel, .carousel-inner, .carousel-inner .item, .item-inner {
+    height: 100%;
+}
+
+.carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+}
+
+.carousel-control {
+    width: 25px;
+    text-shadow: none;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background: none;
+    color: #ccc;
+    opacity: 1.0;
+}
+
+.carousel-control .glyphicon {
+    margin-top: -30px;
+}
+
+#carousel .item {
+    text-align: center;
+    outline: none;
+}
+
+.item-inner {
+    position: relative;
+    margin-left: 27px;
+    margin-right: 27px;
+}
+
+.item-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+.item-body-full {
+    bottom: 0;
+}
+
+.item-body > * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.item-body > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+
+    cursor: pointer;
+}
+
+.item-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+
+    font-size: 25px;
+    border-top: 1px solid #ddd;
+}
+
+.item-footer table {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.item-footer .table tbody tr td {
+    border: none;
+}
+
+#lopan-ad .item-inner {
+    margin: 0;
+}
+
+#lopan-ad .item-body div[id^='sas_'] {
+    left: 0;
+    right: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+#lopan-ad .item-body iframe {
+    width: 100%;
+}
+
+#lopan-ad .item-body img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#lopan-ad .item-body .sas-filmstrip-container {
+    margin: 0 auto;
+}

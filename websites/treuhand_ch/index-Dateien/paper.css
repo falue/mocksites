@@ -1,0 +1,7 @@
+/* (c) Copyright 2000-2015 cmsbox GmbH, Bern, Switzerland. All Rights Reserved. */
+/* Date: 2015-12-09T09:15:27.222411 */
+
+.vcard{float:none;display:inline;white-space:nowrap}
+#addresses{float:left;padding:20px 0}
+.vcard .org,.vcard .street-address,.vcard .ort,.vcard .tel,.vcard .fax,.vcard .postfach{padding:0 5px;border-right:1px solid #000}
+.vcard .tel{border-right:0}

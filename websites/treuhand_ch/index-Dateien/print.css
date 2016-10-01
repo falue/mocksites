@@ -1,0 +1,37 @@
+/* (c) Copyright 2000-2016 cmsbox GmbH, Bern, Switzerland. All Rights Reserved. */
+/* Date: 2016-09-20T08:01:06.069365 */
+
+*{background:none!important}
+body{color:#2c2c2c;margin:0!important;padding:0!important;width:auto!important;background-color:#fff;font:normal 12px/1.4em "Lucida Grande","Lucida Sans Unicode",Helvetica,Verdana,Arial}
+div.stop{clear:both}
+a img{display:block;border:0 none #fff}
+h1{color:#1c1c1c;font-size:2em;font-weight:800;margin-bottom:30px}
+h2{color:#1c1c1c;font-size:1.4em;font-weight:bold}
+.pure{border:0 none #fff}
+.seam{border-top:1px dashed #000}
+.flat{border-top:1px solid #000}
+.edge{border-top:1px dotted #000}
+h3,h4,h5,h6{color:#1c1c1c;font-weight:800}
+h3,h4{font-size:1.1em}
+h5,h6{font-size:1em}
+div.text p.loud{padding-left:1em;border-left:4px solid #2c2c2c;border-right:4px solid #2c2c2c}
+div.text p.pale{color:#999;font-size:.9em}
+div.text p.skew{font-style:italic}
+div.link a{color:#666;text-decoration:underline}
+div.part a.open:after,div.link a.open:after{font-size:90%;text-decoration:underline;content:" (" attr(href) ") "}
+div.mail a.open:after{content:""}
+.link a.null{display:none}
+div.list p{display:list-item;list-style-position:outside}
+div.list p.gist{margin-left:16px;list-style-type:disc}
+div.list p.dent{margin-left:32px;list-style-type:circle}
+div.unit div.line{padding:2px 0;font-size:0;margin-top:2px;line-height:0;margin-bottom:2px}
+div.line hr{color:#999;height:1px;border:0;font-size:0;line-height:0;overflow:hidden;border-bottom-color:#999}
+div.line hr.hair{border-bottom-style:solid}
+div.line hr.dash{border-bottom-style:dashed}
+div.line hr.spot{border-bottom-style:dotted}
+div.line hr.fine{border-bottom-width:1px}
+div.line hr.bold{border-bottom-width:2px}
+div.grid table{width:100%;border-collapse:collapse}
+div.grid table td{padding:1px;vertical-align:top;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.hidden,.fake,div.navi,div.navi *,p.dock,p.dock *,#tool,#tool *,#task,#task *,#work,#work *,#over,#over *,#disp,#disp *,textarea,input,select,form,fieldset,div.form div.tick,div.form div.word,div.form div.foot,#expo,img.zoom,caption,.cb-index,.cb-access,.cb-mobile-access,.cb-album .scan,.body-mobile{display:none}
+.pict,.show,.foto.part{page-break-inside:avoid}

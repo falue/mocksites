@@ -1,0 +1,99 @@
+
+        .sprite-liveticker-breakpoint, .sprite-liveticker-goal, .sprite-liveticker-hockeyEnd, .sprite-liveticker-hockeyGoal, .sprite-liveticker-hockeyThirdEnd, .sprite-liveticker-matchpoint, .sprite-liveticker-penalty, .sprite-liveticker-racket, .sprite-liveticker-redCard, .sprite-liveticker-setpoint, .sprite-liveticker-startEnd, .sprite-liveticker-substitution, .sprite-liveticker-yellowCard, .sprite-liveticker-yellowRedCard, .sprite-scoreboard-goal, .sprite-scoreboard-hockeyGoal, .sprite-scoreboard-tennisRacket, .nonExistendClassSelector {
+            background-image: url('../images/frameworkSprite.png');
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+        .sprite-liveticker-breakpoint, .sprite-liveticker-goal, .sprite-liveticker-hockeyEnd, .sprite-liveticker-hockeyGoal, .sprite-liveticker-hockeyThirdEnd, .sprite-liveticker-matchpoint, .sprite-liveticker-penalty, .sprite-liveticker-racket, .sprite-liveticker-redCard, .sprite-liveticker-setpoint, .sprite-liveticker-startEnd, .sprite-liveticker-substitution, .sprite-liveticker-yellowCard, .sprite-liveticker-yellowRedCard, .sprite-scoreboard-goal, .sprite-scoreboard-hockeyGoal, .sprite-scoreboard-tennisRacket, .nonExistendClassSelector {
+            background-image: url('../images/frameworkSprite@2x.png');
+            background-size: 84px 84px;
+        }
+
+        }
+
+        .sprite-liveticker-breakpoint {
+          background-position: -16px -18px;
+          width: 17px;
+          height: 17px;
+        }
+        .sprite-liveticker-goal {
+          background-position: -52px -37px;
+          width: 16px;
+          height: 16px;
+        }
+        .sprite-liveticker-hockeyEnd {
+          background-position: -0px -0px;
+          width: 17px;
+          height: 18px;
+        }
+        .sprite-liveticker-hockeyGoal {
+          background-position: -33px -18px;
+          width: 17px;
+          height: 17px;
+        }
+        .sprite-liveticker-hockeyThirdEnd {
+          background-position: -17px -0px;
+          width: 17px;
+          height: 18px;
+        }
+        .sprite-liveticker-matchpoint {
+          background-position: -51px -0px;
+          width: 17px;
+          height: 17px;
+        }
+        .sprite-liveticker-penalty {
+          background-position: -0px -54px;
+          width: 17px;
+          height: 14px;
+        }
+        .sprite-liveticker-racket {
+          background-position: -0px -37px;
+          width: 17px;
+          height: 17px;
+        }
+        .sprite-liveticker-redCard {
+          background-position: -0px -68px;
+          width: 13px;
+          height: 16px;
+        }
+        .sprite-liveticker-setpoint {
+          background-position: -17px -37px;
+          width: 17px;
+          height: 17px;
+        }
+        .sprite-liveticker-startEnd {
+          background-position: -34px -0px;
+          width: 17px;
+          height: 18px;
+        }
+        .sprite-liveticker-substitution {
+          background-position: -68px -16px;
+          width: 15px;
+          height: 15px;
+        }
+        .sprite-liveticker-yellowCard {
+          background-position: -68px -31px;
+          width: 13px;
+          height: 16px;
+        }
+        .sprite-liveticker-yellowRedCard {
+          background-position: -0px -18px;
+          width: 16px;
+          height: 19px;
+        }
+        .sprite-scoreboard-goal {
+          background-position: -68px -0px;
+          width: 16px;
+          height: 16px;
+        }
+        .sprite-scoreboard-hockeyGoal {
+          background-position: -51px -17px;
+          width: 17px;
+          height: 17px;
+        }
+        .sprite-scoreboard-tennisRacket {
+          background-position: -34px -37px;
+          width: 18px;
+          height: 16px;
+        }

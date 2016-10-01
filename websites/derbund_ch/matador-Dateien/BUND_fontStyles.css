@@ -1,0 +1,843 @@
+
+/* Fonts */
+
+/*
+This font software is the property of Commercial Type.
+
+You may not modify the font software, use it on another website, or install it on a computer.
+
+License information is available at http://commercialtype.com/eula
+For more information please visit Commercial Type at http://commercialtype.com or email us at info[at]commercialtype.com
+
+Copyright (C) 2013 Schwartzco Inc.
+License: 1312-PEGFLC   
+License: 1409-CKEEFH (Extrabold)
+*/
+@font-face {
+  font-family: "Publico Headline";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Medium-Web.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Medium-Web.eot?#iefix") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Medium-Web.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Medium-Web.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Medium-Web.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Publico Headline";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Bold-Web.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Bold-Web.eot?#iefix") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Bold-Web.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Bold-Web.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Bold-Web.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Publico Headline Extrabold";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Extrabold-Web.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Extrabold-Web.eot?#iefix") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Extrabold-Web.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Extrabold-Web.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoHeadline-Extrabold-Web.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Publico Text Roman";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoText-Roman-Web.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoText-Roman-Web.eot?#iefix") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoText-Roman-Web.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoText-Roman-Web.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/publico/PublicoText-Roman-Web.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+This CSS resource incorporates links to font software which is 
+the valuable copyrighted property of WebType LLC, The Font Bureau, 
+and/or their suppliers. You may not 
+attempt to copy, install, redistribute, convert, modify or reverse 
+engineer this font software. Please contact WebType with any 
+questions: http://www.webtype.com 
+*/
+@font-face {
+  font-family: "Benton Sans Cond Black";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-2.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-2.eot?") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-3.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-1.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-4.svg#web") format("svg");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Benton Sans Cond Light";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/benton/2e86b3e0-b624-4270-befe-3f44606d827a-2.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/benton/2e86b3e0-b624-4270-befe-3f44606d827a-2.eot?") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/2e86b3e0-b624-4270-befe-3f44606d827a-3.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/2e86b3e0-b624-4270-befe-3f44606d827a-1.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/2e86b3e0-b624-4270-befe-3f44606d827a-4.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Benton Sans Cond";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-2.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-2.eot?") format("embedded-opentype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-3.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-1.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-4.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Tamedia Icons";
+  src: url("http://www.tagesanzeiger.ch/css/fonts/icons/tamedia-icons.eot");
+  src: url("http://www.tagesanzeiger.ch/css/fonts/icons/tamedia-icons.eot?#iefix") format("eot"),
+       url("http://www.tagesanzeiger.ch/css/fonts/icons/tamedia-icons.woff") format("woff"),
+       url("http://www.tagesanzeiger.ch/css/fonts/icons/tamedia-icons.ttf") format("truetype"),
+       url("http://www.tagesanzeiger.ch/css/fonts/icons/tamedia-icons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("/fonts/SourceSansPro-Regular.eot");
+    src: url("/fonts/SourceSansPro-Regular.eot?") format("embedded-opentype"), url("/fonts/SourceSansPro-Regular.woff") format("woff"), url("/fonts/SourceSansPro-Regular.ttf") format("truetype"), url("/fonts/SourceSansPro-Regular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Helpers*/
+h1, h2 {
+    font-family: "Publico Headline";
+}
+
+h4 {
+    font-family: "Publico Headline Extrabold";
+}
+
+input,
+textarea,
+button,
+label {
+    font-family: "Benton Sans Cond";
+}
+
+.newsTitle {
+    font-family: "Publico Headline";
+}
+
+.label,
+.labelAd {
+    font-family: "Benton Sans Cond" !important;
+}
+
+.publiTitle, .adsTitle {
+    font-family: "Benton Sans Cond" !important;
+}
+
+.breakingNews {
+    font-family: "Benton Sans Cond";
+}
+
+.author {
+    font-family:  Source Sans Pro !important;
+    font-weight: 300;
+}
+
+.keyword,
+.redKeyword,
+.blueKeyword,
+.leadDecoration,
+.leadGenre, 
+.leadAdditions {
+    font-family: "Benton Sans Cond Black" !important;    
+}
+
+.storyInfo .leadAdditions
+.storyInfo .leadGenre,
+.storyInfo .leadAdditions {
+    font-family: Source Sans Pro !important;
+}
+
+/*Header & Navigation*/
+#topNav ul li {
+    font-family: "Benton Sans Cond"
+}
+
+#mainNav .dropdownNavi ul li {
+    font-family: "Publico Text Roman";
+}
+
+#mainNav .dropdownNavi a.active {
+    font-family: "Publico Text Roman";
+} 
+
+#mainNav ul li,
+#subnavigation ul li {
+    font-family: "Publico Text Roman";
+}
+
+#mainNav ul li a.active,
+#subnavigation ul li.moreCategory a {
+    font-family: "Publico Headline Extrabold";
+}
+
+#subnavigation ul li a.active {
+    font-family: "Publico Headline Extrabold";   
+}
+
+#masthead {
+    font-family: "Benton Sans Cond";
+}
+
+#masthead ul li.navigationTitle {
+  font-family: "Benton Sans Cond Black";
+}
+
+/*Front*/
+#mainContainer .articleStory h4,
+#mainContainer .articleStory h4 a,
+#mainColLeft #mainColMiddle .greyBackground h4 a {
+    font-family: "Publico Headline";
+}
+
+#mainContainer .featureStory h3,
+#mainContainer .story h4 {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+.mostSharedArticles table td,
+.boxNews table td,
+.boxNews ul li a,
+.boxNews ul li span,
+#meistgelesen_rubrik ul li a,
+#meistgelesen_rubrik ul li span {
+    font-family: "Publico Headline";
+}
+
+.mostSharedArticles table td span,
+.boxNews table td span,
+.boxNews ul li span.time,
+#meistgelesen_rubrik ul li span.time {
+    font-family: "Benton Sans Cond";
+}
+
+.mostPopularLink ul li {
+    font-family: "Benton Sans Cond";
+}
+
+.mostPopularLink ul li a {
+    font-family: "Publico Headline";
+}
+
+.mostDiscussedArticles p {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+.storyBundleTop h3 a {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+.ressort .ressortLeft .featureStory h3 a,
+.ressort .ressortMiddle h4 a {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+.ressort.wide h3,
+.ressort.wide h3 a {
+    font-family: "Publico Headline";
+}
+
+.ressort .ressortRight.dasMagazin h5 a {
+    font-family: "Publico Headline";
+}
+
+#mainColLeft #mainColMiddle {
+    font-family: "Benton Sans Cond";
+}
+
+#mainColLeft #mainColMiddle .greyBackground h4.contextBoxTitle a {
+    font-family: "Publico Headline Extrabold";
+}
+
+#mainColLeft #mainColMiddle #recommendedStories .story p a,
+#mainColLeft #mainColMiddle #recommendedStories .story p .leadGenre,
+#mainColLeft #mainColMiddle #recommendedStories .story p .leadAdditions {
+    font-family: "Benton Sans Cond";
+}
+
+#mainColLeft #mainColMiddle .boerse_box_small table.top .name {
+    font-family: "Publico Headline";
+}
+
+#mainColRight {
+    font-family: "Benton Sans Cond";
+}
+
+.mostDiscussedArticles td cite {
+    font-family: "Source Sans Pro";
+}
+
+#weatherZurich table td,
+#weatherBern table td {
+    font-family: "Benton Sans Cond";
+}
+
+#sportBoxFront {
+    font-family: "Benton Sans Cond";
+}
+
+#sportBoxFront ul.ui-tabs-nav li.ui-tabs-selected a,
+#sportBoxFront .ui-tabs-panel select {
+    font-family: "Benton Sans Cond Black";
+}
+
+.ressortRight p,
+.ressortRight span {
+    font-family: "Benton Sans Cond";
+}
+
+#lastRessort .story p {    
+    font-family: "Benton Sans Cond";
+}
+
+#funSection p {
+    font-family: "Benton Sans Cond";
+}
+
+/*Category*/
+#dossierIntro h2.autoDossier em {
+    font-family: "Publico Headline";
+    font-weight: normal;
+}
+
+.dossierDiashow p a {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+#mainColLeft.keywordSearch h3,
+#mainColLeft.keywordSearch h3 a {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+#mainColLeft.mainColLeftSection .articleStory.ticker h3,
+#mainColLeft.mainColLeftSection #Quizlist .QuizTeaser h3 a {
+    font-family: "Publico Headline";
+}
+
+
+.mainColLeftSection .bottomLinks>div p span.icon-slide,
+.mainColLeftSection .bottomLinks>div p span.icon-video {
+    font-family: "Benton Sans Cond Black";
+}
+
+.mainColLeftSection #fltrRessort a.aktiv {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColLeft #primeSection.shortMsg h2 {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColLeft #primeSection.shortMsg h3,
+#mainColLeft #primeSection.shortMsg h3 a {
+    font-family: "Benton Sans Cond Light";
+}
+
+#mainColLeft #primeSection.shortMsg .artGroup h2 {
+    font-family: "Benton Sans Cond Black";
+}
+
+h4 a.showMore {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#sportScoresTab {
+    font-family: "Benton Sans Cond Light";
+}
+
+#sportScoresTab .sportTableBasic h3,
+#sportScoresTab .sports-select select,
+#sportScoresTab ul.ui-tabs-nav li a.active {
+    font-family: "Benton Sans Cond Black";
+}
+
+.sportTableBasic table {
+  font-family: "Benton Sans Cond";
+}
+
+.sportTableBasic thead td.inProgress {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+#mainColRight .teaserEditorialContent h4.title {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColRight .auswahlWelt {
+    font-family: "Benton Sans Cond" !important;
+}
+
+body > .tabStyle2 ul li a {
+    font-family: "Benton Sans Cond";
+}
+
+#weather #mainWrapper #mainColLeft h4 {
+    font-family: "Publico Headline";
+}
+
+#mainContainer #mainColLeft p.weatherText b {
+    font-family: "Benton Sans Cond Black";
+}
+
+#wForecast > div > span {
+    font-family: "Benton Sans Cond Black";
+}
+
+#wForecast td.loc {
+    font-family: "Benton Sans Cond";
+}
+
+#wForecast td.wind,
+#wForecast li.wind {
+    font-family: "Benton Sans Cond";
+}
+
+#wForecast li.loc {
+    font-family: "Benton Sans Cond";
+}
+
+dl#wForecast li.wind {
+    font-family: "Benton Sans Cond Black";
+}
+
+.letters ul li a {
+    font-family: "Benton Sans Cond";
+}
+
+.dossiers h2 {
+    font-family: "Benton Sans Cond Black";
+}
+
+#dossierIntro h2.autoDossier a {
+    font-family: "Benton Sans Cond Black";
+}
+
+#panelDiashowItems .dossierDiashow p {
+    font-family: "Benton Sans Cond";
+}
+
+#panelDiashowItems .dossierDiashow p a {
+    font-family: "Benton Sans Cond Black";
+}
+
+.tagResults ul {
+    font-family: "Benton Sans Cond";
+}
+
+#mainColLeft ul.ui-tabs-nav li.ui-tabs-selected a {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColLeft.keywordSearch h3,
+#mainColLeft.keywordSearch h3 a {
+    font-family: "Publico Headline";
+    font-weight: bold;
+}
+
+#mainColLeft.keywordSearch input[type="submit"],
+#mainColLeft.keywordSearch label,
+#mainColLeft.keywordSearch #searchScrollTop {
+    font-family: "Benton Sans Cond";
+}
+
+#mainColLeft.keywordSearch p b {
+    font-family: "Benton Sans Cond Black";
+}
+
+.mainColLeftSection h2.tickerTitle {
+    font-family: "Benton Sans Cond Black";
+}
+
+.mainColLeftSection #fltrRessort {
+    font-family: "Benton Sans Cond";
+}
+
+.mainColLeftSection .articleStory.ticker h3 {
+    font-family: "Publico Headline";
+}
+
+.mainColLeftSection .articleStory.ticker h3 span {
+    font-family: "Benton Sans Cond";
+}
+
+#slideshowOverview .slideshows .story p {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#slideshowOverview .slideshows.home .featureStory p {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#slideshowOverview .slideshows .story span a {
+    font-family: "Benton Sans Cond Black";
+}
+
+.multimediaNav {
+    font-family: "Benton Sans Cond";
+}
+
+.descContainer h2 {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+.descContainer h5,
+.descContainer p,
+.descContainer a,
+.descContainer span {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#list_container #articleGalleryNav {
+    font-family: "Benton Sans Cond Light";
+}
+
+.counter_red > span {
+    font-family: "Benton Sans Cond Black";
+}
+
+#videoTabs ul.ui-tabs-nav li {
+    font-family: "Benton Sans Cond Light" !important;
+}
+
+.diashowTeaser a b {
+    font-family: "Benton Sans Cond Black";
+}
+
+#contentTabs {
+    font-family: "Benton Sans Cond";
+}
+
+small {
+    font-family: "Benton Sans Cond";
+}
+
+#quizIntro .autoQuiz a {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+#quizQuestion .quizTop h3 {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+#quizQuestion .quizAnswers p {
+    font-family: "Benton Sans Cond" !important;
+}
+
+.sheetTop,
+.sheetComment,
+.sheetWrapper {
+    font-family: "Benton Sans Cond";
+}
+
+#singleLeft .sheetTop p, 
+#mainColLeft .sheetTop p {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+.sheetLeft .points,
+.sheetRight .points,
+.sheetComment b,
+.quizYourAnswer b,
+.quizBestAnswer b {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainContainer .headerPubliReportage {
+    font-family: "Benton Sans Cond";
+}
+
+/*Article*/
+#aside {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#aside .author,
+#aside .author a {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+#aside .author span {
+   font-family: "Benton Sans Cond"; 
+}
+
+#aside .storyInfo time,
+#aside .storyInfo time,
+#aside #feedbackBox p {
+    font-family: "Benton Sans Cond" !important; 
+}
+
+#aside #feedbackBox .korrekturHinweisMsq {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+#msgInfo p {
+    font-family: "Benton Sans Cond" !important;
+}
+
+html .NnSlideshow {
+    font-family: "Benton Sans Cond";
+}
+
+#topElement p.caption {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#mainContent .coText p.coTextOberzeile {
+    font-family: "Benton Sans Cond" !importnat;
+}
+
+#mainContent .coText p.author {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+#mainContent p span.inline_image_capture {
+    font-family: "Benton Sans Cond";
+}
+
+#article div.bestInFacebook .articleStory h3 a {
+    font-family: "Publico Headline";
+}
+
+#mainContent .coText p.coTextTitle {
+    font-family: "Publico Headline" !important;
+}
+
+.relatedArticle h5,
+.bottomLinks h5 {
+    font-family: "Publico Headline";
+}
+
+.trot .circle {
+    font-family: "Benton Sans Cond Black";
+}
+
+#googleAdSense,
+#googleAdSense h4.googleAdsBGTransparent {
+    font-family: "Benton Sans Cond";
+}
+
+#googleAdSense .adItem h5 a {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColBottomMore .bottomLinks .relatedThemaMedia p,
+#mainColBottom .blogArticles p,
+#mainColBottom .blogArticles .smallTextBox,
+.ressortLeft .relatedThemaMedia p,
+.ressortRight .story .smallTextBox {
+    font-family: "Benton Sans Cond";
+}
+
+#mainColBottom .relatedThema.extern h5 {
+    font-family: "Publico Headline";
+}
+
+#mainColBottom .relatedThemaMedia.extern h5 {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColBottom .relatedThemaMedia.extern p span{
+    font-family: "Benton Sans Cond";
+}
+
+h4.contextBoxTitle span,
+h4.contextBoxTitle span a {
+    font-family: "Publico Headline";
+}
+
+#mainColLeft #mainColMiddle h1 {
+    font-family: "Publico Headline";
+    color: #007abf;
+}
+
+#mainColLeft #mainColMiddle h4.contextBoxTitle {
+  line-height: 22px;
+}
+
+#mainColLeft #mainColMiddle .articleStory h4 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+#mainColRight .contextBox text.highcharts-title tspan,
+#mainColRight h3.title,
+#mainColRight .contextBox .infoList b,
+#mainColRight .contextBox .leserRep p b,
+#mainColRight .contextBox text.highcharts-subtitle tspan,
+#mainColRight .contextBox .boxSportstable h4.title,
+#mainColRight .contextBox tspan,
+.teaserEditorialContent .entitled.sportBox h4.title a {
+    font-family: "Publico Headline Extrabold";
+}
+
+.teaserEditorialContent .entitled.sportBox h4.title a {
+    font-size: 19px !important;
+    line-height: 24px !important;
+    text-decoration: none;
+}
+
+.bottomLinks .slideshows p a,
+.bottomLinks .videos p a {
+    font-family: "Benton Sans Cond";
+}
+
+.bottomLinks .slideshows .icon-slide,
+.bottomLinks .videos .icon-video {
+    font-family: "Benton Sans Cond Black";
+}
+
+#footer,
+#footerLinks {
+    font-family: "Benton Sans Cond";
+}
+
+/*Liveticker*/
+ul.liveticker > li .leftCol {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+ul.liveticker > li .leftCol span {
+    font-family: "Benton Sans Cond";
+}
+
+.liveTicker #mainContent span.btnLiveTickerTicker,
+.liveTicker #mainContent span.btnLiveTickerSocial {
+    font-family: "Benton Sans Cond";
+}
+
+.liveTicker #mainContent span.btnLiveTickerTicker.active,
+.liveTicker #mainContent span.btnLiveTickerSocial.active {
+    font-family: "Benton Sans Cond Black";
+}
+
+.NnLiveticker >.header h2,
+.NnLiveticker >.messages .message >div &.header .title {
+    font-family: "Benton Sans Cond";
+}
+
+.NnLiveticker >.messages .message >div &.header .title:first-of-type,
+.NnLiveticker >.messages .message >div &.header .time,
+.NnLiveticker >.messages .message >div &.header .score {
+    font-family: "Benton Sans Cond Black";
+}
+
+.NnLiveticker button {
+    font-family: "Benton Sans Cond Light";
+}
+
+.NnLiveticker >.questionForm {
+    font-family: "Benton Sans Cond";
+}
+
+.NnLiveticker >.questionForm >h2 {
+    font-family: "Benton Sans Cond Black";
+}
+
+.NnLiveticker .NnDialog h1 {
+    font-family: "Benton Sans Cond";
+}
+
+#mainContainer #mainColLeft .slice p {
+    font-family: "Benton Sans Cond" !important;
+}
+
+#mainContainer #mainColLeft .slice .team p {
+    font-family: "Benton Sans Cond Black" !important;
+}
+
+.vergleichsdienst p.description:first-line,
+.vergleichsdienst p.link {
+    font-family: "Benton Sans Cond Black";
+}
+
+#tblMarktplatz h3 {
+    font-family: "Benton Sans Cond Black";
+}
+
+#tblMarktplatz p {
+  font-family: "Benton Sans Cond";
+}
+
+/* comments */
+#Nn2commentsContainer select {
+    font-family: "Benton Sans Cond Black";
+}
+
+#Nn2commentsContainer .showAllComments {
+    font-family: "Benton Sans Cond";
+}
+
+#Nn2commentsContainer .menu a {
+    font-family: "Benton Sans Cond";
+}
+
+#Nn2commentsContainer .facebookUser a {
+    font-family: "Benton Sans Cond";
+}
+
+#Nn2commentsContainer .NnDialog h1 {
+    font-family: "Benton Sans Cond";
+}
+
+.NnPollBox div {
+    font-family: "Benton Sans Cond";
+}
+
+/*publireportage sendform*/
+#mainColRight #contentbox #sendForm input.button {
+    font-family: "Benton Sans Cond";
+}
+
+/*Boerse Overview to FuW*/
+#mainContainer.fuw h3 {
+    font-family: "Publico Headline";
+}
+
+#mainContainer.fuw .col ul li {
+  font-family: "Benton Sans Cond";
+}
+/*Boerse Overview to FuW End*/
+
+/*Championship*/
+#championshipSlideshow .live,
+#championshipSlideshow .caption h3 a {
+  font-family: "Benton Sans Cond Black";
+}
+
+#championshipSlideshow .caption a,
+#championshipSlideshow .leadSpecialSection {
+  font-family: "Benton Sans Cond";
+}
+
+#championshipSlideshow .leadSpecialSection {
+    font-family: "Benton Sans Cond Light";
+}
+/*Championship End*/

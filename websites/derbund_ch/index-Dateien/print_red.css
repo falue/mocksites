@@ -1,0 +1,115 @@
+#tamediaToolbarWrapper {
+    display: none;
+    margin: 0;
+    padding: 0;
+    height: 0;
+}
+
+#adtopBanner,
+#wideBoard {
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 0 !importnat;
+    height: 0 !important;
+    overflow-y: none;
+    position: inherit;
+}
+
+#adtopBanner >div,
+#wideBoard >div {
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 0 !importnat;
+    height: 0 !important;
+    overflow-y: none;
+    position: inherit;
+}
+
+/* WCH specific */
+#colRightAd, .relatedThema, .relatedThemaMedia, .tt-wrapper{
+    display: none;
+}
+
+
+#headerWrapper {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+
+#article {
+    margin: 0;
+}
+
+#article .printLogo {
+    display: block !important;
+    height: 40px;
+    margin: 8px 0 13px 0;
+}
+
+#mainColLeft #aside {
+    display: none;
+}
+
+#mainColLeft #mainContent {
+    width: 640px;
+}
+
+#mainColRight #asidePrint {
+    display: block !important;
+    border-top: 1px solid #797979;
+    margin: 4px 0 24px 0;
+}
+
+#mainColRight #asidePrint .storyInfo .author,
+#mainColRight #asidePrint .storyInfo time,
+#mainColRight #asidePrint .storyInfo .time {
+    font-size: 16px !important;
+    line-height: 24px !important;
+}
+
+#mainColRight .teaserEditorialContent,
+#mainColRight .contextBoxAd,
+#mainColRight .leserRep,
+#mainColRight .publireportage,
+#mainColRightPublireportage {
+    display: none;
+}
+
+#colRightAd,
+#sidebarSky {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+    overflow-y: none;
+    position: inherit;
+}
+
+
+#colRightAd object,
+#sidebarSky object {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+    overflow-y: none;
+    position: inherit;
+}
+
+#mainColBottom,
+#mainColBottomMore,
+#mainColBottomAd,
+#mainColBottomDiashow {
+    display: none;
+}
+
+.localDirectoryInArticle {
+    display: none;
+}
+
+#footer {
+    display: none;
+}

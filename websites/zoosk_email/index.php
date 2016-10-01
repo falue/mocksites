@@ -32,24 +32,24 @@
 		if($_POST["submit_1"]) {
 			$email_betreff = "Zoosk.com - Verifikation E-Mail-Adresse";
 			$email_body = file_get_contents("emails/email1.html");
-			echo "Email: 'Register successful!' written from $_POST[sender] to $_POST[receiver] @ $_POST[date].<br>";
+			$printout = "Email '$email_betreff' written from $_POST[sender] to $_POST[receiver] @ $_POST[date].";
 		} elseif($_POST["submit_2"]) {
 			$email_betreff = "Zoosk.com - PM von Angelique94";
 			$email_body = file_get_contents("emails/email2.html");
-			echo "Email: '?' written from $_POST[sender] to $_POST[receiver] @ $_POST[date].<br>";
+			$printout = "Email '$email_betreff' written from $_POST[sender] to $_POST[receiver] @ $_POST[date].";
 		}
 
 		$header_genereal = "MIME-Version: 1.0 \r\nContent-type: text/html; charset=iso-8859-1\r\n";
 		$headers_customer = $header_genereal."From: $_POST[sender] \r\n";
 		mail($_POST["receiver"], $email_betreff, $email_body, $headers_customer);
 		
+		
 		echo "Choose action:<br>
 		<input type=\"submit\" name=\"submit_1\" value=\"'Register successful'\"> &emsp;<a href=\"emails/email1.html\">[preview]</a><br>
-		<input type=\"submit\" name=\"submit_2\" value=\"'PM von Angelique94'\"> &emsp;<a href=\"emails/email2.html\">[preview]</a><br>";
-		if(isset($_POST["sender"])) echo "<br><br><span style=\"color:green;\">Email send.</span>";
+		<input type=\"submit\" name=\"submit_2\" value=\"'PM von Angelique94'\"> &emsp;<a href=\"emails/email2.html\">[preview]</a><br></form>";
+		if(isset($printout)) echo "<br><span style=\"color:green;\">Email send.</span><br>$printout<br><br>";
 		?>
 		
-		</form>
 		<hr>
 		<br>
 			<a href="http://www.filmkulissen.ch" style="color:#555;">[cc] by fabian lüscher 2016</a>

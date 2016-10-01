@@ -1,0 +1,42 @@
+/* simple reset */
+html,
+body,
+div,
+img { margin: 0; padding: 0; }
+
+img,
+div { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); border: 0; }
+
+/* defaults */
+
+.abs            { position: absolute; }
+.absTL00        { position: absolute; top: 0; left: 0; }
+.absTR00        { position: absolute; top: 0; right: 0; }
+.absBL00        { position: absolute; bottom: 0; left: 0; }
+.absBR00        { position: absolute; right: 0; bottom: 0;  }
+.fullsizePx     { width: 300px; height: 600px; } /* update to your specified sizes */
+.fullsizePerc   { width: 100%; height: 100%; }
+.opacity0       { opacity: 0; }
+.opacity1       { opacity: 1; }
+
+/* start */
+
+.border { border: 1px solid #d6c3aa; box-sizing: border-box; }
+
+#banner    { overflow: hidden; opacity: 0; -webkit-transition: opacity 1s; transition: opacity 1s; }
+
+body.animate #banner { opacity: 1; }
+
+#clicktag  { cursor: pointer; background-color: rgba(0,0,0,0); }
+
+#image-wrapper                  { width: 300px; height: 300px; background-color: rgba(214,195,170,0); }
+#image-wrapper #image-1         { -webkit-transform-origin: 5px bottom; transform-origin: 5px bottom;
+                                  -webkit-transform: scale(2.1); transform: scale(2.1); }
+
+#text-wrapper                   { width: 300px; height: 300px; -webkit-transform: translate3d(0,300px,0); transform: translate3d(0,300px,0); background-color: #ffffff; }
+#text-wrapper .text-background  { width: 300px; height: 90px; -webkit-transform: translate3d(0,5px,0); transform: translate3d(0,5px,0); background-color: #d6c3aa; }
+#text-wrapper #text-1-1         { -webkit-transform: translate3d(-300px,0,0); transform: translate3d(-300px,0,0); }
+#text-wrapper #text-1-2         { -webkit-transform: translate3d(-300px,0,0); transform: translate3d(-300px,0,0); }
+
+#text-wrapper #cta { -webkit-transform-origin: 150px 460px;  transform-origin: 150px 460px; }
+#pointer { -webkit-transform-origin: 217px 482px; transform-origin: 217px 482px; -webkit-transform: translate3d(0,30px,0); transform: translate3d(0,30px,0); }

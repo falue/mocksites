@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <!-- Place somewhere in the <head> of your document -->
+    <link rel="stylesheet" href="show_data/flexslider.css" type="text/css">
+    <script src="show_data/jquery_002.js"></script>
+    <script src="show_data/jquery.js"></script>
+
+    <link rel="stylesheet" href="show_data/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="show_data/style.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                direction: "vertical",
+                slideshow: false,
+                controlNav: false,
+                prevText: "<span class='glyphicon glyphicon-chevron-up'></span> weniger Anzeigen",
+                nextText: "<span class='glyphicon glyphicon-chevron-down'></span> mehr Anzeigen"
+            });
+        });
+    </script>
+
+    <!--[if lt IE 9]>
+        <style type="text/css">
+
+            #wrapperTeaser .flex-direction-nav {top:164px;}
+        </style>
+    <![endif]-->
+
+        <style type="text/css">
+            .teaserInner {
+               background-color: #fef4e9;
+            }
+        </style>
+
+</head>
+<body>
+<div id="wrapperTeaser"><iframe scrolling="no" marginheight="0" marginwidth="0" src="show_data/teaser.html" width="300" height="250" frameborder="0"></iframe>
+
+
+    
+</div> <!--  wrapper  -->
+
+</body></html>

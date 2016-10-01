@@ -1,0 +1,1 @@
+Krux.ns.tamedia.kxjsonp_userdata({"status":"200","body":{"code":"no_segments","kuid":"KnnuYVCJ","kuid_long":"qt9fg2xwb","geo":{"country":"ch","dma":null,"zip":"8000","longitude":"8.53803","latitude":"47.369","domain":null,"region":"zh"}}});

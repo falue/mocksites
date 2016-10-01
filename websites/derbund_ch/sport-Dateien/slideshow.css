@@ -1,0 +1,13 @@
+html .NnSlideshowContainer.desktop .NnSlideshow .body .swiper-slide.ad .labelAd {
+    display: none;
+}
+
+html .NnSlideshowContainer.desktop.fullscreen .NnSlideshow .footer .links p {
+  /* The following !important is necessary, otherwise "#mainColLeft p" is stronger */
+  font-family: "Benton Sans Cond" !important;
+  color: white !important;
+}
+
+html #article.widePlus2Article .NnSlideshowContainer.visible.desktop.inline .NnSlideshow {
+    width: 978px;
+}

@@ -1,0 +1,765 @@
+/* Helpers */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+}
+
+a {
+    color: #0085ab;
+    text-decoration: none;
+}
+
+a:hover nobr {
+    color: #0085ab;
+}
+
+a:hover span {
+    color: #333;
+}
+
+a:hover,
+.tagWrapper a:hover,
+.tagWrapper a strong:hover {
+    color: #333;
+}
+
+h3 a:hover {
+    color: #0085ab !important;
+}
+
+h4 {
+    font-size: 19px;
+    line-height: 24px;
+}
+
+hr {
+    height: 1px;
+    background-color: #000;    
+}
+
+.tagWrapper a,
+.tagWrapper a strong {
+    color: #0085ab;
+}
+
+.ressorts hr,
+#lastRessort hr,
+#funSection hr,
+#footer hr {
+    height: 2px;
+    background-color: #000;
+}
+
+.blueTitle {
+    color: #0085ab;
+}
+
+.icon {
+    color: #0085ab;
+}
+
+.icon-search:before {
+    color: #0085ab;
+}
+
+.icon-up:after {
+    color: #0085ab;
+}
+
+.blueKeyword {
+    margin: 0 4px 0 0;
+    color: #0085ab;
+}
+
+.keyword a {
+    color: #0085ab;
+}
+
+.author a:hover {
+    color: #0085ab !important;
+}
+
+.greyBackground {
+    background-color: #f5f5f5;
+}
+
+#tamediaToolbarWrapper {
+    border: none;
+}
+
+#header {
+    padding-top: 15px;
+}
+
+#topNav {
+    padding: 6px 0 4px 0;
+    border-top: 1px solid #797979;
+}
+
+#topNav .paywallUserNavigation .login a {
+    background-color: #0085ab;
+}
+
+#topNav .paywallUserNavigation .promotion {
+    display: none;
+}
+
+#masthead ul li.frontLogo {
+    padding-top: 12px;
+    padding-left: 283px;
+    padding-bottom: 12px;
+    text-align: center;
+    width: 402px;
+}
+
+#masthead ul li.frontLogo #mainLogo {
+    height: 98px;    
+}
+
+#masthead ul li#headerWeather {
+    padding: 12px 0;
+    // width: 293px; 
+    height: 90px;
+}
+
+#masthead li#headerWeather a span {
+    color: #0085ab;
+}
+
+#masthead ul li.categoryLogo a img,
+#masthead ul li.articleLogo a img {
+    margin: 18px 0 10px 0;
+    width: 165px;
+    float: left;
+}
+
+#masthead ul li#derbundLogo {
+    text-align: center;
+}
+
+#masthead ul li#derbundLogo.categoryLogo {
+    width: 33.33%;
+}
+
+#masthead ul li.navigationTitle {
+    width: 33.33%;
+    font-size: 36px;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 13px;
+}
+
+#masthead ul li.icon-flat-hamburger {
+    width: 33.33%;
+    font-size: 38px;
+    text-align: right;
+    padding-top: 8px;
+    padding-bottom: 13px;
+}
+
+#mainNav {
+    height: 34px;
+    border-bottom: solid 7px #0085ab;
+}
+
+#mainNav li {
+    padding: 0 4px 0 0;
+    font-size: 21px;
+}
+
+#mainNav li a:hover {
+    color: #0085ab;
+}
+
+#mainNav li a.active {
+    margin-top: -1px;
+    font-size: 21px;
+    color: #000;
+}
+
+#mainNav .dropdownNavi ul li a {
+    background-color: #0085ab;
+}
+
+#mainNav .dropdownNavi ul li a:hover {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+#mainNav .dropdownNavi ul.activeDD {
+    margin-top: 3px;
+}
+
+#mainNav .dropdownNavi a.active {
+    color: #0085ab;
+    margin-top: 0;
+}
+
+#subnavigation ul li {
+    padding-top: 11px;
+}
+
+#subnavigation ul li a {
+    font-size: 18px;
+}
+
+#subnavigation ul li.moreCategory {
+    padding: 8px 12px 0 0;
+}
+
+#subnavigation ul li a:hover {
+    color: #0085ab !important;
+}
+
+#masthead ul li#derBundLogo.categoryLogo a img,
+#masthead ul li#derBundLogo.articleLogo a img {
+    float: left;
+    width: 165px;
+    height: auto;
+    /*padding: 19px 0 4px 0;*/
+}
+
+/* mainContainer Helpers */
+#mainContainer .contextBoxTitle a,
+#mainContainer .title a {
+    color: #0085ab;
+}
+
+#mainContainer .contextBoxTitle a:hover {
+    color: #333;
+}
+
+h4.contextBoxTitle span,
+h4.contextBoxTitle span a {
+    color: #333 !important;
+}
+
+h4.contextBoxTitle span a:hover {
+    color: #0085ab !important;
+}
+
+#mainContainer .greyBackground .articleStory h4 a:hover {
+    color: #0085ab !important;
+}
+
+.boerse_box h4 a.title {    
+    color: #0085ab !important;
+}
+
+#mainColLeft ul.ui-tabs-nav li.ui-tabs-selected a {
+    color: #0085ab !important;
+}
+
+/*front*/
+#mostPopularLink:hover,
+#newsTickerLink:hover,
+#mostPopularLink.active,
+#newsTickerLink.active {
+    color: #0085ab;
+}
+
+.mostSharedArticles table td,
+.boxNews table td,
+.boxNews ul li a,
+.boxNews ul li span,
+#meistgelesen_rubrik ul li a,
+#meistgelesen_rubrik ul li span {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.mostSharedArticles table td a,
+.boxNews table td a,
+.boxNews ul li a,
+.boxNews ul li span.time {
+    color: #333 !important;
+}
+
+.mostSharedArticles table td a:hover, 
+.boxNews table td a:hover {
+    color: #0085ab !important;
+}
+
+.mostSharedArticles table td a.frontNewstickerMore {
+    color: #0085ab !important;
+}
+
+.mostSharedArticles table td a.frontNewstickerMore:hover {
+    color: #333 !important;
+}
+
+#mainColLeft.left {
+    margin: 37px 0 36px 0;
+}
+
+#mainColLeft #mainColMiddle #bestOfFacebook ul li a:hover {
+    color: #0085ab;
+}
+
+#mainColLeft #mainColMiddle #recommendedStories .story p a:hover{    
+    color: #0085ab;
+}
+
+#mainColLeft #mainColMiddle a:hover span {
+    color: #0085ab;
+}
+
+#mainColLeft #mainColMiddle .greyBackground {
+    padding: 12px 0 0 0;
+}
+
+#mainColLeft #mainColMiddle .greyBackground hr {
+    width: 218px;
+    margin-left: 12px;
+}
+
+#mainColLeft #mainColMiddle .boerse_box_small table.button tr {
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#mainColRight {
+    margin: 41px 0 0 0;
+}
+
+#mainColRight .boxNews table,
+#mainColRight .boxNews ul,
+#mainColRight #meistgelesen_rubrik ul {
+    margin: 8px 0 0 0;
+}
+
+#mainColRight .sidelineBoxFront p a:hover,
+#mainColRight .sidelineBoxFront p a:hover span {
+    color: #0085ab;
+}
+
+#mainColRight .smallTextBox a:hover,
+#mainColRight .smallTextBox a:hover span,
+.ressortRight .smallTextBox a:hover,
+.ressortRight .smallTextBox a:hover span {
+    color: #0085ab;
+}
+
+.boxNews ul li a:hover,
+#meistgelesen_rubrik ul li a:hover {
+    color: #0085ab !important;
+}
+
+.boxNews td,
+.boxNews ul li,
+#meistgelesen_rubrik ul li {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.ressort .ressortMiddle h4 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.ressort .ressortMiddle h4 a:hover {
+    color: #0085ab;
+}
+
+.ressortRight h4 a:hover {
+    color: #0085ab;
+}
+
+.ressort .ressortRight.dasMagazin h5 a:hover {
+    color: #0085ab;
+}
+
+.ressortRight .teaserEditorialContent .entitled.sportBox {
+    position: relative;
+    top: -46px;
+}
+
+.mostDiscussedArticles td a:hover {
+    color: #0085ab;
+}
+
+.mostSharedArticles #mostPopular table td, 
+.mostSharedArticles #newsTicker table td{
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
+
+/*category(ressorts)*/
+.category #mainColRight {
+    margin: 38px 0 0 0;
+}
+
+.dossiers .search .ui-tabs-nav li.ui-tabs-selected a {
+    color: #0085ab !important;
+}
+
+.letters ul li:hover {
+    background-color: #0085ab;
+    border-color: #0085ab;
+}
+
+h4 a.showMore {
+    color: #0085ab !important;
+}
+
+h4 a.showMore:hover {
+    color: #333 !important;
+}
+
+.dossierDiashow p a:hover {
+    color: #0085ab !important;
+}
+
+#panelVideos .dossierVideo > div span a,
+#mainColLeft.dossiers .teaserVideo a span.text {
+    font-family: "Benton Sans Cond Black";
+}
+
+#mainColLeft ul.ui-tabs-nav li a:hover {
+    color: #0085ab !important;
+}
+
+#slideshowOverview .slideshows .story p a:hover,
+#slideshowOverview .slideshows.home .featureStory p a:hover {
+    color: #0085ab;
+}
+
+.multimediaNav a:hover {
+    color: #0085ab;
+}
+
+.diashowTeaser a:hover h4 span {
+    color: #0085ab;
+}
+
+/*Category Dossier, Weather Tabstyle2 for ui-tabs-nav*/
+body > .tabStyle2 ul li a {
+    color: #0085ab;
+}
+
+/*category weather*/
+#citySearch input[type=button] {
+    background-color: #0085ab;
+}
+
+#weatherBern table td {
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+/*category dossiers*/
+#mainContainer .articleStory h4 a.showMore {
+    color: #0085ab !important;
+}
+
+/*category ticker*/
+.mainColLeftSection #fltrRessort a:hover {
+    color: #0085ab;
+}
+
+.mainColLeftSection #fltrRessort a.aktiv {
+    color: #0085ab;
+}
+
+/*category videos*/
+.multimediaNav a.keyword {
+    color: #0085ab;
+}
+
+.descContainer .relatedVideo a.diashowLink:hover {
+    color: #0085ab;
+}
+
+/*category quiz*/
+input.buttonQuiz,
+.quizNavi input.submitAnswer,
+.quizNavi input.nextQuestion {
+    background-color: #0085ab;
+}
+
+#quizQuestion .singleAnswer {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#quizQuestion .singleAnswer:hover {
+    background-color: #bfbfbf;
+}
+
+#quizQuestion .singleAnswer.marked {
+    background-color: #bfbfbf;
+    border: 1px solid #afafaf;  
+}
+
+.sheetComment {
+    border-top: 1px solid #bfbfbf;
+}
+
+/*category sport*/
+#panelTeam table.team tr th,
+#panelRestProgramm table.all_games tr th {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#panelTeam table.team tr td,
+#panelRestProgramm table.all_games tr td {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+/*contextBox*/
+#mainColRight .boxExclusiv .pollbox .storylink a {
+    color: #0085ab;
+}
+
+.teaserEditorialContent .leftCol ul .title,
+.teaserEditorialContent .rightCol ul .title {
+    border-top: 1px solid #bfbfbf;
+}
+
+/*article*/
+#aside .author a.twitterLink {
+    color: #0085ab !important;
+}
+
+.relatedArticle h5 a:hover {
+    color: #0085ab;
+}
+
+.bottomLinks >div,
+#mainColBottom .relatedThema.extern {
+    border-top: 2px solid #000;
+}
+
+.bottomLinks.categoryBern {
+    width: 640px;
+}
+
+.bottomLinks.categoryBern .slideshows {
+    width: 100%;
+}
+
+.bottomLinks.categoryBern .slideshows .relatedThemaMedia {
+    float: left;
+    width: 302px;
+}
+
+.bottomLinks.categoryBern .slideshows .relatedThemaMedia:first-of-type,
+.bottomLinks.categoryBern .slideshows h4.contextBoxTitle + .relatedThemaMedia +.relatedThemaMedia + .relatedThemaMedia  {
+    margin: 0 36px 0 0 !important;
+}
+
+#mainColBottomMore .bottomLinks h4,
+#mainColBottomMore .bottomLinks .relatedThemaMedia p a:hover,
+#mainColBottomMore .bottomLinks .relatedThemaMedia p a:hover span,
+#mainColBottomMore .bottomLinks .relatedThema .story p a:hover,
+#mainColBottomMore .bottomLinks .relatedThema .story p a:hover span {
+    color: #0085ab;
+}
+
+#mainColBottomMorePublireportage {
+    border-top: 2px solid #000;
+}
+
+#mainColBottomDiashow {
+    border-top: 2px solid #000;
+}
+
+#mainColBottom .blogArticles .story p a:hover {
+    color: #0085ab;
+}
+
+#googleAdSense {
+    border-top: 2px solid #000;
+}
+
+/*article context boxes*/
+#mainColRight .relatedThemaMedia p a:hover {
+    color: #0085ab;
+}
+
+#mainColRight .contextBox #pollBox label,
+#mainColRight .boxExclusiv .pollbox form label {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#mainColRight .voteBar .widthResult div {
+    background-color: #bfbfbf;
+}
+
+#mainColRight .contextBox .swissquote li {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#mainColRight .contextBox.keywordBox ul li {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#mainColRight .boxSportstable table th {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+#mainColRight .boxSportstable table td {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+/*trot(spickzettel)*/
+.trot .circle {
+    background-color: #0085ab;
+}
+
+/*sideline, teasers*/
+.publireportage {
+    border-top: 2px solid #000;
+}
+
+.teaserEditorialContent .leftCol ul li a,
+.teaserEditorialContent .rightCol ul li a {
+    color: #0085ab !important;
+}
+
+.publireportage .publiBox h5 a:hover,
+.publireportage .publiBox h5 a:hover nobr,
+.teaserEditorialContent h4.title a:hover,
+.teaserEditorialContent .publiBox a:hover {
+    color: #0085ab !important;
+}
+
+.teaserEditorialContent p a:hover,
+.teaserEditorialContent p a:hover span {
+    color: #0085ab;
+}
+
+.boxExclusiv ul a:hover {
+    color: #0085ab;
+}
+
+.relatedArticle h5 a:hover {
+    color: #0085ab;
+}
+
+.bottomLinks .slideshows p:hover,
+.bottomLinks .slideshows p:hover span,
+.bottomLinks .videos p:hover,
+.bottomLinks .videos p:hover span {
+    color: #0085ab;
+}
+
+.mktpImmo .icon-right {
+    color: #0085ab;
+}
+
+#article #meistgelesen_rubrik ul li a:hover {
+    color: #0085ab;
+}
+
+#mainColBottomGoogleAd #googleAdSense {
+    width: 978px;
+    margin-left: 0;
+}
+
+#mainColBottomGoogleAd #googleAdSense .adItem {
+    width: 302px;
+    display: inline-block;
+    margin-left: 36px;
+}
+
+#mainColBottomGoogleAd #googleAdSense .adItem:first-of-type,
+#mainColBottomGoogleAd #googleAdSense .adItem:first-child {
+    margin-left: 0;
+}
+
+/* mainColRight contextBoxes */
+#mainColRight .contextBox p.desc a:hover span {
+    color: #0085ab !important;
+}
+
+#mainColRight .contextBox a span ,
+#mainColRight .contextBox a b {
+    color: #0085ab;
+}
+
+#mainColRight .contextBox a:hover span ,
+#mainColRight .contextBox a:hover b {
+    color: #333;
+}
+
+.relatedThemaMedia p a {
+    color: #333;
+}
+
+.relatedThemaMedia p a:hover span,
+.relatedThemaMedia p a:hover {
+    color: #0085ab;
+}
+
+/*dealbreaker*/
+.reportComment input[type="submit"] {
+    background-color: #0085ab;
+}
+
+/*recomends*/
+.recommendCommentCountNumber:before,
+.recommendCommentCountNumber.dislike:before {
+    color: #0085ab;
+}
+
+/*livericekr*/
+.liveTicker #mainContent span.btnLiveTickerTicker.active,
+.liveTicker #mainContent span.btnLiveTickerSocial.active {
+    background-color: #0085ab;
+    color: #fff;
+}
+
+.NnLiveticker button {
+    background-color: #0085ab;
+}
+
+/* footer */
+#bottomNav li {
+    padding: 0 22px 0 0;
+}
+
+#bottomNav li a:hover {
+    color: #0085ab;
+}
+
+#bottomNav li.active {
+    color: #0085ab;
+}
+
+#contentFooter {
+    display: none;
+}
+
+/* comments */
+#Nn2commentsContainer select {
+    color: #0085ab;
+}
+
+#Nn2commentsContainer input[type=submit] {
+    background-color: #0085ab;
+}
+
+#Nn2commentsContainer a:hover {
+    color: #0085ab;
+}
+
+#Nn2commentsContainer a span {
+    color: #0085ab;
+}
+
+#Nn2commentsContainer .NnIcon {
+    color: #0085ab;
+}
+
+/* social media */
+.SocialMediaBox[content_typ='article_teaser'] .NnSocialMediaBox >div ul li a span {
+    color: #0085ab;
+}
+
+#mainColLeft #mainColMiddle .SocialMediaBox[content_typ='fb_populaer'] .NnLikeButton a:hover span {
+    color: #fff;
+}
+
+html .bubbleLoader > div > div {
+    background-color: #0085ab;   
+}

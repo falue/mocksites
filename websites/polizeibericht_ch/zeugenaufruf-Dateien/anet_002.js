@@ -1,0 +1,1 @@
+document.write('<a href="http://clk.tradedoubler.com/click?p=59254&a=1752383&g=23381254&pools=272300" target="_blank"><img border="0" src="https://www.adtracker.ch/upload/Schuler_CH/Neu/1605_Banner_Affiliate_160x600.jpg" title="SCHULER St&#46; JakobsKellerei"></a>')

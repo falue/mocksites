@@ -1,0 +1,106 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>import test</title>
+
+    <link rel="stylesheet" type="text/css" href="idangerous.css">
+<link rel="stylesheet" type="text/css" href="sprites.css">
+<link rel="stylesheet" type="text/css" href="desktop.css">
+<!-- <link rel="stylesheet" type="text/css" href="http://files.newsnetz.ch/css/exportedFromNN2/styles/desktop.css?v=190"> -->
+
+<link rel="stylesheet" href="scoreboard.css" type="text/css">
+<link rel="stylesheet" href="liveticker.css" type="text/css">
+<link rel="stylesheet" href="slideshow.css" type="text/css">
+
+<link rel="stylesheet" href="baseStyles_v5.css" type="text/css">
+<link rel="stylesheet" href="BUND_styles_v5.css" type="text/css">
+<link rel="stylesheet" href="BUND_fontStyles.css" type="text/css">
+
+<!--[if IE]>
+<link rel="stylesheet" href="http://files.newsnetz.ch/css/base_stylesIE_v4.css?v=1475231178" type="text/css" />
+<link rel="stylesheet" href="http://files.newsnetz.ch/css/BUND_stylesIE_v4.css?v=1475221400" type="text/css" />
+<![EndIf]-->
+
+<link href="css.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" media="print" href="print_red.css" type="text/css">
+    
+    <link rel="stylesheet" href="index_data/recommendation_widget.css">
+
+    <script src="index_data/react.js"></script>
+    <script src="index_data/react-dom.js"></script>
+    <script src="index_data/jquery-1.js"></script>
+    <script src="dimension_watcher.js"></script>
+</head>
+<body>
+
+    <div id="my20min_widget"><section class="recommender" data-reactid=".0"><h1 class="box" data-reactid=".0.0"><span class="i18nmessage" data-reactid=".0.0.0">Mehr Themen</span></h1><img src="index_data/trk.txt" class="tracking-image" data-reactid=".0.1"><div data-reactid=".0.2"><article class="recommender-item" data-reactid=".0.2.$recommender_ifo0jyqr_0"><img class="recommender-image" src="index_data/teasersmall16x9_002.jpg" data-reactid=".0.2.$recommender_ifo0jyqr_0.0"><div class="recommender-text" data-reactid=".0.2.$recommender_ifo0jyqr_0.1"><h1 class="title" data-reactid=".0.2.$recommender_ifo0jyqr_0.1.0">«Wir dürfen uns nicht zur Geisel anderer Staaten machen»</h1><p class="storytext" data-reactid=".0.2.$recommender_ifo0jyqr_0.1.1"></p><p>Sollte
+ das Parlament den Inländervorrang verschärfen, drohen abermals 
+Schwierigkeiten mit der EU, sagt Chefunterhändler Jacques de Watteville.</p><p></p></div></article><article class="recommender-item" data-reactid=".0.2.$recommender_ifo0jyqr_1"><iframe src="index_data/ADTECH.html" data-reactid=".0.2.$recommender_ifo0jyqr_1.0"></iframe></article><article class="recommender-item" data-reactid=".0.2.$recommender_ifo0jyqr_2"><img class="recommender-image" src="index_data/teasersmall16x9.jpg" data-reactid=".0.2.$recommender_ifo0jyqr_2.0"><div class="recommender-text" data-reactid=".0.2.$recommender_ifo0jyqr_2.1"><h1 class="title" data-reactid=".0.2.$recommender_ifo0jyqr_2.1.0">Deutsche-Bank-Absturz reisst UBS und CS mit</h1><p class="storytext" data-reactid=".0.2.$recommender_ifo0jyqr_2.1.1"></p><p>Erstmals
+ ist das Beteiligungspapier des grössten deutschen Geldinstituts weniger
+ als 10 Euro wert. Der rapide Niedergang verunsichert die Märkte 
+weltweit.</p><p></p></div></article></div></section></div>
+    <script src="index_data/recommendation_min.js"></script>
+    <script>
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        var domain = getUrlParameter("domain");
+
+        var source_id = getUrlParameter("story_id");
+
+        var source_url = domain + ".ch" + getUrlParameter("story_url");
+
+        Twenty.api.component({
+            language: "de",
+            widget: "recommender",
+            node: "my20min_widget",
+            feed_server: "http://" + domain + ".rcmd.tda.io/rec/v1/" + domain + "/rec.json",
+            handleClick: function(element){
+                console.log(element)
+            },
+            config: {
+                source_url: source_url,
+                source_id: source_id,
+                //lang: "de",
+                //platform: "desktop",
+                //mediatype: "text",
+                device: "desktop",
+                //url: source_url,
+                numResults: 3,
+                i18n: {
+                    de: {
+                        headline: "Mehr Themen",
+                        loading: "Laden ..."
+                    },
+                    fr : {
+                        headline: "Plus de sujets",
+                        loading: "loading ..."
+                    },
+                },
+                clickHandler: function(element){
+                    var win = window.open(element.url, '_blank');
+                    win.focus();
+                }
+            }
+        });
+
+        DimensionWatcher.enableParentNotification();
+
+    </script>
+
+
+
+</body></html>

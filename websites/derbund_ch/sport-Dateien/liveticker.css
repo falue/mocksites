@@ -1,0 +1,57 @@
+#mainContent .liveTicker #aside .storyInfo {
+    width: 169px;
+    float: left;
+}
+
+#mainContent .liveTicker #aside .socialLinks {
+    width: 471px;
+    float: left;
+}
+
+#mainContent .liveTicker #aside .social_box >div.twitter {
+    width: 114px;
+}
+
+/* Basicly the NN2-Liveticker uses NN2-Styles, so we do not have to style anything. But since NN1-Styles are overwriting NN2-Styles, we
+ * have to overwrite those NN1-Styles again here. So here should only be those styles we REALLY HAVE TO overwrite!
+ */
+#mainContent .NnLiveticker {
+    margin-bottom: 10px;
+}
+
+#mainContent .NnLiveticker .spriteIcon {
+    vertical-align: baseline;
+}
+ 
+#mainContent .NnLiveticker>.header>h2,
+#mainContent .NnLiveticker>.header>h2 * {
+    font-family: "Benton Sans Cond";
+    color: #990000;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+#mainContent .NnLiveticker>.header>h2.loadingCaption {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#mainContent .NnLiveticker>.header>h2 .lastUpdatedAt {
+    display: inline-block;
+}
+
+#mainContent .NnLiveticker .messages {
+    display: table;
+}
+
+#mainContent .NnLiveticker .messages {
+    margin-left: 0;
+}
+
+#mainContent .NnLiveticker >.messages .message >.header span.time,
+#mainContent .NnLiveticker >.messages .message >.header span.time * {
+    font-family: "Benton Sans Cond Black";
+    color: #333;
+}

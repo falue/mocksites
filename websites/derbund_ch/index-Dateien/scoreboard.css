@@ -1,0 +1,11 @@
+html .NnScoreboard {
+	margin-bottom: 30px;
+}
+
+html .NnScoreboard .teamsport > table td {
+	vertical-align: middle;
+}
+
+html .NnScoreboard .teamsport > table td span {
+    color: white;
+}

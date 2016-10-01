@@ -1,0 +1,209 @@
+@font-face
+{
+    font-family: "Benton Sans Cond Black";
+    src:url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-2.eot");
+    src:url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-2.eot?")
+    format("embedded-opentype"),
+    url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-3.woff")
+    format("woff"),
+    url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-1.ttf")
+    format("truetype"),
+    url("http://www.tagesanzeiger.ch/css/fonts/benton/3d37dcaf-9dfb-45f0-bd8f-a635fea92d0b-4.svg#web")
+    format("svg");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face
+{
+    font-family: "Benton Sans Cond";
+    src:
+            url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-2.eot");
+    src:
+            url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-2.eot?")
+            format("embedded-opentype"),
+            url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-3.woff")
+            format("woff"),
+            url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-1.ttf")
+            format("truetype"),
+            url("http://www.tagesanzeiger.ch/css/fonts/benton/7bb9e5d1-f5d9-4a09-8b5d-770aa2f4228e-4.svg#web")
+            format("svg");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    color: rgb(81,81,81);
+    text-shadow: 0 0 1px rgba(0,0,0,.01);
+    font-family: "Benton Sans Cond";
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: #0085ab;
+    font-size:16px;
+    line-height:20px;
+    text-transform: uppercase;
+}
+
+.idms-clip-box{
+    background-color: #ffffff;
+    width: 302px;
+    margin: 0 0 0 0;
+    padding-bottom: 2px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.idms-box-title{
+    width: 275px;
+    font-size: 18px;
+    line-height: 20px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #ffffff;
+    margin: 2px 2px 6px 2px;
+    padding: 3px 0 3px 5px;
+    color: #333;
+    vertical-align: baseline;
+}
+
+.idms-tab-insidebox{
+    position: relative;
+    width: 302px;
+    float: left;
+    margin-bottom: 5px;
+    height: 20px;
+    border-bottom: 1px solid #999;
+}
+
+#idms-navlist {
+    padding: 0 0 0 2px;
+    margin: 0;
+    width: 100%;
+    height: 21px;
+}
+
+
+#idms-navlist li {
+    list-style: none;
+    float: left;
+    margin-right: 3px;
+    display: block;
+}
+
+#idms-navlist li  a {
+    float: left;
+    padding: 0 3px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: none !important;
+    background: #999999;
+    height: 20px;
+    display: block;
+    text-decoration: none;
+    color:white;
+}
+
+.idms-active{
+    background: white!important;
+    color: #333 !important;
+    outline: medium none;
+
+}
+
+.idms-tab-wraper .kursdiv{
+    font-size: 15px;
+    font-family: "Benton Sans Cond Black";
+    color: #000;
+    padding: 10px 0 0 5px;
+}
+
+.idms-tab-wraper .datetime{
+    color: #999999;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: normal;
+    font-size: 11px;
+    float: left;
+    width: 105px;
+}
+
+.box_1_tabline2 span{
+    background-image: url(../images/tab_small_bg.gif);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-color: white;
+    color: #5e94ae;
+    border-bottom: 1px solid #d8d9dd;
+    cursor: pointer;
+}
+
+.box_1_tabline2 .aktiv{
+    background-image: none;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-bottom: none;
+    border-left: 1px solid #d8d9dd;
+    border-right: 1px solid #d8d9dd;
+}
+
+.idms-table{
+    margin-top: 0px;
+    border-bottom: 1px solid rgb(255,255,255);
+    vertical-align: bottom;
+    font-size: 12px;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.idms-table tbody tr{
+    line-height: 21px;
+    border-bottom: 1px dotted rgb(239,239,239);
+    background-color:#F1F1F1
+}
+
+.idms-odd{
+    background-color:#ffffff!important;
+}
+
+.idms-table tbody tr td a{
+    text-decoration: none;
+}
+
+.idms-table tbody .titel{
+    border-bottom: solid #60b6de 0;
+    background-color: #ffffff;
+    line-height: 30px;
+    color: #999;
+}
+
+.col2, .col3, .col4{
+    text-align: right;
+}
+
+.idms-red{
+    color:red;
+}
+
+.idms-green{
+    color:green;
+}
+
+.idms-table-footer{
+    background-color:#ffffff!important;
+}
+
+.idms-small{
+    width: 219px!important;
+}

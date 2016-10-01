@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  min-width: 300px;
+}
+
+#hintergrund {
+  float: left;
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin-top: 0;
+  margin-left: 0;
+  z-index: 1;
+}
+
+#box {
+  float: left;
+  position: relative;
+  width: 246px;
+  height: 44px;
+  margin-top: 512px;
+  margin-left: -273px;
+  z-index: 7;
+}
+
+#text2 {
+  float: left;
+  position: relative;
+  width: 229px;
+  height: 59px;
+  margin-top: 431px;
+  margin-left: -273px;
+  z-index: 3;
+}
+
+#text1 {
+  float: left;
+  position: relative;
+  width: 215px;
+  height: 45px;
+  margin-top: 348px;
+  margin-left: -272px;
+  z-index: 4;
+}
+
+#klicken {
+  float: left;
+  position: relative;
+  width: 213px;
+  height: 17px;
+  margin-top: 527px;
+  margin-left: -257px;
+  z-index: 8;
+}
+
+#logo {
+  float: left;
+  position: relative;
+  width: 120px;
+  height: 43px;
+  margin-top: 20px;
+  margin-left: -138px;
+  z-index: 5;
+}
+
+#pfeil {
+  float: left;
+  position: relative;
+  width: 28px;
+  height: 45px;
+margin-top: 580px;
+  margin-left: -28px;
+  z-index: 9;
+}
+
+#schmetterling {
+  float: left;
+  position: relative;
+  width: 48px;
+  height: 43px;
+  margin-top: 315px;
+  margin-left: -64px;
+  z-index: 6;
+}
