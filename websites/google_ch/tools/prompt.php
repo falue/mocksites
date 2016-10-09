@@ -21,20 +21,14 @@ foreach($files as $file) {
 	}
 }
 
-
-/*
- *print_r($prompt);
-echo "<hr>";
-$prompt = array_slice($prompt, 0, 5);
-print_r($prompt);
-echo "<hr>";
-*/
-
 if(isset($prompt)) {
 	$prompt = implode("#", $prompt);
 	$prompt = explode("#", $prompt);
-	echo implode("", array_slice($prompt, 0, 5));
+	#echo implode("", array_slice($prompt, 0, 5));
+	rsort($prompt);
+	#print_r(array_filter($prompt));
+	echo implode("", array_slice(array_filter($prompt), 0, 4));
 } else {
-	echo "null";
+	echo "Keine Ergebnisse";
 }
 ?>

@@ -93,7 +93,7 @@ function inc_up(step, date) {
 
 function timeConverter(UNIX_timestamp){
   var a = new Date(UNIX_timestamp * 1000);
-  var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOB','DEC'];
+  var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
   var year = a.getFullYear();
   var month = months[a.getMonth()];
   var date = a.getDate();

@@ -27,34 +27,35 @@ foreach($results as $match => $result) {
 	$filename = $match;
 	$match = str_replace("_", " ", strtolower(substr($match, 0, -4)));
 	#$resultlist .= $match.levenshtein($q, $match);
+	
 	if(levenshtein($q, $match) <=2 ) {
-		foreach($result as $info) {
-			if($info == "imageband\n") {
-				$resultlist .= "<a href=\"#\"><span class=\"result_titel\">Images for Nina Galli</span></a>&emsp;<span class=\"right grey\">Report images</span><br><br><a href=\"#\"><img src=\"queue_img/".substr($filename, 0, -4).".png\" class=\"imageband\" alt=\"\"></a><br><br><a href=\"#\">More images for Nina Galli</a><br><br><br><hr><br>";
-			} else {
-				$links = explode(">", $info);
-				$titel = $links[0];
-				$link_show = preg_match("#localhost#", $links[1]) || preg_match("#../#", $links[1]) ? "http://www.".strtolower(str_replace(" ", "-", $links[0])).".ch" : $links[1];
-				$text = preg_replace("#\[IMG:(.*?)\]#x", "", "$links[2]");
-				preg_match("#\[IMG:(.*?)\]#x", "$links[2]", $images);
-				#print_r($images);
-				$image = isset($images[0]) ? preg_replace("#\[IMG:(.*?)\]#x", "<div class=\"result_img\" style=\"background-image: url('queue_img/\\1');\">&nbsp;</div>", $images[0]) : "";
-				
-				$resultlist .= "<div class=\"result\">
-				<a href=\"$links[1]\"><span class=\"result_titel\">$titel</span></a><br>
-				
-				<div class=\"result_text\">
-					$image
-					<span class=\"result_link\">$link_show &#9662;</span><br>
-					$text
-				</div>
-				</div>";
+		$result = parse_ini_file("$dir/$filename", TRUE);
+		if($result){
+			/*echo "<code>";
+			print_r($ini_array);
+			echo "</code>";*/
+			foreach($result as $info) {
+				$resultlist .= $info["imageband"] ? "<a href=\"#\"><span class=\"result_titel\">Images for $q</span></a>&emsp;<span class=\"right grey\">Report images</span><br><br><a href=\"#\"><img src=\"queue_img/$info[imageband]\" class=\"imageband\" alt=\"\"></a><br><br><a href=\"#\">More images for $q</a><br><br><br><hr><br>" : "";
+				$url = $info["URL"] ? $info["URL"] : "";
+				$url_show = $info["URL_cover"] ? $info["URL_cover"] : $url;
+				$image = $info["img"] ? "<div class=\"result_img\" style=\"background-image: url('queue_img/$info[img]');\">&nbsp;</div>" : "";
+				$text = $info["desc"] ? $info["desc"] : "";
+				if($info["title"]) {					
+					$resultlist .= "<div class=\"result\">
+					<a href=\"$url\"><span class=\"result_titel\">$info[title]</span></a><br>
+					<div class=\"result_text\">
+						$image
+						<span class=\"result_link\">$url_show &#9662;</span><br>
+						$text
+					</div>
+					</div>";
+				}
+				#$resultlist .= "$info";
 			}
+			
 		}
 	}
 }
-
-
 
 
 if(isset($resultlist)) {

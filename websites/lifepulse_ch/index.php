@@ -38,7 +38,7 @@
   <div class="nav_right">
       <a href="#"><img src="tools/fav.png" alt=""></a>
       <a href="#"><img src="tools/notes.png" alt=""></a>
-      <a href="#">Jonas&emsp;<div>&nbsp;</div>&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+      <a href="#">Runner92&emsp;<div>&nbsp;</div>&emsp;&emsp;&emsp;&emsp;&emsp;</a>
   </div>
   
   <div class="nav_sub">
@@ -130,16 +130,19 @@ if(!isset($_GET["s"])) {
  } else {
  echo "<article id=\"graph_wrapper\">
  <h1>Uploaded data: ".gmdate("d. m. Y", $_GET["s"])."</h1><br>
- 
+ <img src=\"tools/werte_pulse.jpg\" alt=\"\" class=\"border\"><br>
+ <div class=\"route\" id=\"route\">&nbsp;<div>Gef&auml;llt dir die Route? F&uuml;ge sie zu deinen Favoriten hinzu!<img src=\"tools/karte_tools.png\" alt=\"\"></div></div>
+
+  <a href=\"javascript:makechart(1);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"])."</div></a>
+  <a href=\"javascript:makechart(2);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-24*60*60)."</div></a>
+  <a href=\"javascript:makechart(3);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-2*24*60*60)."</div></a>
+  <a href=\"javascript:makechart(4);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-3*24*60*60)."</div></a>
+  <br>
+  
   <div class='wrapper' >
 	<canvas id='graph' class='graph' height=\"400px\" width=\"1600px\"></canvas>
   </div>
-  <br>
-  <a href=\"javascript:makechart(1);\"><span class=\"change_map\">".gmdate("d. m. Y", $_GET["s"])."</span></a>
-  <a href=\"javascript:makechart(2);\"><span class=\"change_map\">".gmdate("d. m. Y", $_GET["s"]-24*60*60)."</span></a>
-  <a href=\"javascript:makechart(3);\"><span class=\"change_map\">".gmdate("d. m. Y", $_GET["s"]-2*24*60*60)."</span></a>
-  <a href=\"javascript:makechart(1);\"><span class=\"change_map\">".gmdate("d. m. Y", $_GET["s"]-3*24*60*60)."</span></a>
-  <span class=\"change_map\">&hellip;</span>
+  <img src=\"tools/anzeige_pulse.png\" alt=\"\" class=\"border\">
   
   <script src=\"tools/chart.min.js\"></script>
   <script src=\"tools/graph.js\"></script>
@@ -147,20 +150,19 @@ if(!isset($_GET["s"])) {
   <br><br><br>
   <img src=\"tools/footer1.png\" alt=\"\"><br>
   <img src=\"tools/footer2.png\" alt=\"\"><br>
-  </article>";
+  </article>
+  
+  <nav id=\"feelings\"><img src=\"tools/feelings.png\" alt=\"\"><div class=\"button\" onclick=\"hide('feelings');\">Jetzt nicht</div><div class=\"button\">Speichern</div></nav>";
 
  }
  
  ?>
  
  
-  <nav><img src="tools/feelings.png" alt=""></nav>
 
 
 
-<footer> &copy; LIFEPULSE: Trainingspuls: Berechnen Sie Ihre optimale Herzfrequenz - LIFEPULSE<br><br>
-
-Fotocredits: Nico Kalozenski, Blacksheep, Tourismuszentrale Rostock Warnemande, 123RF, FIT FOR FUN (10), Thinkstock (2), istockphotos (2), Getty Images (3), Sebastian Hanel/Fit For Fun, Gunnar Ebmeyer / FIT FOR FUN, Lloyd Images/Oman Sail, lucky7even.de, Fitnessmodel-Contest 2013, Cover Media (3), Alpinschule Innsbruck, Mike Hecker/Fit For Fun, Daniel Cramer/Fit For Fun, ddp-images, iStockphoto, Dirk Schmidt/FFF (2), Dirk Schmidt/FIT FOR FUN, Corbis (3), Zespri
+<footer> &copy; LIFEPULSE: Trainingspuls: Berechnen Sie Ihre optimale Herzfrequenz - LIFEPULSE<br>
 </footer>
 
 <script src="tools/javascript.js"></script>

@@ -1,0 +1,8 @@
+ergebinsse können wie folgt formatiert werden:
+
+
+GOOGLE TITEL oder imageband für anzeige queue_img/suchanfrage.png
+>
+URL oder lokale URL mit etwaigem [SHOW:http://angezeigterlink.com]
+>
+Fliesstext mit etwaigem [IMG:dateiname]

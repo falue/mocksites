@@ -14,7 +14,7 @@ function count(counter) {
 	}
 	
 	if (now <= 0) {
-		document.getElementById('result_count').innerHTML = "1 EINTRAG";
+		document.getElementById('result_count').innerHTML = "2 EINTR&Auml;GE";
 	} else {
 		document.getElementById('result_count').innerHTML = now.formatMoney(0,"'",".") + " EINTR&Auml;GE";
 	}
