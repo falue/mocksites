@@ -24,15 +24,21 @@ function chat(commit) {
 	} else if (commit == 2) {
 		chatwindow.innerHTML = chatwindow.innerHTML+"<div class=\"speech_left\">wazzup...<img src=\"tools/icons/smiley.png\" alt=\"\">!?</div><br>";
 	}
+	chatwindow.scrollTop = chatwindow.scrollHeight;
 }
 
 function chat_submit() {
 	var chat = document.getElementById('chat_input').value;
-	document.getElementById('chat_input').value = '';
-	var chatwindow = document.getElementById('chatwindow');
-	chatwindow.innerHTML = chatwindow.innerHTML+"<div style=\"text-align:right;\"><div class=\"speech_right right\">"+chat+"</div></div>";
-	hide('chat_emoji','chat_submit');
-	document.getElementById('chat_input').focus();
+	if (chat) {
+		document.getElementById('chat_input').value = '';
+		var chatwindow = document.getElementById('chatwindow');
+		chat = chat.replace(/:\)/g, "<img src=\"tools/icons/smiley.png\" alt=\":)\">");
+		chat = chat.replace(/;\)/g, "<img src=\"tools/icons/smiley_wink.png\" alt=\";)\">");
+		chatwindow.innerHTML = chatwindow.innerHTML+"<div style=\"text-align:right;\"><div class=\"speech_right right\">"+chat+"</div></div>";
+		hide('chat_emoji','chat_submit');
+		document.getElementById('chat_input').focus();
+		chatwindow.scrollTop = chatwindow.scrollHeight;
+	}
 }
 
 function typing() {

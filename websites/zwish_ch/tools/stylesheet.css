@@ -403,15 +403,14 @@ article {
 	table-layout: fixed;
 }
 
-tr {
-	
-	height: 238px;
-}
-
-td {
-	height: 238px;
-	vertical-align: bottom;
-	padding: 5px;
+.chatwindow_content {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+	right: 0px;
+	margin: 5px;
+	max-height: 238px;
+	overflow: auto;
 }
 
 .speech_left {
@@ -706,7 +705,7 @@ input[type=button]:hover, input[type=submit]:hover {
 	display: none;
 	font-size: 30px !important;
 	right: 21px;
-	top: 262px;
+	top: 252px;
 	padding: 2px 2px 0px 3px !important;
 	height: 39px !important;
 	width: 40px !important;
@@ -719,7 +718,7 @@ input[type=button]:hover, input[type=submit]:hover {
 	display: none;
 	font-size: 20px !important;
 	right: 68px;
-	top: 262px;
+	top: 252px;
 	padding: 7px 0 1em 0 !important;
 	height: 39px !important;
 	width: 27px !important;

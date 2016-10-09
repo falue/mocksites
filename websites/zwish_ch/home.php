@@ -169,13 +169,11 @@ if(!$online) {
 	  
 	  <div class=\"profile_chat\">";
 	  if($online) {
-	  echo "<table class=\"chatwindow\">
-	  <tr>
-		<td id=\"chatwindow\">
+	  echo "<div class=\"chatwindow\">
+		<div id=\"chatwindow\" class=\"chatwindow_content\">
 		  <div class=\"speech_left left\">Hey Runner92, Ich bin eine begeisterte Bikerin und arbeite wie du in der Gastronomie. Zeigst du mir dein privates Album?</div><br>
-		</td>
-	  </tr>
-	  </table>
+		</div>
+	  </div>
 	  <div class=\"writing\" id=\"type\">Angelique94 schreibt&hellip;</div>
 	  <form action=\"javascript:chat_submit();\">
 	  <input type=\"text\" placeholder=\"Tippen zum chatten&hellip;\" value=\"\" onkeydown=\"show('chat_emoji','chat_submit');\" maxlength=\"42\" id=\"chat_input\" autocomplete=\"off\">
