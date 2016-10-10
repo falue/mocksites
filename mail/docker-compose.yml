@@ -4,7 +4,7 @@ services:
   mail:
     image: tvial/docker-mailserver:latest
     # build: .
-    hostname: mail
+    hostname: imap
     domainname: gmail.com
     container_name: mail
     ports:
