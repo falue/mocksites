@@ -15,6 +15,7 @@ services:
     volumes:
       - maildata:/var/mail
       - ./config/:/tmp/docker-mailserver/
+      - ../websites/zwish_email/emails/:/mails/
 
 volumes:
   maildata:
