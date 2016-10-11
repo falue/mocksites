@@ -13,7 +13,7 @@ html,body{color:#5A51D0;font-size:15px;background:#ddd;line-height:1.4;font-fami
 .logo{width:100%;height:auto}
 #wrapper{float:left;background:#fff;width:1024px}
 #header{float:left;width:1024px;height:162px; background-image: url(../tools/header.jpg)}
-#addresses{float:right;margin-top:56px;margin-right:66px;width:170px}
+#addresses{float:right;margin-top:56px;margin-right:66px;width:170px;font-size:18px;line-height:20px;}
 #navigation{float:left;width:1024px}
 #maincontent{float:left;width:764px;margin:0 0 60px 172px}
 #slides,#expo div.link{height:150px}
@@ -113,7 +113,7 @@ div.cats .cb-count{padding-left:5px}
 #cmsbox{letter-spacing:.05em;text-transform:lowercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;float:right;margin-bottom:5px}
 #cmsbox>.meta{font-size:10px}
 #cmsbox>.meta:hover,#cmsbox>.meta:focus{text-decoration:none;color:#fff}
-.vcard{float:left;margin-left:36px;font-size:10px;line-height:13px;display:none}
+.vcard{float:left;margin-left:36px;display:none}
 .vcard.first{margin-left:0}
 .c1 .vcard,.c2 .vcard.c2,.c3 .vcard.c3,.c4 .vcard.c4{display:block}
 .c3 .vcard.c3,.c4 .vcard.third{margin-left:0}

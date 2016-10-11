@@ -414,7 +414,10 @@ article {
 }
 
 .speech_left {
-	background-color: #f8f8f8;
+	color: white;
+	background: -moz-linear-gradient(top,  rgba(31, 206, 30, 1) 0%, rgba(62, 174, 27, 1) 100%) !important;
+	background: -webkit-linear-gradient(top,  rgba(31, 206, 30, 1) 0%, rgba(62, 174, 27, 1) 100%) !important;
+	background: linear-gradient(to bottom,  rgba(31, 206, 30, 1) 0%, rgba(62, 174, 27, 1) 100%) !important;
 	position: relative;
 	display: inline-block;
 	left: 0px;
@@ -422,7 +425,7 @@ article {
 	margin-top: 5px;
 	margin-left: 25px;
 	padding: 12px 12px 12px 24px;
-	border: 1px solid #ddd;
+	border: 1px solid rgba(62, 174, 27, 1);
 	border-radius: 5px;
 }
 
@@ -432,7 +435,7 @@ article {
 	bottom: auto;
 	left: -24px;
 	border-width: 10px 24px 10px 0;
-	border-color: transparent #ddd;
+	border-color: transparent rgba(62, 174, 27, 1);
 	content: "";
 	position: absolute;
 	border-style: solid;
@@ -447,7 +450,7 @@ article {
 	bottom: auto;
 	left: -21px;
 	border-width: 9px 21px 9px 0;
-	border-color: transparent #f8f8f8;
+	border-color: transparent rgba(50, 186, 28, 1);
 	content: "";
 	position: absolute;
 	border-style: solid;
@@ -462,14 +465,17 @@ article {
 }
 
 .speech_right {
-	background-color: #f8f8f8;
+	color: white;
+	background: -moz-linear-gradient(top,  rgba(31, 206, 30, 1) 0%, rgba(62, 174, 27, 1) 100%) !important;
+	background: -webkit-linear-gradient(top,  rgba(31, 206, 30, 1) 0%, rgba(62, 174, 27, 1) 100%) !important;
+	background: linear-gradient(to bottom,  rgba(31, 206, 30, 1) 0%, rgba(62, 174, 27, 1) 100%) !important;
 	position: relative;
 	display: inline-block;
 	right: 0px;
 	margin-top: 5px;
 	margin-right: 25px;
 	padding: 12px 24px 12px 12px;
-	border: 1px solid #ddd;
+	border: 1px solid rgba(62, 174, 27, 1);
 	border-radius: 5px;
 }
 
@@ -479,7 +485,7 @@ article {
 	bottom: auto;
 	right: -24px;
 	border-width: 10px 0 10px 24px;
-	border-color: transparent #ddd;
+	border-color: transparent rgba(62, 174, 27, 1);
 	content: "";
 	position: absolute;
 	border-style: solid;
@@ -494,7 +500,7 @@ article {
 	bottom: auto;
 	right: -21px;
 	border-width: 9px 0 9px 21px;
-	border-color: transparent #f8f8f8;
+	border-color: transparent rgba(50, 186, 28, 1);
 	content: "";
 	position: absolute;
 	border-style: solid;
@@ -575,7 +581,7 @@ article {
 .profile_more_text div {
 	display: inline-block;
 	width: 50%;
-	
+
 }
 
 
@@ -624,9 +630,9 @@ article {
 
 /*	font-size: .78571em;
 
-	
+
 	padding: 0 .90909em;
-	
+
 .online {
 	position: absolute;
 	display: none;
@@ -726,7 +732,7 @@ input[type=button]:hover, input[type=submit]:hover {
 	z-index: 11;
     box-sizing: border-box;
 	font-weight: 100 !important;
-	
+
 }
 
 
@@ -748,7 +754,7 @@ select {
 }
 
 /*target Internet Explorer 9 and Internet Explorer 10:*/
-@media screen and (min-width:0\0) { 
+@media screen and (min-width:0\0) {
     select {
         background:none;
         /*padding: 5px;*/

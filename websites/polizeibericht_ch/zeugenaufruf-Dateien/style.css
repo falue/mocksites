@@ -701,6 +701,7 @@ aside .vermisst, aside .fahdung, aside .video {
     background: #efefe5;
     padding: 10px 8px;
     margin: 10px 0;
+    display: none;
 }
 
 aside .vermisst b, aside .fahdung b {
@@ -1028,7 +1029,7 @@ footer .menu li {
 h1.news-title {
     font-size: 30px;
     font-weight: bold;
-    color: #009FE3;
+    color: black;
     line-height: 1em;
     margin-bottom: 15px;
     margin-top: -6px;

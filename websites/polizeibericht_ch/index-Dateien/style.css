@@ -698,9 +698,10 @@ aside.right-block .b-b ul li {
 }
 
 aside .vermisst, aside .fahdung, aside .video {
-    background: #efefe5;
+    background: red;
     padding: 10px 8px;
     margin: 10px 0;
+    display: none;
 }
 
 aside .vermisst b, aside .fahdung b {

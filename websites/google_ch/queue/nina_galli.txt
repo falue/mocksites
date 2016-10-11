@@ -1,4 +1,4 @@
-; Basis:
+﻿; Basis:
 ;   title (Blau)
 ;   URL (verlinkter & angezeigter Link, Grün)
 ;   desc (Resultat-Beschreibung, Grau)
@@ -13,8 +13,7 @@ imageband = "nina_galli.png"
 
 [1]
 title = "Steinmann & Partner Treuhand GmbH"
-URL = "../steinmannpartner_ch/"
-URL_cover = "http://www.steinmannpartner.ch"
+URL = "http://www.steinmannpartner.ch"
 img = "steinmann_logo.jpg"
 desc = "Steinmann & Partner Treuhand bietet ihren Kunden umfassende, Dienstleistungen in den Bereichen Wirtschaftsprüfung, Steuerberatung- und..."
 
