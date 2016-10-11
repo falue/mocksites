@@ -50,7 +50,7 @@
     <div class=\"result\">
       <img src=\"tools/person.png\" alt=\"a\" class=\"result_img\">
       <h1>Nina Bovet</h1>
-      Chaumontweg 34<br>
+      Morandweg 34<br>
       3030 Bern<br>
       <h1>031 972 13 77*</h1>
       <div class=\"details\"><input type=\"button\" value=\"Details\"></div>
@@ -58,7 +58,7 @@
     <div class=\"result\">
       <img src=\"tools/person.png\" alt=\"a\" class=\"result_img\">
       <h1>Nina & Ernst Kalberer</h1>
-      Chaumontweg 203<br>
+      Morandweg 203<br>
       3030 Bern<br>
       <h1>031 973 16 08*</h1>
       <div class=\"details\"><input type=\"button\" value=\"Details\"></div>
