@@ -27,7 +27,7 @@
 <nav>
   <div class="slogan2">Anmelden</div><br><br>
   <form action="index.php?p=register" method="post" autocomplete="off">
-  <a href="index.php?p=register"><img src="tools/icons/home_fb.png" alt=""></a>&emsp;<a href="index.php?p=register"><img src="tools/icons/home_reg.png" alt=""></a><br><br>  
+  <a href="index.php?p=register"><img src="tools/icons/home_fb.png" alt=""></a><br><br>  
   &nbsp;Ich bin:<br>
   <select>
     <option hidden="hidden">Geschlecht und Partnerwunsch</option>
