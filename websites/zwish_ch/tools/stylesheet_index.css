@@ -56,7 +56,14 @@ ul {
 }
 
 li {
-	margin-left: 14px;
+	margin-left: 20px;
+	list-style: none;
+}
+
+li:before {
+	margin-left: -20px;
+	content: "➡ ";
+    color: grey;
 }
 
 p {
@@ -400,7 +407,7 @@ option {
 	min-height: 150px;
 	background-color: #fff;
 	z-index: 7;
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 	-moz-box-shadow: 0px 0px 200px rgba(0, 181, 232, 0.2);
 	-webkit-box-shadow: 0px 0px 200px rgba(0, 181, 232, 0.2);
 	box-shadow: 0px 0px 200px rgba(0, 181, 232, 0.2);
@@ -415,22 +422,26 @@ option {
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
-	height: 60px;
+	height: 50px;
 	padding: 20px 20px 20px 20px;
 	background-color: #d0ebfb;
+}
+
+.loading {
+	margin-top:-7px;
 }
 
 .registerbox_body {
 	position: relative;
 	right: 0px;
 	bottom: 0px;
-	padding: 20px;
+	padding: 20px 20px 20px 20px;
 }
 
 .registerbox_body_box {
 	display: inline-block;
 	text-align: left;
-	padding: 20px;
+	padding: 20px 20px 0px 20px;
 	width: 440px;
 }
 

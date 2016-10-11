@@ -1,0 +1,78 @@
+; Basis:
+;   title (Blau)
+;   URL (verlinkter & angezeigter Link, Grün)
+;   desc (Resultat-Beschreibung, Grau)
+; Optionen:
+;   URL_cover (scheinbarer Link, wird angezeigt [URL wird verlinkt])
+;   img (vorschaubild der website, enthält dateinamen eines bildes in "queue_img/")
+; Oder:
+;   imageband (anstelle Basis+Optionen, enthält dateinamen eines bildes in "queue_img/")
+
+[0]
+imageband = "nina_bovet.png"
+
+[1]
+title = "Steinmann & Partner Treuhand GmbH"
+URL = "http://www.steinmannpartner.ch"
+img = "steinmann_logo.jpg"
+desc = "Steinmann & Partner Treuhand bietet ihren Kunden umfassende, Dienstleistungen in den Bereichen Wirtschaftsprüfung, Steuerberatung- und..."
+
+[2]
+title = "Nina Bovet Profile / Facebook"
+URL = "https://www.facebook.com/public/Nina-Bovet"
+desc = "Schau dir alle Profile von Personen mit dem Namen Nina Bovet an. Trete Facebook bei um mit Nina Bovet und andere, die du kennen könntest, Kontakt aufzunehmen. Facebook gibt allen die Macht zum..."
+
+[3]
+title = "Nina Bovet Profiles / Facebook"
+URL = "https://www.facebook.com/public/Nina-Bovet"
+desc = "View the profiles of people named Nina Bovet. Join Facebook to connect with Nina Bovet and others you may know. Facebook gives people the power to..."
+
+[4]
+title = "Nina Bovet | LinkedIn"
+URL = "https://ch.linkedin.com/in/nina-Bovet-882750119"
+desc = "Bern, Schweiz - ‎Senior Assistentin bei KENDRIS Ltd - ‎KENDRIS Ltd Nina Bovets berufliches Profil anzeigen - LinkedIn ist das weltweit größte berufliche Netzwerk, das Fach- und Führungskräften wie Nina Bovet dabei hilft, ..."
+
+[5]
+title = "Nina Bovet in Bern - 4 Treffer auf local.ch"
+URL = "tel.local.ch/de/q/Winterthur/nina%20Bovet.html"
+desc = "2 Treffer für Nina Bovet in Bern. ... Hertner Nina und Bovet Sara. Steinackerweg 5, 3003 Bern Details. Karte vergrössern. Nina Bovet in ..."
+
+[6]
+title = "Nina (2016 film) - Wikipedia, the free encyclopedia"
+URL = "https://en.wikipedia.org/wiki/Nina_(2016_film)"
+desc = "Nina is an American biographical film written and directed by Cynthia Mort. The film focuses on American musician and civil rights activist Nina Simone, ..."
+
+[7]
+title = "Nina Iljitc (@ninailjitc) | Twitter"
+URL = "https://twitter.com/ninailjitc"
+desc = "8 mins ago - View on Twitter - Today's gonna be different - I'm making progress! Just watch as i gonna roll all over you... twitter.com/i/web/status/..."
+
+[8]
+title = "Nina - Wikipedia, the free encyclopedia"
+URL = "https://en.wikipedia.org/wiki/Nina"
+desc = "Nina may refer to: Nina (name), people with the name Nina. Contents. [hide]. 1 Places; 2 Music. 2.1 Songs; 2.2 Operas; 2.3 Albums. 3 Film; 4 Television; 5 Plays ..."
+
+[9]
+title = "Nina (singer) - Wikipedia, the free encyclopedia"
+URL = "https://en.wikipedia.org/wiki/Nina_(singer)"
+desc = "Anna Maria Agustí Flores (born in Barcelona on 1 October 1966), known professionally as Nina, is a Spanish musical actress and singer. She started her music ..."
+
+[10]
+title = "Nina Alejandra | Actress - Speaker"
+URL = "www.ninaalejandra.com/"
+desc = "Nina is a swiss actress and speaker. As Freelancer Artist she is bookable for events around the world. Find out more!"
+
+[11]
+title = "Nina's Blog - Blog | Nina Caprez | klettern, alpines sportklettern"
+URL = "www.ninacaprez.ch/blog/"
+desc = "Aug 9, 2016 - Benoit who is not quite able to onsight all the pitches still enjoys the climb as fully as me. Nina 7a+ · Nina on 7b · Benoit 7a+.. Ninas climb 6a. ..."
+
+[12]
+title = "NINA-B1 | u-blox"
+URL = "https://www.u-blox.com/en/product/nina-b1"
+desc = "See the NINA‑B1 Bluetooth low energy 4.2 module video to learn how it brings state‑of‑the‑art performance and power efficiency to IoT designs..."
+
+[13]
+title = "Museum 2.0"
+URL = "museumtwo.blogspot.com/"
+desc = "... those November conferences--if you are a motivated Texan with a venue and a dream, let me know. See you on the road! Posted by Nina Simon 1 Comment."

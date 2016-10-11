@@ -49,7 +49,7 @@
     <hr>
     <div class=\"result\">
       <img src=\"tools/person.png\" alt=\"a\" class=\"result_img\">
-      <h1>Nina Galli</h1>
+      <h1>Nina Bovet</h1>
       Chaumontweg 34<br>
       3030 Bern<br>
       <h1>031 972 13 77*</h1>

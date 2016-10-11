@@ -23,45 +23,16 @@
     <link rel="stylesheet" type="text/css" media="print" href="index-Dateien/print.css">
     <link rel="stylesheet" type="text/css" media="print" href="index-Dateien/paper.css">
     <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="screen, projection" href="/_cmsbox_24/design/hacks.css"/><![endif]-->
-    <script type="text/javascript" defer async src="index-Dateien/piwik.js"></script>
-    <script type="text/javascript" src="index-Dateien/prototype.js"></script>
-    <script type="text/javascript" src="index-Dateien/effects.js"></script>
-    <script type="text/javascript" src="index-Dateien/cmsbox.js"></script>
-    <script type="text/javascript">
-        try {
-            var _paq = _paq || [];
-            _paq.push(["trackPageView"]);
-            _paq.push(["enableLinkTracking"]);
-            var tracker = document.getElementsByName("tracker");
-            var pageFound = !(tracker && tracker.length == 1 && tracker[0] && (/notFound|404/g).test(tracker[0].content));
-            if (pageFound) {
-                var customUrl = document.location.pathname;
-                if ((/\?(contact|home|imprint|mailto|intro|next|previous|print|recommend|sitemap|support|zoom)(=.*)?/i).test(document.location.search)) {
-                    var customQuery = document.location.search.replace(/\&_(s|k)=[a-z0-9\-_]+/ig, "").replace(/\?_(s|k)=[a-z0-9\-_]+/ig, "\?").replace(/\?\&/, "\?").replace(/\?$/, "");
-                    var customUrl = customUrl + customQuery;
-                }
-                _paq.push(["setCustomUrl", customUrl]);
-            } else {
-                _paq.push(["setDocumentTitle", "404 - Not found"]);
-                _paq.push(["setCustomUrl", "/404"]);
-                _paq.push(["setCustomVariable", 1, "404 - Not found", document.location.pathname + document.location.search, "page"]);
-                _paq.push(["setCustomVariable", 2, "404 - Referer", document.referrer, "page"]);
-            }
-            (function() {
-                var u = (("hxxps:" == document.location.protocol) ? "hxxps" : "hxxp") + "://tracker.cmsbox.com/";
-                _paq.push(["setTrackerUrl", u + "piwik.php"]);
-                _paq.push(["setSiteId", "612"]);
-                var d = document,
-                    g = d.createElement("script"),
-                    s = d.getElementsByTagName("script")[0];
-                g.type = "text/javascript";
-                g.defer = true;
-                g.async = true;
-                g.src = u + "piwik.js";
-                s.parentNode.insertBefore(g, s);
-            })();
-        } catch (error) {}
-    </script>
+
+    
+
+    <script type="text/javascript" src="tools/box/jquery-2.1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="tools/box/featherlight.css">
+    <script type="text/javascript" src="tools/box/featherlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="tools/box/featherlight.gallery.css">
+    <script type="text/javascript" src="tools/box/featherlight.gallery.js"></script>
+
+    
 </head>
 
 <body onload="onLoad()" class="de sub3 cb-layout1 c2" id="view">
@@ -207,7 +178,7 @@
                 <div class="area main" id="area1334">
                     <div id="d23a038e-0772-476f-bd0e-ef4ce16a00c9" class="unit note slim pure">
                         <div class="body">
-                            <div class="part show pict tiny"><img alt="_mg_0170.jpg" title="_mg_0170.jpg" class="cb-landscape" src="tools/mitarbeiter1.jpg" width="179" height="149">
+                            <div class="part show pict tiny"><img alt="_mg_0170.jpg" title="_mg_0170.jpg" class="cb-landscape" src="tools/mitarbeiter1.jpg" width="179">
                             </div>
                             <div class="part link mail tall"><a class="open" title="troniger-ät-strasser-ag.ch" data-title="dHJvbmlnZXJAc3RyYXNzZXItYWcuY2g=" href="https://www.strasser-ag.ch/extras/fonts/BlenderPro-BoldWeb.woff">Marco Gilgen</a>
                             </div>
@@ -222,9 +193,9 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="König von Felsenau" title="_mg_0240.jpg" class="cb-landscape" src="tools/mitarbeiter5.jpg" width="179" height="149">
+                            <div class="part show pict tiny"><img alt="König von Felsenau" title="_mg_0240.jpg" class="cb-landscape" src="tools/mitarbeiter5.jpg" width="179">
                             </div>
-                            <div class="part link mail tall"><a class="open" title="sgillieron-ät-strasser-ag.ch" data-title="c2dpbGxpZXJvbkBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=c2dpbGxpZXJvbkBzdHJhc3Nlci1hZy5jaA==">Stefan Immertreu</a>
+                            <div class="part link mail tall"><a class="open" title="sgillieron-ät-strasser-ag.ch" data-title="c2dpbGxpZXJvbkBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=c2dpbGxpZXJvbkBzdHJhc3Nlci1hZy5jaA==">Stefan Baal</a>
                             </div>
                             <div class="part text tall">
                                 <p class="pale">Sachbearbeiter
@@ -239,38 +210,24 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="siria.jpg" title="siria.jpg" class="cb-landscape" src="tools/mitarbeiter9.jpg" width="179" height="149">
-                            </div>
-                            <div class="part link mail tall"><a class="open" title="scasetti-ät-strasser-ag.ch" data-title="c2Nhc2V0dGlAc3RyYXNzZXItYWcuY2g=" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=c2Nhc2V0dGlAc3RyYXNzZXItYWcuY2g=">Lena Baal</a>
-                            </div>
-                            <div class="part text tall">
-                                <p class="pale">Lernende 3. Lehrjahr</p>
-                            </div>
-                            <div class="part text tall">
-                                <p class="norm">
-                                    <br>
-                                    <br>
-                                </p>
-                            </div>
-                            <div class="part text tall">
-                                <p class="norm">
-                                    <br>
-                                    <br>
-                                </p>
-                            </div>
+                            
+                            
+           
                         </div>
                         <div class="foot"></div>
                     </div>
                     <div id="fe0a7b7a-0e31-48b1-bf9c-5e5be8807f95" class="unit note slim pure">
                         <div class="body">
-                            <div class="part show pict tiny"><img alt="_mg_0191.jpg" title="_mg_0191.jpg" class="cb-landscape" src="tools/mitarbeiter2.jpg" width="179" height="149">
+                            <div class="part show pict tiny">
+                                    <img alt="_mg_0191.jpg" title="_mg_0191.jpg" class="cb-landscape" src="tools/mitarbeiter2.jpg" width="179">
+
                             </div>
-                            <div class="part link mail tall"><a class="open" title="bstamenkov-ät-strasser-ag.ch" data-title="YnN0YW1lbmtvdkBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=YnN0YW1lbmtvdkBzdHJhc3Nlci1hZy5jaA==">Frederic Jansen</a>
+                            <div class="part link mail tall"><a class="open" title="bstamenkov-ät-strasser-ag.ch" data-title="YnN0YW1lbmtvdkBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=YnN0YW1lbmtvdkBzdHJhc3Nlci1hZy5jaA==">Frederica Jansen</a>
                             </div>
                             <div class="part text tall">
-                                <p class="pale">Mandatsleiter/Partner
-                                    <br>dipl. Treuhandexperte
-                                    <br>zugelassener Revisionsexperte</p>
+                                <p class="pale">Mandatsleiterin/Partnerin
+                                    <br>dipl. Treuhandexpertin
+                                    <br>zugelassene Revisionsexpertin</p>
                             </div>
                             <div class="part text tall">
                                 <p class="norm">
@@ -278,9 +235,15 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="_mg_0391.jpg" title="_mg_0391.jpg" class="cb-landscape" src="tools/mitarbeiter6.jpg" width="179" height="149">
+                            
+                            
+                            <div data-featherlight-gallery data-featherlight-filter="a">
+                            <a href="tools/mitarbeiter6_gross.jpg">
+                            <div class="part show pict tiny"><img alt="_mg_0391.jpg" title="_mg_0391.jpg" class="cb-landscape" src="tools/mitarbeiter6.jpg" width="179">
+                            </a>
                             </div>
-                            <div class="part link mail tall"><a class="open" title="mbelokoska-ät-strasser-ag.ch" data-title="bWJlbG9rb3NrYUBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=bWJlbG9rb3NrYUBzdHJhc3Nlci1hZy5jaA==">Nina Galli</a>
+                            </div>
+                            <div class="part link mail tall"><a class="open" title="mbelokoska-ät-strasser-ag.ch" data-title="bWJlbG9rb3NrYUBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=bWJlbG9rb3NrYUBzdHJhc3Nlci1hZy5jaA==">Nina Bovet</a>
                             </div>
                             <div class="part text tall">
                                 <p class="pale">Sachbearbeiterin
@@ -293,25 +256,16 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="jg.jpg" title="jg.jpg" class="cb-landscape" src="tools/mitarbeiter10.jpg" width="179" height="149">
-                            </div>
-                            <div class="part link mail tall"><a class="open" title="jguggisberg-ät-strasser-ag.ch" data-title="amd1Z2dpc2JlcmdAc3RyYXNzZXItYWcuY2g=" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=amd1Z2dpc2JlcmdAc3RyYXNzZXItYWcuY2g=">Nino Veille</a>
-                            </div>
-                            <div class="part text tall">
-                                <p class="pale">Lernender 1. Lehrjahr</p>
-                            </div>
-                            <div class="part text tall">
-                                <p class="norm">
-                                    <br>
-                                    <br>
-                                </p>
-                            </div>
+                            
+                            
+                            
+
                         </div>
                         <div class="foot"></div>
                     </div>
                     <div id="1d822f1a-1add-4acf-a489-fda21cf8ea92" class="unit note slim pure">
                         <div class="body">
-                            <div class="part show pict tiny"><img alt="_mg_0446.jpg" title="_mg_0446.jpg" class="cb-landscape" src="tools/mitarbeiter3.jpg" width="179" height="149">
+                            <div class="part show pict tiny"><img alt="_mg_0446.jpg" title="_mg_0446.jpg" class="cb-landscape" src="tools/mitarbeiter3.jpg" width="179">
                             </div>
                             <div class="part link mail tall"><a class="open" title="rgehri-ät-strasser-ag.ch" data-title="cmdlaHJpQHN0cmFzc2VyLWFnLmNo" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=cmdlaHJpQHN0cmFzc2VyLWFnLmNo">Roman Sodermann</a>
                             </div>
@@ -326,7 +280,7 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="_mg_0331.jpg" title="_mg_0331.jpg" class="cb-landscape" src="tools/mitarbeiter7.jpg" width="179" height="149">
+                            <div class="part show pict tiny"><img alt="_mg_0331.jpg" title="_mg_0331.jpg" class="cb-landscape" src="tools/mitarbeiter7.jpg" width="179">
                             </div>
                             <div class="part link mail tall"><a class="open" title="nlagger-ät-strasser-ag.ch" data-title="bmxhZ2dlckBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=bmxhZ2dlckBzdHJhc3Nlci1hZy5jaA==">Janine Lustenberger</a>
                             </div>
@@ -341,25 +295,13 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="_cm20171.jpg" title="_cm20171.jpg" class="cb-landscape" src="tools/mitarbeiter11.jpg" width="179" height="149">
-                            </div>
-                            <div class="part link mail tall"><a class="open" title="bern-ät-strasser-ag.ch" data-title="YmVybkBzdHJhc3Nlci1hZy5jaA==" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=YmVybkBzdHJhc3Nlci1hZy5jaA==">Roy und Dorky</a>
-                            </div>
-                            <div class="part text tall">
-                                <p class="pale">Security Mitarbeiter</p>
-                            </div>
-                            <div class="part text tall">
-                                <p class="norm">
-                                    <br>
-                                    <br>
-                                </p>
-                            </div>
+                            
                         </div>
                         <div class="foot"></div>
                     </div>
                     <div id="1fbe24af-d77c-4dcf-8711-c52873ee1b34" class="unit note slim pure">
                         <div class="body">
-                            <div class="part show pict tiny"><img alt="_cm20127.jpg" title="_cm20127.jpg" class="cb-landscape" src="tools/mitarbeiter4.jpg" width="179" height="149">
+                            <div class="part show pict tiny"><img alt="_cm20127.jpg" title="_cm20127.jpg" class="cb-landscape" src="tools/mitarbeiter4.jpg" width="179">
                             </div>
                             <div class="part link mail tall"><a class="open" title="tmast-ät-strasser-ag.ch" data-title="dG1hc3RAc3RyYXNzZXItYWcuY2g=" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=dG1hc3RAc3RyYXNzZXItYWcuY2g=">Franziska Brun</a>
                             </div>
@@ -375,12 +317,12 @@
                                     <br>
                                 </p>
                             </div>
-                            <div class="part show pict tiny"><img alt="_mg_0312.jpg" title="_mg_0312.jpg" class="cb-landscape" src="tools/mitarbeiter8.jpg" width="179" height="149">
+                            <div class="part show pict tiny"><img alt="_mg_0312.jpg" title="_mg_0312.jpg" class="cb-landscape" src="tools/mitarbeiter8.jpg" width="179">
                             </div>
-                            <div class="part link mail tall"><a class="open" title="dwoodtli-ät-strasser-ag.ch" data-title="ZHdvb2R0bGlAc3RyYXNzZXItYWcuY2g=" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=ZHdvb2R0bGlAc3RyYXNzZXItYWcuY2g=">Susanne Mendes</a>
+                            <div class="part link mail tall"><a class="open" title="dwoodtli-ät-strasser-ag.ch" data-title="ZHdvb2R0bGlAc3RyYXNzZXItYWcuY2g=" href="hxxps://xxx.strasser-ag.ch/de/ueber-uns/team-bern?mailto=ZHdvb2R0bGlAc3RyYXNzZXItYWcuY2g=">Dorky</a>
                             </div>
                             <div class="part text tall">
-                                <p class="pale">Sachbearbeiterin
+                                <p class="pale">Security Mitarbeiter
                                     <br>
                                     <br>
                                     <br>

@@ -13,291 +13,10 @@
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="hxxp://xxx.derbund.ch/sport/rss.html">
 
 <title> News Sport - derbund.ch</title>
-<script src="sport-Dateien/jquery-1.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_007.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_016.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_012.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_004.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_006.js" type="text/javascript"></script>
-<script src="sport-Dateien/messages_de.js" type="text/javascript"></script>
-<script src="sport-Dateien/easyTooltip.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_011.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_013.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_003.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_014.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_015.js" type="text/javascript"></script>
-<script src="sport-Dateien/ajax.js" type="text/javascript"></script>
-<script src="sport-Dateien/swfobject.js" type="text/javascript"></script>
-<script src="sport-Dateien/misc6.js" type="text/javascript"></script>
-<script src="sport-Dateien/ad_red.js" type="text/javascript"></script>
-
-<script src="sport-Dateien/dimension_watcher.js"></script>
-<script>
-	DimensionWatcher.watchIframeContent();
-</script>
-
-<!-- Includes used for framework.js, nn2 slideshow and nn2 comments -->
-<script src="sport-Dateien/html5shiv.js"></script>
-<script src="sport-Dateien/es5-shim.js"></script>
-<script src="sport-Dateien/es5-sham.js"></script>
-<script src="sport-Dateien/loader.js"></script>
-<script src="sport-Dateien/jquery_008.js"></script>
-<script src="sport-Dateien/jquery_010.js"></script>
-<script src="sport-Dateien/hammer.js"></script>
-<script src="sport-Dateien/handlebars.js"></script>
-<script src="sport-Dateien/rsvp.js"></script>
-<script src="sport-Dateien/idangerous.js"></script>
-<script src="sport-Dateien/react-with-addons.js"></script>
-<script src="sport-Dateien/react-dom.js"></script>
-<script src="sport-Dateien/lodash.js"></script>
-<script src="sport-Dateien/postscribe.js"></script>
-
-<script src="sport-Dateien/analytics.js"></script>
-<script src="sport-Dateien/embeds.js"></script>
-<script src="sport-Dateien/cx.js"></script>
-
-<script type="text/javascript">
-    // Used for app.js and framework.js
-    window.cre_jq = jQuery.noConflict(true);
-</script>
-
-<!-- Used for new nn2 slideshow -->
-<script src="sport-Dateien/framework.js"></script>
-<!-- <script src="hxxp://files.newsnetz.ch/scripts/exportedFromNN2/framework.js?v=222" type="text/javascript"></script> -->
-
-<script>
-    // Load statistics for slideshow and comments from NN2 framework
-    (function($) {
-        var config = require("framework/config").config;
-
-        config.configure({
-            env: "desktop",
-            apiUrl: "hxxp://xxx.derbund.ch/api"
-        });
-
-        if (window.location.host.indexOf("devlocal")) {
-            config.configure({
-                apiUrl: config.apiUrl.replace("devlocal", "ch")
-            });
-        }
-
-        $.getJSON(config.apiUrl + "/sites/default").then(function(payload) {
-            require("framework/statistics").statistics.init({
-                env: config.env,
-                ga: {
-                    trackers: payload.site.google_analytics_information.trackers
-                }
-            }, {
-                "google_analytics": {
-                    "customVars": [{
-                        "name": "device_characteristics",
-                        "value": "desktop"
-                    }, {
-                        "name": "app_mode",
-                        "value": "browser"
-                    }, {
-                        "name": "version",
-                        "value": config.version
-                    }, {
-                        "name": "ad_blocker",
-                        "value": !window.adblockJsFile
-                    }]
-                }
-            });
-        });
-    })(cre_jq);
-</script>
-
-<script src="sport-Dateien/liveticker.js" type="text/javascript"></script>
-<script src="sport-Dateien/slideshow.js" type="text/javascript"></script>
-<script src="sport-Dateien/sm.js" type="text/javascript"></script>
 
 <link rel="shortcut icon" type="image/x-icon" href="tools/favicon.ico" />
 
 <meta name="c1_user_info" content="">
-
-<script>
-    var config = require("framework/config").config,
-        paywallInterface = require("framework/paywallInterface").paywallInterface,
-        paywallEventHandler = require("framework/paywallEventHandler").paywallEventHandler;
-
-    paywallInterface.configure($.extend({}, config, {
-        "paywall_status": config.paywall.status.enabled,
-        "eventHandler": paywallEventHandler
-    }));
-
-    paywallInterface.init().then(function() {
-        var url = window.location.href.toString().split(window.location.host)[1],
-            channels = url.split("/"),
-            regexResult = url.match(/.*\/story\/([0-9]{8})/i);
-
-        var trackingInfo = {
-            "cms_id": (regexResult ? regexResult[1] : ""),
-            "main_channel": (window.location.pathname === "/" ? "home" : channels[1]),
-            "sub_channel": channels[2],
-            "doc_type": (regexResult ? "article" : "section")
-        }
-
-        // Check if the current site is a blog
-        if(window.location.host.indexOf("blog") > -1) {
-            channels = channels.filter(function(e, i) {
-                return e !== "index.php" && e !== "category";
-            });
-
-            trackingInfo.sub_channel = "";
-            trackingInfo.doc_type = "section";
-
-            // Check if it is a blog article (if the third url section contains only numbers)
-            var regexResult = channels[2].match(/[0-9]+/i);
-            if(regexResult) {
-                trackingInfo.cms_id = url;
-                trackingInfo.doc_type = "article";
-            } else {
-                trackingInfo.sub_channel = channels[2];
-            }
-        }
-
-        paywallInterface.track(trackingInfo);
-    });
-</script>
-
-    <script src="sport-Dateien/advertisement.js" type="text/javascript"></script>
-
-    <!--
-        hxxp_HOST: xxx.derbund.ch
-hxxp_X_FORWARDED_PROTO: hxxp
-hxxp_INCAP_CLIENT_IP: 195.65.18.98
-hxxp_X_FORWARDED_FOR: 127.0.0.1, 151.252.10.27
-hxxp_USER_AGENT: Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; rv:11.0) like Gecko
-hxxp_ACCEPT_ENCODING: gzip
-hxxp_X_VARNISH: 1439561731
-hxxp_X_REAL_IP: 198.143.58.1
-hxxp_X_DEVICE: pc
-hxxp_C1_TRACKING_ID: 1546901217314615639
-hxxp_INCAP_PROXY_287: OK
-
-     -->
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ "paywall_user_id": "" });
-    </script>
-
-
-    <!-- Google Tag Manager -->
-    <script>
-        if (! window.googleTagManagerStarted) {
-            // According to fabian, this code can be included multiple times per page, so we make sure at this point
-            // that we initialize gtm only once
-            window.googleTagManagerStarted = true;
-
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '//xxx.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j ,f);
-            })(window,document,'script','dataLayer','GTM-5J6M86');
-        }
-    </script>
-    <!-- End Google Tag Manager -->
-
-
-
-    <!-- GOOGLE DFP TOP scripts start -->
-    <script src="sport-Dateien/tatm.js"></script>
-
-        <script>
-            TATM.init("de-derbund.ch","Sport/");
-        </script>
-
-    <script>
-    function initTATM() {
-        TATM.displayAds();
-    }
-    </script>
-    <!-- GOOGLE DFP TOP scripts end -->
-
-    <!-- Socio-Demographic Targeting script start-->
-    <script>
-        tamediaBID = null;
-
-        function initTamediaBID() {
-            var userInfo = document.querySelector("meta[name='c1_user_info']").getAttribute("content")
-            if(userInfo !== "") {
-                tamediaBID = "publishing/"+JSON.parse(document.querySelector("meta[name='c1_user_info']").getAttribute("content")).user_id;
-            }
-        };
-    </script>
-    <!-- Socio-Demographic Targeting script end-->
-
-    <script>
-    window.onload = function() {
-        initTATM();
-        initTamediaBID();
-    };
-    setTimeout(function(){
-        initTATM();
-        initTamediaBID();
-    }, 1000);
-    </script>
-
-
-<script>
-    window.redesign2014 = 1;
-</script>
-
-<script>
-    $(document).ready(function() {
-        if (getCookie('redesign2014') == 1) {
-            if (!get_url_param('redesign') == 1) {
-                insertParam('redesign','1');
-            }
-        }
-    });
-
-    function getCookie(name) {
-      var parts = document.cookie.split(name + "=");
-      if (parts.length == 2) return parts.pop().split(";").shift();
-    }
-
-    function insertParam(key, value)
-    {
-        key = encodeURI(key); value = encodeURI(value);
-
-        var kvp = document.location.search.substr(1).split('&');
-
-        var i=kvp.length; var x; while(i--)
-        {
-            x = kvp[i].split('=');
-
-            if (x[0]==key)
-            {
-                x[1] = value;
-                kvp[i] = x.join('=');
-                break;
-            }
-        }
-
-        if(i<0) {kvp[kvp.length] = [key,value].join('=');}
-
-        //this will reload the page, it's likely better to store this until finished
-        document.location.search = kvp.join('&');
-    }
-
-    function get_url_param( name )
-    {
-        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-
-        var regexS = "[\\?&]"+name+"=([^&#]*)";
-        var regex = new RegExp( regexS );
-        var results = regex.exec( window.location.href );
-
-        if ( results == null )
-            return "";
-        else
-            return results[1];
-    }
-</script>
 
 <link rel="stylesheet" type="text/css" href="sport-Dateien/idangerous.css">
 <link rel="stylesheet" type="text/css" href="sport-Dateien/sprites.css">
@@ -320,65 +39,6 @@ hxxp_INCAP_PROXY_287: OK
 <link href="sport-Dateien/css.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" media="print" href="sport-Dateien/print_red.css" type="text/css">
-<script src="sport-Dateien/jquery_009.js" type="text/javascript"></script><script src="sport-Dateien/pubads_impl_95.js" async=""></script>
-<script src="sport-Dateien/jquery_017.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_005.js" type="text/javascript"></script>
-<script src="sport-Dateien/jquery_002.js" type="text/javascript"></script>
-
-
-<!-- BEGIN Krux Control Tag for "derbund.ch" -->
- <!-- Source: /controltag?confid=KVqVeuFx&site=derbund.ch&edit=1 -->
- <script class="kxct" data-id="KVqVeuFx" data-timing="async" data-version="1.9" type="text/javascript">
-  window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
-  (function(){
-  var k=document.createElement('script');k.type='text/javascript';k.async=true;
-  var m,src=(m=location.href.match(/\bkxsrc=([^&]+)/))&&decodeURIComponent(m[1]);
-  k.src = /^hxxps?:\/\/([a-z0-9_\-\.]+\.)?krxd\.net(:\d{1,5})?\//i.test(src) ? src : src === "disable" ? "" :
-  (location.protocol==="hxxps:"?"hxxps:":"hxxp:")+"//cdn.krxd.net/controltag?confid=KVqVeuFx";
-  var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
-  }());
- </script>
- <!-- END Krux Controltag -->
-
-<!-- BEGIN Krux Control Tag for all sites -->
-<script class="kxint" type="text/javascript">
-window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
-  (function(){
-
-    // Namespace tamedia
-    var Krux = this.Krux.tamedia = this.Krux.tamedia || {};
-
-    function retrieve(n){
-      var m, k='kxtamedia_'+n,ls=(function(){
-          try{
-            return window.localStorage;
-          }catch(e){
-            return null;
-          }
-        })();
-      if (ls) {
-          return ls[k] || "";
-      } else if (navigator.cookieEnabled) {
-          m = document.cookie.match(k+'=([^;]*)');
-          return (m && unescape(m[1])) || "";
-      } else {
-          return '';
-      }
-    }
-
-    var kvs = [];
-    Krux.user = retrieve('user');
-    Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
-    if (Krux.user) {
-      kvs.push(';kvu=' + Krux.user);
-    }
-    kvs.push('ksg=' + Krux.segments.join(':'));
-
-    Krux.adTechKeyValues = kvs.length ? kvs.join(';') + ';' : '';
-  })();
-</script>
- <!-- END Krux Controltag -->
-<script language="javascript">$(document).ready(function(){$('body').append('<img src="hxxps://tda.derbund.ch/in/newsnet/in.gif" width="1" height="1" display="none">');});</script><script src="sport-Dateien/dakt.js" async="" defer="defer"></script>
 <link rel="prefetch" href="hxxp://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html"><script async="" src="sport-Dateien/mtrcs_786243_002.js"></script><link rel="stylesheet" type="text/css" href="sport-Dateien/teads-format.css"></head>
 <body><iframe marginwidth="0" marginheight="0" scrolling="no" id="_mN_beacons" style="display: none ! important;" width="0" height="0" frameborder="0"></iframe>
 
@@ -756,18 +416,16 @@ document.write(adTechKrux);
 
                     <h3>
                         <a href="hxxp://xxx.derbund.ch/sport/fussball/forte-will-seine-spieler-von-wolke-sieben-holen/story/24008721">
-                            Forte will seine Spieler von Wolke sieben holen
+                            Das System beginnt zu greifen 
                         </a>
                     </h3>
-                    <a href="hxxp://xxx.derbund.ch/sport/fussball/forte-will-seine-spieler-von-wolke-sieben-holen/story/24008721"><img alt="" src="sport-Dateien/teaserbreitgross.jpg" class="imgfloat"></a>
+                    <a href="hxxp://xxx.derbund.ch/sport/fussball/forte-will-seine-spieler-von-wolke-sieben-holen/story/24008721"><img alt="" src="tools/artikel1.jpg" class="imgfloat"></a>
                     <p>
 
 
 
 
-                        Nach dem Sieg in der Europa League wartet am
-Wochenende Wohlen. Heute wird sich auch die Zukunft von Simonyan
-entscheiden.
+                        Vorne jubeln Pl&uuml;ss und Scherwey &uuml;ber das 3:0, hinten Torsch&uuml;tze Untersander. Es ist &laquo;eines der sch&ouml;nsten&raquo; seiner Karriere. Bild: Peter Schneider/Keystone 
                         <a href="hxxp://xxx.derbund.ch/sport/fussball/forte-will-seine-spieler-von-wolke-sieben-holen/story/24008721">Mehr...</a>
                     </p>
                     <p class="storyInfo">
@@ -787,30 +445,28 @@ entscheiden.
             <div class="featureStory standard layout_2">
 
 
-                <a href="hxxp://xxx.derbund.ch/sport/fussball/die-erinnerung-an-den-doofen-frauenarzt/story/18056195"><img alt="" src="sport-Dateien/rechte_spalte_gross_003.jpg" class="imgfloat"></a>
+                <a href="hxxp://xxx.derbund.ch/sport/fussball/die-erinnerung-an-den-doofen-frauenarzt/story/18056195"><img alt="" src="tools/artikel2.jpg" class="imgfloat"></a>
                 <div>
                     <h3>
                         <a href="hxxp://xxx.derbund.ch/sport/fussball/die-erinnerung-an-den-doofen-frauenarzt/story/18056195">
-                            Hohn und Spott f&uuml;r Bayerns Trainer
+                            Schatten im Emmental 
                         </a>
                     </h3>
                     <p>
 
 
 
-                        Dass Carlo Ancelotti vor zwei Jahren mit Real
-die Champions League gewann, ist den Spaniern offenbar v&ouml;llig egal. Nach
- dem 0:1 gegen Atl&eacute;tico ziehen sie &uuml;ber den Italiener her.
+                        Langnau verliert bei der Premiere von Trainer Heinz Ehlers gegen Ambri 0:3 – es ist die zehnte Niederlage im elften Spiel. 
                         <a href="hxxp://xxx.derbund.ch/sport/fussball/die-erinnerung-an-den-doofen-frauenarzt/story/18056195">Mehr...</a>
                     </p>
                     <p class="storyInfo">
-                        <span class="author">Von <a href="hxxp://xxx.derbund.ch/stichwort/autor/thomas-niggl/s.html">Thomas Niggl</a> </span>
-                        <time class="time">10:55</time>
+                        <span class="author">Von <a href="hxxp://xxx.derbund.ch/stichwort/autor/thomas-niggl/s.html">Erwin Pflugshaupt</a> </span>
+                        <time class="time">16.11.2015</time>
 
                         </p><div site_id="6" story_id="18056195" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".2"><div class="NnSocialMediaBox" data-reactid=".2.1"><div data-reactid=".2.1.0"><ul class="horizontal desktop aggregated" data-reactid=".2.1.0.0"><li data-reactid=".2.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".2.1.0.0.$0.0"><span class="button shareV" data-reactid=".2.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".2.1.0.0.$0.0.0.0"></span><span data-reactid=".2.1.0.0.$0.0.0.1"></span><span data-reactid=".2.1.0.0.$0.0.0.2">0</span><span data-reactid=".2.1.0.0.$0.0.0.3"></span></span><span data-reactid=".2.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".2.2"><div data-reactid=".2.2.0"><a class="iconClose" data-reactid=".2.2.0.0"><span class="NnIcon closeIcon" data-reactid=".2.2.0.0.0"></span></a><h1 data-reactid=".2.2.0.1"></h1><h2 data-reactid=".2.2.0.2"></h2><div data-reactid=".2.2.0.3"><div class="NnSocialMediaBox" data-reactid=".2.2.0.3.0"><div data-reactid=".2.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".2.2.0.3.0.0.0"><li data-reactid=".2.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".2.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".2.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".2.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".2.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".2.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".2.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".2.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".2.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".2.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".2.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".2.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".2.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".2.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".2.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".2.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".2.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".2.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".2.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".2.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".2.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".2.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".2.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".2.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
                     <ul>
-                        <li><a href="hxxp://xxx.derbund.ch/sport/fussball/Kahn-uebt-scharfe-Kritik-an-den-Bayern-/story/21423601"><span class="icon icon-right"></span>Kahn &uuml;bt scharfe Kritik an den Bayern </a></li><li><a href="hxxp://xxx.derbund.ch/sport/fussball/Hoeness--ironischer-Auftritt/story/15883238"><span class="icon icon-right"></span>Hoeness' ironischer Auftritt</a></li>
+                        <li><a href="hxxp://xxx.derbund.ch/sport/fussball/Kahn-uebt-scharfe-Kritik-an-den-Bayern-/story/21423601"><span class="icon icon-right"></span>&Uuml;bt scharfe Kritik an den Bayern </a></li><li><a href="hxxp://xxx.derbund.ch/sport/fussball/Hoeness--ironischer-Auftritt/story/15883238"><span class="icon icon-right"></span>Der ironische Auftritt</a></li>
                     </ul>
                 </div>
                 <p class="clear"></p>
@@ -911,7 +567,7 @@ Spannendes.
 					$(document).ready(function(){
 						$("#aktualisiert-11352401-1").each(function(){
 					    var dStartTime = new Date(2016, 9, 30, 14, 24, 44);
-							ShowTime(dStartTime, "aktualisiert-11352401-1", "Aktualisiert vor 1 Minute", "Aktualisiert vor [minute] Minuten", "14:24", "HEUTE");	});
+							ShowTime(dStartTime, "aktualisiert-11352401-1", "Aktualisiert vor 1 Minute", "Aktualisiert vor [minute] Minuten", "14:24", "16.11.2015");	});
 					});
 						//]]>
 					</script>
@@ -974,7 +630,7 @@ Weltmeister schl&auml;gt Alarm+++200 Millionen Euro f&uuml;r neue Stars+++
 					$(document).ready(function(){
 						$("#aktualisiert-12675550-1").each(function(){
 					    var dStartTime = new Date(2016, 9, 30, 14, 31, 52);
-							ShowTime(dStartTime, "aktualisiert-12675550-1", "Aktualisiert vor 1 Minute", "Aktualisiert vor [minute] Minuten", "14:31", "HEUTE");	});
+							ShowTime(dStartTime, "aktualisiert-12675550-1", "Aktualisiert vor 1 Minute", "Aktualisiert vor [minute] Minuten", "14:31", "16.11.2015");	});
 					});
 						//]]>
 					</script>
@@ -1041,7 +697,7 @@ europ&auml;ischen Fussballb&uuml;hne die Retorten-Hauptstadt promoten soll.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von Alex Trunz </span>
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="29249689" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".9"><div class="NnSocialMediaBox" data-reactid=".9.1"><div data-reactid=".9.1.0"><ul class="horizontal desktop aggregated" data-reactid=".9.1.0.0"><li data-reactid=".9.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".9.1.0.0.$0.0"><span class="button shareV" data-reactid=".9.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".9.1.0.0.$0.0.0.0"></span><span data-reactid=".9.1.0.0.$0.0.0.1"></span><span data-reactid=".9.1.0.0.$0.0.0.2">0</span><span data-reactid=".9.1.0.0.$0.0.0.3"></span></span><span data-reactid=".9.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".9.2"><div data-reactid=".9.2.0"><a class="iconClose" data-reactid=".9.2.0.0"><span class="NnIcon closeIcon" data-reactid=".9.2.0.0.0"></span></a><h1 data-reactid=".9.2.0.1"></h1><h2 data-reactid=".9.2.0.2"></h2><div data-reactid=".9.2.0.3"><div class="NnSocialMediaBox" data-reactid=".9.2.0.3.0"><div data-reactid=".9.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".9.2.0.3.0.0.0"><li data-reactid=".9.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".9.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".9.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".9.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".9.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".9.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".9.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".9.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".9.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".9.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".9.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".9.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".9.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".9.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".9.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".9.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".9.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".9.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".9.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".9.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".9.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".9.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".9.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".9.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".9.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".9.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".9.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".9.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".9.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".9.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".9.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".9.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1071,7 +727,7 @@ europ&auml;ischen Fussballb&uuml;hne die Retorten-Hauptstadt promoten soll.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="18488702" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".a"><div class="NnSocialMediaBox" data-reactid=".a.1"><div data-reactid=".a.1.0"><ul class="horizontal desktop aggregated" data-reactid=".a.1.0.0"><li data-reactid=".a.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".a.1.0.0.$0.0"><span class="button shareV" data-reactid=".a.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".a.1.0.0.$0.0.0.0"></span><span data-reactid=".a.1.0.0.$0.0.0.1"></span><span data-reactid=".a.1.0.0.$0.0.0.2">0</span><span data-reactid=".a.1.0.0.$0.0.0.3"></span></span><span data-reactid=".a.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".a.2"><div data-reactid=".a.2.0"><a class="iconClose" data-reactid=".a.2.0.0"><span class="NnIcon closeIcon" data-reactid=".a.2.0.0.0"></span></a><h1 data-reactid=".a.2.0.1"></h1><h2 data-reactid=".a.2.0.2"></h2><div data-reactid=".a.2.0.3"><div class="NnSocialMediaBox" data-reactid=".a.2.0.3.0"><div data-reactid=".a.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".a.2.0.3.0.0.0"><li data-reactid=".a.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".a.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".a.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".a.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".a.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".a.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".a.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".a.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".a.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".a.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".a.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".a.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".a.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".a.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".a.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".a.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".a.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".a.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".a.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".a.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".a.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".a.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".a.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".a.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".a.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".a.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".a.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".a.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".a.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".a.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".a.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".a.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1131,7 +787,7 @@ europ&auml;ischen Fussballb&uuml;hne die Retorten-Hauptstadt promoten soll.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von Dario Greco </span>
-                        <time class="time">VORGESTERN</time>
+                        <time class="time">14.11.2015</time>
 
                         </p><div site_id="6" story_id="21450090" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".c"><div class="NnSocialMediaBox" data-reactid=".c.1"><div data-reactid=".c.1.0"><ul class="horizontal desktop aggregated" data-reactid=".c.1.0.0"><li data-reactid=".c.1.0.0.$0"><a href="javascript:void(0)" name="comment" data-reactid=".c.1.0.0.$0.0"><span class="button comment" data-reactid=".c.1.0.0.$0.0.0"><span class="NnIcon commentIcon" data-reactid=".c.1.0.0.$0.0.0.0"></span><span data-reactid=".c.1.0.0.$0.0.0.1">Kommentar</span><span data-reactid=".c.1.0.0.$0.0.0.2">1</span><span data-reactid=".c.1.0.0.$0.0.0.3">Kommentar</span></span><span data-reactid=".c.1.0.0.$0.0.1">Kommentar schreiben</span></a></li><li data-reactid=".c.1.0.0.$1"><a href="javascript:void(0)" name="shareV" data-reactid=".c.1.0.0.$1.0"><span class="button shareV" data-reactid=".c.1.0.0.$1.0.0"><span class="NnIcon shareVIcon" data-reactid=".c.1.0.0.$1.0.0.0"></span><span data-reactid=".c.1.0.0.$1.0.0.1"></span><span data-reactid=".c.1.0.0.$1.0.0.2">2</span><span data-reactid=".c.1.0.0.$1.0.0.3"></span></span><span data-reactid=".c.1.0.0.$1.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".c.2"><div data-reactid=".c.2.0"><a class="iconClose" data-reactid=".c.2.0.0"><span class="NnIcon closeIcon" data-reactid=".c.2.0.0.0"></span></a><h1 data-reactid=".c.2.0.1"></h1><h2 data-reactid=".c.2.0.2"></h2><div data-reactid=".c.2.0.3"><div class="NnSocialMediaBox" data-reactid=".c.2.0.3.0"><div data-reactid=".c.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".c.2.0.3.0.0.0"><li data-reactid=".c.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".c.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".c.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".c.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".c.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".c.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".c.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".c.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".c.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".c.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".c.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".c.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".c.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".c.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".c.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".c.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".c.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".c.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".c.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".c.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".c.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".c.2.0.3.0.0.0.$2.0.0.2">1</span><span data-reactid=".c.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".c.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".c.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".c.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".c.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".c.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".c.2.0.3.0.0.0.$3.0.0.1">Kommentar</span><span data-reactid=".c.2.0.3.0.0.0.$3.0.0.2">1</span><span data-reactid=".c.2.0.3.0.0.0.$3.0.0.3">Kommentar</span></span><span data-reactid=".c.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1191,7 +847,7 @@ europ&auml;ischen Fussballb&uuml;hne die Retorten-Hauptstadt promoten soll.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von  </span>
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="15785906" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".e"><div class="NnSocialMediaBox" data-reactid=".e.1"><div data-reactid=".e.1.0"><ul class="horizontal desktop aggregated" data-reactid=".e.1.0.0"><li data-reactid=".e.1.0.0.$0"><a href="javascript:void(0)" name="comment" data-reactid=".e.1.0.0.$0.0"><span class="button comment" data-reactid=".e.1.0.0.$0.0.0"><span class="NnIcon commentIcon" data-reactid=".e.1.0.0.$0.0.0.0"></span><span data-reactid=".e.1.0.0.$0.0.0.1">Kommentar</span><span data-reactid=".e.1.0.0.$0.0.0.2">1</span><span data-reactid=".e.1.0.0.$0.0.0.3">Kommentar</span></span><span data-reactid=".e.1.0.0.$0.0.1">Kommentar schreiben</span></a></li><li data-reactid=".e.1.0.0.$1"><a href="javascript:void(0)" name="shareV" data-reactid=".e.1.0.0.$1.0"><span class="button shareV" data-reactid=".e.1.0.0.$1.0.0"><span class="NnIcon shareVIcon" data-reactid=".e.1.0.0.$1.0.0.0"></span><span data-reactid=".e.1.0.0.$1.0.0.1"></span><span data-reactid=".e.1.0.0.$1.0.0.2">0</span><span data-reactid=".e.1.0.0.$1.0.0.3"></span></span><span data-reactid=".e.1.0.0.$1.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".e.2"><div data-reactid=".e.2.0"><a class="iconClose" data-reactid=".e.2.0.0"><span class="NnIcon closeIcon" data-reactid=".e.2.0.0.0"></span></a><h1 data-reactid=".e.2.0.1"></h1><h2 data-reactid=".e.2.0.2"></h2><div data-reactid=".e.2.0.3"><div class="NnSocialMediaBox" data-reactid=".e.2.0.3.0"><div data-reactid=".e.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".e.2.0.3.0.0.0"><li data-reactid=".e.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".e.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".e.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".e.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".e.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".e.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".e.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".e.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".e.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".e.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".e.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".e.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".e.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".e.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".e.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".e.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".e.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".e.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".e.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".e.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".e.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".e.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".e.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".e.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".e.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".e.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".e.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".e.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".e.2.0.3.0.0.0.$3.0.0.1">Kommentar</span><span data-reactid=".e.2.0.3.0.0.0.$3.0.0.2">1</span><span data-reactid=".e.2.0.3.0.0.0.$3.0.0.3">Kommentar</span></span><span data-reactid=".e.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1253,7 +909,7 @@ schl&auml;gt Team Europa mit den Schweizern Josi, Streit und Niederreiter
                     </p>
                     <p class="storyInfo">
                         <span class="author"> Herr Schubiger. </span>
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="24218754" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".g"><div class="NnSocialMediaBox" data-reactid=".g.1"><div data-reactid=".g.1.0"><ul class="horizontal desktop aggregated" data-reactid=".g.1.0.0"><li data-reactid=".g.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".g.1.0.0.$0.0"><span class="button shareV" data-reactid=".g.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".g.1.0.0.$0.0.0.0"></span><span data-reactid=".g.1.0.0.$0.0.0.1"></span><span data-reactid=".g.1.0.0.$0.0.0.2">0</span><span data-reactid=".g.1.0.0.$0.0.0.3"></span></span><span data-reactid=".g.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".g.2"><div data-reactid=".g.2.0"><a class="iconClose" data-reactid=".g.2.0.0"><span class="NnIcon closeIcon" data-reactid=".g.2.0.0.0"></span></a><h1 data-reactid=".g.2.0.1"></h1><h2 data-reactid=".g.2.0.2"></h2><div data-reactid=".g.2.0.3"><div class="NnSocialMediaBox" data-reactid=".g.2.0.3.0"><div data-reactid=".g.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".g.2.0.3.0.0.0"><li data-reactid=".g.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".g.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".g.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".g.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".g.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".g.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".g.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".g.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".g.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".g.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".g.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".g.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".g.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".g.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".g.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".g.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".g.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".g.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".g.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".g.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".g.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".g.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".g.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".g.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1285,7 +941,7 @@ Imageschaden.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="10085219" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".h"><div class="NnSocialMediaBox" data-reactid=".h.1"><div data-reactid=".h.1.0"><ul class="horizontal desktop aggregated" data-reactid=".h.1.0.0"><li data-reactid=".h.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".h.1.0.0.$0.0"><span class="button shareV" data-reactid=".h.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".h.1.0.0.$0.0.0.0"></span><span data-reactid=".h.1.0.0.$0.0.0.1"></span><span data-reactid=".h.1.0.0.$0.0.0.2">1</span><span data-reactid=".h.1.0.0.$0.0.0.3"></span></span><span data-reactid=".h.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".h.2"><div data-reactid=".h.2.0"><a class="iconClose" data-reactid=".h.2.0.0"><span class="NnIcon closeIcon" data-reactid=".h.2.0.0.0"></span></a><h1 data-reactid=".h.2.0.1"></h1><h2 data-reactid=".h.2.0.2"></h2><div data-reactid=".h.2.0.3"><div class="NnSocialMediaBox" data-reactid=".h.2.0.3.0"><div data-reactid=".h.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".h.2.0.3.0.0.0"><li data-reactid=".h.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".h.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".h.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".h.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".h.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".h.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".h.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".h.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".h.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".h.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".h.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".h.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".h.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".h.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".h.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".h.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".h.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".h.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".h.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".h.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".h.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".h.2.0.3.0.0.0.$2.0.0.2">1</span><span data-reactid=".h.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".h.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1315,7 +971,7 @@ Imageschaden.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="23390107" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".i"><div class="NnSocialMediaBox" data-reactid=".i.1"><div data-reactid=".i.1.0"><ul class="horizontal desktop aggregated" data-reactid=".i.1.0.0"><li data-reactid=".i.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".i.1.0.0.$0.0"><span class="button shareV" data-reactid=".i.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".i.1.0.0.$0.0.0.0"></span><span data-reactid=".i.1.0.0.$0.0.0.1"></span><span data-reactid=".i.1.0.0.$0.0.0.2">0</span><span data-reactid=".i.1.0.0.$0.0.0.3"></span></span><span data-reactid=".i.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".i.2"><div data-reactid=".i.2.0"><a class="iconClose" data-reactid=".i.2.0.0"><span class="NnIcon closeIcon" data-reactid=".i.2.0.0.0"></span></a><h1 data-reactid=".i.2.0.1"></h1><h2 data-reactid=".i.2.0.2"></h2><div data-reactid=".i.2.0.3"><div class="NnSocialMediaBox" data-reactid=".i.2.0.3.0"><div data-reactid=".i.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".i.2.0.3.0.0.0"><li data-reactid=".i.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".i.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".i.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".i.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".i.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".i.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".i.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".i.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".i.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".i.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".i.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".i.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".i.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".i.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".i.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".i.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".i.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".i.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".i.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".i.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".i.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".i.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".i.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".i.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1347,7 +1003,7 @@ gelassen.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">VORVORGESTERN</time>
+                        <time class="time">13.11.2015</time>
                         <!-- no decoration for this type -->
                         </p><div site_id="6" story_id="18711058" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".j"><div class="NnSocialMediaBox" data-reactid=".j.1"><div data-reactid=".j.1.0"><ul class="horizontal desktop aggregated" data-reactid=".j.1.0.0"><li data-reactid=".j.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".j.1.0.0.$0.0"><span class="button shareV" data-reactid=".j.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".j.1.0.0.$0.0.0.0"></span><span data-reactid=".j.1.0.0.$0.0.0.1"></span><span data-reactid=".j.1.0.0.$0.0.0.2">0</span><span data-reactid=".j.1.0.0.$0.0.0.3"></span></span><span data-reactid=".j.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".j.2"><div data-reactid=".j.2.0"><a class="iconClose" data-reactid=".j.2.0.0"><span class="NnIcon closeIcon" data-reactid=".j.2.0.0.0"></span></a><h1 data-reactid=".j.2.0.1"></h1><h2 data-reactid=".j.2.0.2"></h2><div data-reactid=".j.2.0.3"><div class="NnSocialMediaBox" data-reactid=".j.2.0.3.0"><div data-reactid=".j.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".j.2.0.3.0.0.0"><li data-reactid=".j.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".j.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".j.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".j.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".j.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".j.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".j.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".j.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".j.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".j.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".j.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".j.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".j.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".j.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".j.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".j.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".j.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".j.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".j.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".j.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".j.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".j.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".j.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".j.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1377,7 +1033,7 @@ gelassen.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">VORVORGESTERN</time>
+                        <time class="time">13.11.2015</time>
                         <!-- no decoration for this type -->
                         </p><div site_id="6" story_id="17181521" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".k"><div class="NnSocialMediaBox" data-reactid=".k.1"><div data-reactid=".k.1.0"><ul class="horizontal desktop aggregated" data-reactid=".k.1.0.0"><li data-reactid=".k.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".k.1.0.0.$0.0"><span class="button shareV" data-reactid=".k.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".k.1.0.0.$0.0.0.0"></span><span data-reactid=".k.1.0.0.$0.0.0.1"></span><span data-reactid=".k.1.0.0.$0.0.0.2">0</span><span data-reactid=".k.1.0.0.$0.0.0.3"></span></span><span data-reactid=".k.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".k.2"><div data-reactid=".k.2.0"><a class="iconClose" data-reactid=".k.2.0.0"><span class="NnIcon closeIcon" data-reactid=".k.2.0.0.0"></span></a><h1 data-reactid=".k.2.0.1"></h1><h2 data-reactid=".k.2.0.2"></h2><div data-reactid=".k.2.0.3"><div class="NnSocialMediaBox" data-reactid=".k.2.0.3.0"><div data-reactid=".k.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".k.2.0.3.0.0.0"><li data-reactid=".k.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".k.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".k.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".k.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".k.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".k.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".k.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".k.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".k.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".k.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".k.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".k.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".k.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".k.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".k.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".k.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".k.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".k.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".k.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".k.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".k.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".k.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".k.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".k.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1409,7 +1065,7 @@ Nebensache.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
 
                         </p><div site_id="6" story_id="26481876" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".l"><div class="NnSocialMediaBox" data-reactid=".l.1"><div data-reactid=".l.1.0"><ul class="horizontal desktop aggregated" data-reactid=".l.1.0.0"><li data-reactid=".l.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".l.1.0.0.$0.0"><span class="button shareV" data-reactid=".l.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".l.1.0.0.$0.0.0.0"></span><span data-reactid=".l.1.0.0.$0.0.0.1"></span><span data-reactid=".l.1.0.0.$0.0.0.2">0</span><span data-reactid=".l.1.0.0.$0.0.0.3"></span></span><span data-reactid=".l.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".l.2"><div data-reactid=".l.2.0"><a class="iconClose" data-reactid=".l.2.0.0"><span class="NnIcon closeIcon" data-reactid=".l.2.0.0.0"></span></a><h1 data-reactid=".l.2.0.1"></h1><h2 data-reactid=".l.2.0.2"></h2><div data-reactid=".l.2.0.3"><div class="NnSocialMediaBox" data-reactid=".l.2.0.3.0"><div data-reactid=".l.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".l.2.0.3.0.0.0"><li data-reactid=".l.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".l.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".l.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".l.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".l.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".l.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".l.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".l.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".l.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".l.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".l.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".l.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".l.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".l.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".l.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".l.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".l.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".l.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".l.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".l.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".l.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".l.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".l.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".l.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".l.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".l.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".l.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".l.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".l.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".l.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".l.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".l.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1439,7 +1095,7 @@ Nebensache.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von <a href="hxxp://xxx.derbund.ch/stichwort/autor/thea-guggisberg/s.html">Thea Guggisberg</a> </span>
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
 
                         </p><div site_id="6" story_id="14642515" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".m"><div class="NnSocialMediaBox" data-reactid=".m.1"><div data-reactid=".m.1.0"><ul class="horizontal desktop aggregated" data-reactid=".m.1.0.0"><li data-reactid=".m.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".m.1.0.0.$0.0"><span class="button shareV" data-reactid=".m.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".m.1.0.0.$0.0.0.0"></span><span data-reactid=".m.1.0.0.$0.0.0.1"></span><span data-reactid=".m.1.0.0.$0.0.0.2">1</span><span data-reactid=".m.1.0.0.$0.0.0.3"></span></span><span data-reactid=".m.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".m.2"><div data-reactid=".m.2.0"><a class="iconClose" data-reactid=".m.2.0.0"><span class="NnIcon closeIcon" data-reactid=".m.2.0.0.0"></span></a><h1 data-reactid=".m.2.0.1"></h1><h2 data-reactid=".m.2.0.2"></h2><div data-reactid=".m.2.0.3"><div class="NnSocialMediaBox" data-reactid=".m.2.0.3.0"><div data-reactid=".m.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".m.2.0.3.0.0.0"><li data-reactid=".m.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".m.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".m.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".m.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".m.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".m.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".m.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".m.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".m.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".m.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".m.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".m.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".m.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".m.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".m.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".m.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".m.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".m.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".m.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".m.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".m.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".m.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".m.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".m.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".m.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".m.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".m.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".m.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".m.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".m.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".m.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".m.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1470,7 +1126,7 @@ Der RL-Sonderkorrespondent Herr Shearer n&auml;hert sich Moskau.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
                         <!-- no decoration for this type -->
                         </p><div site_id="6" story_id="11075134" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".n"><div class="NnSocialMediaBox" data-reactid=".n.1"><div data-reactid=".n.1.0"><ul class="horizontal desktop aggregated" data-reactid=".n.1.0.0"><li data-reactid=".n.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".n.1.0.0.$0.0"><span class="button shareV" data-reactid=".n.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".n.1.0.0.$0.0.0.0"></span><span data-reactid=".n.1.0.0.$0.0.0.1"></span><span data-reactid=".n.1.0.0.$0.0.0.2">0</span><span data-reactid=".n.1.0.0.$0.0.0.3"></span></span><span data-reactid=".n.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".n.2"><div data-reactid=".n.2.0"><a class="iconClose" data-reactid=".n.2.0.0"><span class="NnIcon closeIcon" data-reactid=".n.2.0.0.0"></span></a><h1 data-reactid=".n.2.0.1"></h1><h2 data-reactid=".n.2.0.2"></h2><div data-reactid=".n.2.0.3"><div class="NnSocialMediaBox" data-reactid=".n.2.0.3.0"><div data-reactid=".n.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".n.2.0.3.0.0.0"><li data-reactid=".n.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".n.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".n.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".n.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".n.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".n.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".n.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".n.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".n.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".n.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".n.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".n.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".n.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".n.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".n.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".n.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".n.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".n.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".n.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".n.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".n.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".n.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".n.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".n.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1502,7 +1158,7 @@ Wochenendes. In Biel bei der 1:4-Niederlage war er gar chancenlos. Grund
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von <a href="hxxp://xxx.derbund.ch/stichwort/autor/dieter-stamm/s.html">Dieter Stamm</a> </span>
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
 
                         </p><div site_id="6" story_id="27208331" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".o"><div class="NnSocialMediaBox" data-reactid=".o.1"><div data-reactid=".o.1.0"><ul class="horizontal desktop aggregated" data-reactid=".o.1.0.0"><li data-reactid=".o.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".o.1.0.0.$0.0"><span class="button shareV" data-reactid=".o.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".o.1.0.0.$0.0.0.0"></span><span data-reactid=".o.1.0.0.$0.0.0.1"></span><span data-reactid=".o.1.0.0.$0.0.0.2">2</span><span data-reactid=".o.1.0.0.$0.0.0.3"></span></span><span data-reactid=".o.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".o.2"><div data-reactid=".o.2.0"><a class="iconClose" data-reactid=".o.2.0.0"><span class="NnIcon closeIcon" data-reactid=".o.2.0.0.0"></span></a><h1 data-reactid=".o.2.0.1"></h1><h2 data-reactid=".o.2.0.2"></h2><div data-reactid=".o.2.0.3"><div class="NnSocialMediaBox" data-reactid=".o.2.0.3.0"><div data-reactid=".o.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".o.2.0.3.0.0.0"><li data-reactid=".o.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".o.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".o.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".o.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".o.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".o.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".o.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".o.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".o.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".o.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".o.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".o.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".o.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".o.2.0.3.0.0.0.$1.0.0.2">2</span><span data-reactid=".o.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".o.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".o.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".o.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".o.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".o.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".o.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".o.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".o.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".o.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".o.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".o.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".o.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".o.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".o.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".o.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".o.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".o.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1534,7 +1190,7 @@ Wochenendes. In Biel bei der 1:4-Niederlage war er gar chancenlos. Grund
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
 
                         </p><div site_id="6" story_id="13905816" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".p"><div class="NnSocialMediaBox" data-reactid=".p.1"><div data-reactid=".p.1.0"><ul class="horizontal desktop aggregated" data-reactid=".p.1.0.0"><li data-reactid=".p.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".p.1.0.0.$0.0"><span class="button shareV" data-reactid=".p.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".p.1.0.0.$0.0.0.0"></span><span data-reactid=".p.1.0.0.$0.0.0.1"></span><span data-reactid=".p.1.0.0.$0.0.0.2">1</span><span data-reactid=".p.1.0.0.$0.0.0.3"></span></span><span data-reactid=".p.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".p.2"><div data-reactid=".p.2.0"><a class="iconClose" data-reactid=".p.2.0.0"><span class="NnIcon closeIcon" data-reactid=".p.2.0.0.0"></span></a><h1 data-reactid=".p.2.0.1"></h1><h2 data-reactid=".p.2.0.2"></h2><div data-reactid=".p.2.0.3"><div class="NnSocialMediaBox" data-reactid=".p.2.0.3.0"><div data-reactid=".p.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".p.2.0.3.0.0.0"><li data-reactid=".p.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".p.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".p.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".p.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".p.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".p.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".p.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".p.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".p.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".p.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".p.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".p.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".p.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".p.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".p.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".p.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".p.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".p.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".p.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".p.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".p.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".p.2.0.3.0.0.0.$2.0.0.2">1</span><span data-reactid=".p.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".p.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".p.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".p.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".p.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".p.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".p.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".p.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".p.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".p.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1567,7 +1223,7 @@ Sekunden vor dem Schlusspfiff.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von J&uuml;rg Jungi </span>
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
 
                         </p><div site_id="6" story_id="20746360" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".q"><div class="NnSocialMediaBox" data-reactid=".q.1"><div data-reactid=".q.1.0"><ul class="horizontal desktop aggregated" data-reactid=".q.1.0.0"><li data-reactid=".q.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".q.1.0.0.$0.0"><span class="button shareV" data-reactid=".q.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".q.1.0.0.$0.0.0.0"></span><span data-reactid=".q.1.0.0.$0.0.0.1"></span><span data-reactid=".q.1.0.0.$0.0.0.2">0</span><span data-reactid=".q.1.0.0.$0.0.0.3"></span></span><span data-reactid=".q.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".q.2"><div data-reactid=".q.2.0"><a class="iconClose" data-reactid=".q.2.0.0"><span class="NnIcon closeIcon" data-reactid=".q.2.0.0.0"></span></a><h1 data-reactid=".q.2.0.1"></h1><h2 data-reactid=".q.2.0.2"></h2><div data-reactid=".q.2.0.3"><div class="NnSocialMediaBox" data-reactid=".q.2.0.3.0"><div data-reactid=".q.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".q.2.0.3.0.0.0"><li data-reactid=".q.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".q.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".q.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".q.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".q.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".q.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".q.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".q.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".q.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".q.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".q.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".q.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".q.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".q.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".q.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".q.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".q.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".q.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".q.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".q.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".q.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".q.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".q.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".q.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".q.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".q.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".q.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".q.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".q.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".q.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".q.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".q.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1599,7 +1255,7 @@ ungekl&auml;rte Zukunft von CR7 bei Real bringt neue Reize.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von Javier Cáceres </span>
-                        <time class="time">GESTERN</time>
+                        <time class="time">15.11.2015</time>
 
                         </p><div site_id="6" story_id="22676683" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".r"><div class="NnSocialMediaBox" data-reactid=".r.1"><div data-reactid=".r.1.0"><ul class="horizontal desktop aggregated" data-reactid=".r.1.0.0"><li data-reactid=".r.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".r.1.0.0.$0.0"><span class="button shareV" data-reactid=".r.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".r.1.0.0.$0.0.0.0"></span><span data-reactid=".r.1.0.0.$0.0.0.1"></span><span data-reactid=".r.1.0.0.$0.0.0.2">0</span><span data-reactid=".r.1.0.0.$0.0.0.3"></span></span><span data-reactid=".r.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".r.2"><div data-reactid=".r.2.0"><a class="iconClose" data-reactid=".r.2.0.0"><span class="NnIcon closeIcon" data-reactid=".r.2.0.0.0"></span></a><h1 data-reactid=".r.2.0.1"></h1><h2 data-reactid=".r.2.0.2"></h2><div data-reactid=".r.2.0.3"><div class="NnSocialMediaBox" data-reactid=".r.2.0.3.0"><div data-reactid=".r.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".r.2.0.3.0.0.0"><li data-reactid=".r.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".r.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".r.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".r.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".r.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".r.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".r.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".r.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".r.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".r.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".r.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".r.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".r.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".r.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".r.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".r.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".r.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".r.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".r.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".r.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".r.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".r.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".r.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".r.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1629,7 +1285,7 @@ ungekl&auml;rte Zukunft von CR7 bei Real bringt neue Reize.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von Dieter Stamm </span>
-                        <time class="time">25.09.2016</time>
+                        <time class="time">12.11.2015</time>
 
                         </p><div site_id="6" story_id="30708902" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".s"><div class="NnSocialMediaBox" data-reactid=".s.1"><div data-reactid=".s.1.0"><ul class="horizontal desktop aggregated" data-reactid=".s.1.0.0"><li data-reactid=".s.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".s.1.0.0.$0.0"><span class="button shareV" data-reactid=".s.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".s.1.0.0.$0.0.0.0"></span><span data-reactid=".s.1.0.0.$0.0.0.1"></span><span data-reactid=".s.1.0.0.$0.0.0.2">9</span><span data-reactid=".s.1.0.0.$0.0.0.3"></span></span><span data-reactid=".s.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".s.2"><div data-reactid=".s.2.0"><a class="iconClose" data-reactid=".s.2.0.0"><span class="NnIcon closeIcon" data-reactid=".s.2.0.0.0"></span></a><h1 data-reactid=".s.2.0.1"></h1><h2 data-reactid=".s.2.0.2"></h2><div data-reactid=".s.2.0.3"><div class="NnSocialMediaBox" data-reactid=".s.2.0.3.0"><div data-reactid=".s.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".s.2.0.3.0.0.0"><li data-reactid=".s.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".s.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".s.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".s.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".s.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".s.2.0.3.0.0.0.$0.0.0.2">7</span><span data-reactid=".s.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".s.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".s.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".s.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".s.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".s.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".s.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".s.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".s.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".s.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".s.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".s.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".s.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".s.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".s.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".s.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".s.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".s.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".s.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".s.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".s.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".s.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".s.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".s.2.0.3.0.0.0.$3.0.0.2">0</span><span data-reactid=".s.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".s.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1660,7 +1316,7 @@ ungekl&auml;rte Zukunft von CR7 bei Real bringt neue Reize.
                     </p>
                     <p class="storyInfo">
 
-                        <time class="time">26.09.2016</time>
+                        <time class="time">12.11.2015</time>
                         <!-- no decoration for this type -->
                         </p><div site_id="6" story_id="10974614" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".t"><div class="NnSocialMediaBox" data-reactid=".t.1"><div data-reactid=".t.1.0"><ul class="horizontal desktop aggregated" data-reactid=".t.1.0.0"><li data-reactid=".t.1.0.0.$0"><a href="javascript:void(0)" name="shareV" data-reactid=".t.1.0.0.$0.0"><span class="button shareV" data-reactid=".t.1.0.0.$0.0.0"><span class="NnIcon shareVIcon" data-reactid=".t.1.0.0.$0.0.0.0"></span><span data-reactid=".t.1.0.0.$0.0.0.1"></span><span data-reactid=".t.1.0.0.$0.0.0.2">0</span><span data-reactid=".t.1.0.0.$0.0.0.3"></span></span><span data-reactid=".t.1.0.0.$0.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".t.2"><div data-reactid=".t.2.0"><a class="iconClose" data-reactid=".t.2.0.0"><span class="NnIcon closeIcon" data-reactid=".t.2.0.0.0"></span></a><h1 data-reactid=".t.2.0.1"></h1><h2 data-reactid=".t.2.0.2"></h2><div data-reactid=".t.2.0.3"><div class="NnSocialMediaBox" data-reactid=".t.2.0.3.0"><div data-reactid=".t.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".t.2.0.3.0.0.0"><li data-reactid=".t.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".t.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".t.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".t.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".t.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".t.2.0.3.0.0.0.$0.0.0.2">0</span><span data-reactid=".t.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".t.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".t.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".t.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".t.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".t.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".t.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".t.2.0.3.0.0.0.$1.0.0.2">0</span><span data-reactid=".t.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".t.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".t.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".t.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".t.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".t.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".t.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".t.2.0.3.0.0.0.$2.0.0.2">0</span><span data-reactid=".t.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".t.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>
@@ -1692,7 +1348,7 @@ nicht mehr investieren.
                     </p>
                     <p class="storyInfo">
                         <span class="author">Von Adrian Sulc </span>
-                        <time class="time">24.09.2016</time>
+                        <time class="time">11.11.2015</time>
 
                         </p><div site_id="6" story_id="31039087" content_typ="article_teaser" class="SocialMediaBox"><div class="NnSocialMediaContainer" data-reactid=".u"><div class="NnSocialMediaBox" data-reactid=".u.1"><div data-reactid=".u.1.0"><ul class="horizontal desktop aggregated" data-reactid=".u.1.0.0"><li data-reactid=".u.1.0.0.$0"><a href="javascript:void(0)" name="comment" data-reactid=".u.1.0.0.$0.0"><span class="button comment" data-reactid=".u.1.0.0.$0.0.0"><span class="NnIcon commentIcon" data-reactid=".u.1.0.0.$0.0.0.0"></span><span data-reactid=".u.1.0.0.$0.0.0.1">Kommentare</span><span data-reactid=".u.1.0.0.$0.0.0.2">6</span><span data-reactid=".u.1.0.0.$0.0.0.3">Kommentare</span></span><span data-reactid=".u.1.0.0.$0.0.1">Kommentar schreiben</span></a></li><li data-reactid=".u.1.0.0.$1"><a href="javascript:void(0)" name="shareV" data-reactid=".u.1.0.0.$1.0"><span class="button shareV" data-reactid=".u.1.0.0.$1.0.0"><span class="NnIcon shareVIcon" data-reactid=".u.1.0.0.$1.0.0.0"></span><span data-reactid=".u.1.0.0.$1.0.0.1"></span><span data-reactid=".u.1.0.0.$1.0.0.2">25</span><span data-reactid=".u.1.0.0.$1.0.0.3"></span></span><span data-reactid=".u.1.0.0.$1.0.1"></span></a></li></ul></div></div><div class="shareBox" data-reactid=".u.2"><div data-reactid=".u.2.0"><a class="iconClose" data-reactid=".u.2.0.0"><span class="NnIcon closeIcon" data-reactid=".u.2.0.0.0"></span></a><h1 data-reactid=".u.2.0.1"></h1><h2 data-reactid=".u.2.0.2"></h2><div data-reactid=".u.2.0.3"><div class="NnSocialMediaBox" data-reactid=".u.2.0.3.0"><div data-reactid=".u.2.0.3.0.0"><ul class="vertical desktop " data-reactid=".u.2.0.3.0.0.0"><li data-reactid=".u.2.0.3.0.0.0.$0"><a href="javascript:void(0)" name="facebook" data-reactid=".u.2.0.3.0.0.0.$0.0"><span class="button facebook" data-reactid=".u.2.0.3.0.0.0.$0.0.0"><span class="NnIcon facebookIcon" data-reactid=".u.2.0.3.0.0.0.$0.0.0.0"></span><span data-reactid=".u.2.0.3.0.0.0.$0.0.0.1">Facebook</span><span data-reactid=".u.2.0.3.0.0.0.$0.0.0.2">9</span><span data-reactid=".u.2.0.3.0.0.0.$0.0.0.3">Facebook</span></span><span data-reactid=".u.2.0.3.0.0.0.$0.0.1">Auf Facebook teilen</span></a></li><li data-reactid=".u.2.0.3.0.0.0.$1"><a href="javascript:void(0)" name="twitter" data-reactid=".u.2.0.3.0.0.0.$1.0"><span class="button twitter" data-reactid=".u.2.0.3.0.0.0.$1.0.0"><span class="NnIcon twitterIcon" data-reactid=".u.2.0.3.0.0.0.$1.0.0.0"></span><span data-reactid=".u.2.0.3.0.0.0.$1.0.0.1">Twitter</span><span data-reactid=".u.2.0.3.0.0.0.$1.0.0.2">4</span><span data-reactid=".u.2.0.3.0.0.0.$1.0.0.3">Twitter</span></span><span data-reactid=".u.2.0.3.0.0.0.$1.0.1">Bei Twitter ver&ouml;ffentlichen</span></a></li><li data-reactid=".u.2.0.3.0.0.0.$2"><a href="javascript:void(0)" name="share" data-reactid=".u.2.0.3.0.0.0.$2.0"><span class="button share" data-reactid=".u.2.0.3.0.0.0.$2.0.0"><span class="NnIcon shareIcon" data-reactid=".u.2.0.3.0.0.0.$2.0.0.0"></span><span data-reactid=".u.2.0.3.0.0.0.$2.0.0.1">Senden</span><span data-reactid=".u.2.0.3.0.0.0.$2.0.0.2">1</span><span data-reactid=".u.2.0.3.0.0.0.$2.0.0.3">Senden</span></span><span data-reactid=".u.2.0.3.0.0.0.$2.0.1">Per Mail senden</span></a></li><li data-reactid=".u.2.0.3.0.0.0.$3"><a href="javascript:void(0)" name="comment" data-reactid=".u.2.0.3.0.0.0.$3.0"><span class="button comment" data-reactid=".u.2.0.3.0.0.0.$3.0.0"><span class="NnIcon commentIcon" data-reactid=".u.2.0.3.0.0.0.$3.0.0.0"></span><span data-reactid=".u.2.0.3.0.0.0.$3.0.0.1">Kommentare</span><span data-reactid=".u.2.0.3.0.0.0.$3.0.0.2">6</span><span data-reactid=".u.2.0.3.0.0.0.$3.0.0.3">Kommentare</span></span><span data-reactid=".u.2.0.3.0.0.0.$3.0.1">Kommentar schreiben</span></a></li></ul></div></div></div></div></div></div></div>
                     <p></p>

@@ -4,7 +4,7 @@
 @font-face{font-family:'blender';src:url('../tools/fonts/BlenderPro-BookWeb.eot');src:url('../tools/fonts/BlenderPro-BookWeb.eot?#iefix') format('embedded-opentype'),url('../tools/fonts/BlenderPro-BookWeb.woff') format('woff');font-weight:normal;font-style:normal}
 @font-face{font-family:'blenderItalic';src:url('../tools/fonts/BlenderPro-BookItalicWeb.eot');src:url('../tools/fonts/BlenderPro-BookItalicWeb.eot?#iefix') format('embedded-opentype'),url('../tools/fonts/BlenderPro-BookItalicWeb.woff') format('woff');font-weight:normal;font-style:normal}
 @font-face{font-family:'blenderBold';src:url('../tools/fonts/BlenderPro-BoldWeb.eot');src:url('../tools/fonts/BlenderPro-BoldWeb.eot?#iefix') format('embedded-opentype'),url('../tools/fonts/BlenderPro-BoldWeb.woff') format('woff');font-weight:normal;font-style:normal}
-html,body{color:#5A51D0;font-size:15px;background:#ddd;line-height:1.4;font-family:'blender',Helvetica,Arial,sans-serif;background:url(../tools/bg.jpg) #244d9b fixed no-repeat 50% 0;background-size:cover}
+html,body{color:#5A51D0;font-size:15px;background:#ddd;line-height:1.4;font-family:'blender',Helvetica,Arial,sans-serif;background:url(../tools/bg.jpg) #244d9b fixed no-repeat 0px 0px;background-size:110%}
 #desk{width:1024px;margin:0 auto;min-height:100%}
 #home{float:left;width:465px;display:block;margin:50px 0 0 60px}
 .c4 #home{display:none}
@@ -67,10 +67,10 @@ div.sub3 .menu:hover,div.sub3 .menu:focus{color:#A4A4A4}
 h1,h1>strong{margin-left:6px;line-height:1.2;font-size:16px;font-weight:normal;font-family:'blenderBold'}
 h1 a,h1{color:#A4A4A4}
 div.unit h2,div.unit h2>strong{font-size:15px;line-height:1.2;font-weight:normal;font-family:'blenderBold'}
-div.main{width:764px}
+div.main{width:764px;}
 div.main div.unit{margin:10px 0}
 div.main h2,div.main div.foot{margin:0 6px}
-div.main div.part,div.main div.grid table{margin:.4em 6px}
+div.main div.part,div.main div.grid table{margin:.4em 6px;cursor:pointer;}
 div.main div.wide{width:382px}
 div.main div.wide table,div.main div.wide div.tall{width:370px}
 div.main div.wide div.tiny{width:370px}

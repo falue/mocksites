@@ -71,15 +71,15 @@ if(!isset($_GET["s"])) {
   $firstDay = mktime(0,0,0,$month, 1, $year);
   $title = strftime('%B', $firstDay);
   $dayOfWeek = date('D', $firstDay);
-	$daysInMonth = date('t', mktime(0,0,0,$month, $year));
+  $daysInMonth = date('t', mktime(0,0,0,$month, $year));
   /*Get the name of the week days */
-  $timestamp = strtotime('next Sunday');
+  $timestamp = strtotime('next Monday');
   $weekDays = array();
   for ($i = 0; $i < 7; $i++) {
       $weekDays[] = strftime('%a', $timestamp);
       $timestamp = strtotime('+1 day', $timestamp);
   }
-  $blank = date('w', strtotime("{$year}-{$month}-01"));
+  $blank = date('w', strtotime("{$year}-{$month}-7"));
 
   echo "<h1>tagebuch $title $year</h1> &larrb; &rarrb;
   <br><br>
@@ -97,10 +97,10 @@ if(!isset($_GET["s"])) {
 
   for($i = 1; $i <= $daysInMonth; $i++) {
     if($day == $i) {
-    echo "<td class=\"today\" onclick=\"upload(0, 0, $date);\" onmouseover=\"show('day_$i');\" onmouseout=\"hide('day_$i');\"><strong>$i</strong><br><br><span id=\"day_$i\" class=\"add\">Daten hochladen</span></td>";
+    echo "<td class=\"today\" onclick=\"upload(0, 0, ".strtotime("{$year}-{$month}-$i").");\" onmouseover=\"show('day_$i');\" onmouseout=\"hide('day_$i');\"><strong>$i</strong><br><br><span id=\"day_$i\" class=\"add\">Daten hochladen $year-$month-$i</span></td>";
     } else {
       $data = $i == 2 || $i == 3 || $i == 5 || $i == 6 || $i == 7 || $i == 10 || $i == 12 || $i == 15 || $i == 16 || $i == 17 ? "style=\"background-image:url('tools/graph.png');\"" : "";
-    echo "<td class=\"day\" onclick=\"upload(0, 0, ".strtotime("{$year}-{$month}-$i").");\" onmouseover=\"show('day_$i');\" onmouseout=\"hide('day_$i');\" $data>$i<br><br><span id=\"day_$i\" class=\"add\">Daten hochladen</span></td>";
+    echo "<td class=\"day\" onclick=\"upload(0, 0, ".strtotime("{$year}-{$month}-$i").");\" onmouseover=\"show('day_$i');\" onmouseout=\"hide('day_$i');\" $data>$i<br><br><span id=\"day_$i\" class=\"add\">Daten hochladen $year-$month-$i</span></td>";
     }
     if(($i + $blank) % 7 == 0) {
       echo "</tr><tr>";
@@ -134,14 +134,14 @@ if(!isset($_GET["s"])) {
 
  } else {
  echo "<article id=\"graph_wrapper\">
- <h1>Uploaded data: ".gmdate("d. m. Y", $_GET["s"])."</h1><br>
+ <h1>Uploaded data: ".gmdate("d. m. Y", $_GET["s"]+(60*60*12))."</h1><br>
  <img src=\"tools/werte_pulse.jpg\" alt=\"\" class=\"border\"><br>
  <div class=\"route\" id=\"route\">&nbsp;<div>Gef&auml;llt dir die Route? F&uuml;ge sie zu deinen Favoriten hinzu!<img src=\"tools/karte_tools.png\" alt=\"\"></div></div>
 
-  <a href=\"javascript:makechart(1);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"])."</div></a>
-  <a href=\"javascript:makechart(2);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-24*60*60)."</div></a>
-  <a href=\"javascript:makechart(3);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-2*24*60*60)."</div></a>
-  <a href=\"javascript:makechart(4);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-3*24*60*60)."</div></a>
+  <a href=\"javascript:makechart(1);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]+24*60*60)."</div></a>
+  <a href=\"javascript:makechart(2);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"])."</div></a>
+  <a href=\"javascript:makechart(3);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-1*24*60*60)."</div></a>
+  <a href=\"javascript:makechart(4);\"><div class=\"button\">".gmdate("d. m. Y", $_GET["s"]-2*24*60*60)."</div></a>
   <br>
 
   <div class='wrapper' >
