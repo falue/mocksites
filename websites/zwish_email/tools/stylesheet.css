@@ -120,6 +120,13 @@ img {
 		background-color:#444444;
 }
 
+input[type="radio"]{
+	margin-right: 10px;
+}
+
+label {
+	cursor: pointer;
+}
 
 input[type="text"], textarea {
 	width: 100%;

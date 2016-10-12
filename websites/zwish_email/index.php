@@ -4,12 +4,14 @@
 <title>DER L&Auml;UFER - zoosk emails</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="tools/stylesheet.css" />
+
+</script>
 </head>
 <body>
     <article>
         <header>"Der L&auml;ufer" – Fake emails zoosk.com</header>
 		<hr>
-		<form action="index.php"  method="POST">
+		<form action="index.php" method="POST">
 		<?
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -17,17 +19,18 @@
 
 		echo "Absender-Email<input type=\"text\" value=\"".(isset($_POST["sender"]) ? $_POST["sender"] : "noreply@zoosk.com")."\" id=\"sender\" name=\"sender\" placeholder=\"Absender-Email\">
     Empf&auml;nger-Email<input type=\"text\" value=\"".(isset($_POST["receiver"]) ? $_POST["receiver"] : "jonaswid_92@gmail.com")."\" id=\"receiver\" name=\"receiver\" placeholder=\"Empf&auml;nger-Email\">
-    <br><br>";
+    Sendeverz&ouml;gerung (s)<input type=\"text\" id=\"delay\" name=\"delay\" value=\"".(isset($_POST["delay"]) ? $_POST["delay"] : "0")."\" placeholder=\"n\"><br><br>
+	<label><input type=\"radio\" name=\"email\" value=\"1\" checked=\"checked\">Email 1: 'Register successful'</label> <a href=\"emails/email1.html\">[preview]</a><br>
+	<label><input type=\"radio\" name=\"email\" value=\"2\">Email 2: 'PM von Angelique94'</label> <a href=\"emails/email2.html\">[preview]</a><br><br>";
 
-    echo "Choose action:<br>
-    <input type=\"submit\" name=\"submit_1\" value=\"Email 1: 'Register successful'\"> &emsp;<a href=\"emails/email1.html\">[preview]</a><br>
-    <input type=\"submit\" name=\"submit_2\" value=\"Email 2: 'PM von Angelique94'\"> &emsp;<a href=\"emails/email2.html\">[preview]</a><br>
-    <input type=\"button\" value=\"Create n random emails\" id=\"button_create\" onclick=\"document.getElementById('button_create').style.display='none'; document.getElementById('count_email').style.display='block';\"><br>
-	<div  id=\"count_email\" style=\"display:none;\">Anzahl Fake emails
+    echo "Aktion ausw&auml;hlen:<br>
+    <input type=\"submit\" name=\"submit_1\" id=\"submit_1\" value=\"Email schreiben\"> &emsp;<br>
+    <input type=\"button\" value=\"Mock Emails erstellen\" id=\"button_create\" onclick=\"document.getElementById('button_create').style.display='none'; document.getElementById('count_email').style.display='block';\"><br>
+	<div  id=\"count_email\" style=\"display:none;\">Anzahl Mock emails
 	<input type=\"text\" value=\"\" name=\"count_email\" placeholder=\"\"> 
-	<input type=\"submit\" name=\"submit_3\" value=\"Create emails\"></div><br></form>";
+	<input type=\"submit\" name=\"submit_3\" value=\"Emails generieren\"></div><br></form>";
 
-	if(isset($_POST["submit_1"])) {
+	if(isset($_POST["email"]) && $_POST["email"] == 1 && !isset($_POST["count_email"])) {
 		$email_betreff = "Zoosk.com - Verifikation E-Mail-Adresse";
 		/*$email_body = file_get_contents("emails/email1.html"); \"$email_betreff\"  */
 		chdir('../../mail');
@@ -35,12 +38,12 @@
 		$printout = shell_exec("./hello");
 		$printout = "Email '$email_betreff' written from \"".$_POST["sender"]."\" to ".$_POST["receiver"]."";
 
-    } elseif(isset($_POST["submit_2"])) {
+    } elseif(isset($_POST["email"]) && $_POST["email"] == 2 && !isset($_POST["count_email"])) {
 		$email_betreff = "Zoosk.com - PM von Angelique94";
 		shell_exec("./sendmail ".$_POST["sender"]." \"$email_betreff\" ../websites/zwish_email/emails/email2.html");
 		$printout = "Email '$email_betreff' written from ".$_POST["sender"]." to ".$_POST["receiver"].".";
 
-	} elseif(isset($_POST["submit_3"]) && $_POST["count_email"] > 0) {
+	} elseif(isset($_POST["count_email"]) && $_POST["count_email"] > 0) {
 	  $receiver = explode("@", $_POST["receiver"]);
 	  $receiver_name = ucfirst($receiver[0]);
 	  $wordlist = file("tools/wordlistDE.txt", FILE_IGNORE_NEW_LINES);
@@ -85,7 +88,7 @@
 		$printout .=  "<hr>";
 	  }
 	  
-      $printout = $_POST["count_email"]." mails created:<br><br><form action=\"index.php\" method=\"POST\">$printout<input type=\"submit\" name=\"submit_4\" value=\"Send ".$_POST["count_email"]." emails\"></form>";
+      $printout = $_POST["count_email"]." mails erstellt:<br><br><form action=\"index.php\" method=\"POST\">$printout<input type=\"submit\" name=\"submit_4\" value=\"Send ".$_POST["count_email"]." emails\"></form>";
 	  
     }
 	
@@ -98,11 +101,11 @@
 			
 			shell_exec("./sendmail_txt \"".$_POST["from"][$m]."\" \"".$_POST["betreff"][$m]."\" \"".$_POST["text"][$m]."\"");
 		}
-		$printout = "Fake mails sent.";
+		$printout = "Mock Emails versendet.";
 	}
 	
 	
-	if(isset($printout)) echo "<span style=\"color:green;\">Action occurred:</span><br>$printout<br><br>";
+	if(isset($printout)) echo "<span style=\"color:green;\">Passiert ist folgendes:</span><br>$printout<br><br>";
 		
 		
 		
@@ -113,11 +116,30 @@
 	}
 		
 		
-		?>
+?>
 
 		<hr>
 		<br>
 			<a href="http://www.filmkulissen.ch" style="color:#555;">[cc] by fabian lüscher 2016</a>
     </article>
+	
+	
+	<script>
+		
+	document.querySelector("[name=submit_1]").addEventListener('click', send1);
+	function send1(e) {
+	  var button = this;
+	  var form = document.getElementById('mainform');
+	  button.value="Waiting to send...";
+	  var delaytime = document.getElementById('delay').value*1000;
+	  e.preventDefault();
+	  setTimeout(function() {
+		button.form.submit();
+	  }, delaytime);
+	}
+</script>
+	
+	
+	
 </body>
 </html>
