@@ -14,8 +14,10 @@
 <?
 
 
+// Pear Mail Library local
+# require_once "tools/pear/Mail.php";
 // Pear Mail Library
-require_once "tools/pear/Mail.php";
+require_once "Mail.php";
 
 $from = 'info@filmkulissen.ch';
 $to = 'info@filmlicht.ch';

@@ -45,7 +45,7 @@
   <?php
   if(isset($_GET["wer"])) {   
     echo "<article id=\"results\" class=\"results\">
-    1 EINTRAG F&Uuml;R '".strtoupper($_GET["wer"])."' IN '".strtoupper($_GET["wo"])."':
+    2 EINTR&Auml;GE F&Uuml;R '".strtoupper($_GET["wer"])."' IN '".strtoupper($_GET["wo"])."':
     <hr>
     <div class=\"result\">
       <img src=\"tools/person.png\" alt=\"a\" class=\"result_img\">

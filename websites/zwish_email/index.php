@@ -155,7 +155,8 @@
 
 	
 	function smtp_mail($from, $to, $subject, $body, $save=False) {
-		require_once "tools/pear/Mail.php";
+		# require_once "tools/pear/Mail.php";
+		require_once "Mail.php";
 		$from = html_entity_decode($from);
 		$headers = array(
 		'From' => $from,
