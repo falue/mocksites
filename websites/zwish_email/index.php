@@ -27,18 +27,18 @@
 	<input type=\"text\" value=\"\" name=\"count_email\" placeholder=\"\"> 
 	<input type=\"submit\" name=\"submit_3\" value=\"Create emails\"></div><br></form>";
 
-		if(isset($_POST["submit_1"])) {
-			$email_betreff = "Zoosk.com - Verifikation E-Mail-Adresse";
-			/*$email_body = file_get_contents("emails/email1.html"); \"$email_betreff\"  */
-      chdir('../../mail');
-      #shell_exec("./sendmail $_POST[sender] $email_betreff ../websites/zwish_email/emails/email1.html");
-      $printout = shell_exec("./hello");
-			#$printout = "Email '$email_betreff' written from $_POST[sender] to $_POST[receiver].";
+	if(isset($_POST["submit_1"])) {
+		$email_betreff = "Zoosk.com - Verifikation E-Mail-Adresse";
+		/*$email_body = file_get_contents("emails/email1.html"); \"$email_betreff\"  */
+		chdir('../../mail');
+		#shell_exec("./sendmail ".$_POST["sender"]." \"$email_betreff\" ../websites/zwish_email/emails/email1.html");
+		$printout = shell_exec("./hello");
+		$printout = "Email '$email_betreff' written from \"".$_POST["sender"]."\" to ".$_POST["receiver"]."";
 
     } elseif(isset($_POST["submit_2"])) {
-			$email_betreff = "Zoosk.com - PM von Angelique94";
-      shell_exec("./sendmail $_POST[sender] $email_betreff ../websites/zwish_email/emails/email2.html");
-			$printout = "Email '$email_betreff' written from $_POST[sender] to $_POST[receiver].";
+		$email_betreff = "Zoosk.com - PM von Angelique94";
+		shell_exec("./sendmail ".$_POST["sender"]." \"$email_betreff\" ../websites/zwish_email/emails/email2.html");
+		$printout = "Email '$email_betreff' written from ".$_POST["sender"]." to ".$_POST["receiver"].".";
 
 	} elseif(isset($_POST["submit_3"]) && $_POST["count_email"] > 0) {
 	  $receiver = explode("@", $_POST["receiver"]);
@@ -85,7 +85,7 @@
 		$printout .=  "<hr>";
 	  }
 	  
-      $printout = "$_POST[count_email] mails created:<br><br><form action=\"index.php\" method=\"POST\">$printout<input type=\"submit\" name=\"submit_4\" value=\"Send $_POST[count_email] emails\"></form>";
+      $printout = $_POST["count_email"]." mails created:<br><br><form action=\"index.php\" method=\"POST\">$printout<input type=\"submit\" name=\"submit_4\" value=\"Send ".$_POST["count_email"]." emails\"></form>";
 	  
     }
 	
@@ -102,7 +102,7 @@
 	}
 	
 	
-	if(isset($printout)) echo "<br><span style=\"color:green;\">Action occurred:</span><br>$printout<br><br>";
+	if(isset($printout)) echo "<span style=\"color:green;\">Action occurred:</span><br>$printout<br><br>";
 		
 		
 		
