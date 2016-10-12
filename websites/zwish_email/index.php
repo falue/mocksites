@@ -96,7 +96,7 @@
 			echo $_POST["text"][$m]."<br>";
 			echo "<hr>";*/
 			
-			shell_exec("./sendmail_txt $_POST[from][$m] $_POST[betreff][$m] $_POST[text][$m]");
+			shell_exec("./sendmail_txt \"".$_POST["from"][$m]."\" \"".$_POST["betreff"][$m]."\" \"".$_POST["text"][$m]."\"");
 		}
 		$printout = "Fake mails sent.";
 	}
