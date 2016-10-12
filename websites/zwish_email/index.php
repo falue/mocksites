@@ -29,7 +29,12 @@
 	<div  id=\"count_email\" style=\"display:none;\">Anzahl Mock emails
 	<input type=\"text\" value=\"\" name=\"count_email\" placeholder=\"\"> 
 	<input type=\"submit\" name=\"submit_3\" value=\"Emails generieren\"></div><br></form>";
-
+		chdir('../../mail');
+		#shell_exec("./sendmail ".$_POST["sender"]." \"$email_betreff\" ../websites/zwish_email/emails/email1.html");
+		$printout = shell_exec("ping 192.168.99.100");
+		
+		
+		
 	if(isset($_POST["email"]) && $_POST["email"] == 1 && !isset($_POST["count_email"])) {
 		$email_betreff = "Zoosk.com - Verifikation E-Mail-Adresse";
 		/*$email_body = file_get_contents("emails/email1.html"); \"$email_betreff\"  */
