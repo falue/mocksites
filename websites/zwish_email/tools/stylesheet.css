@@ -121,7 +121,7 @@ img {
 }
 
 
-input[type="text"] {
+input[type="text"], textarea {
 	width: 100%;
 	color: #444;
 	background-color: #ddd;
@@ -130,8 +130,8 @@ input[type="text"] {
 	padding: 7px;
 	border-radius: 0.188em;
 	border: 1px solid white;
-	margin-top: 15px;
-	margin-top: 5px;
+	margin-top: 3px;
+	margin-bottom: 8px;
 	margin-right: 10px;
 }
 
@@ -149,4 +149,8 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
 	background-color: #f5f5f5;
+}
+
+textarea {
+	height: 250px;
 }

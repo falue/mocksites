@@ -7,4 +7,3 @@
   echo
   echo $3
 ) | docker exec -i mail sendmail -t
-echo "email send"
