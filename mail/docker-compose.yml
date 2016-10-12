@@ -2,6 +2,7 @@ version: '2'
 
 services:
   mail:
+    restart: always
     image: tvial/docker-mailserver:latest
     # build: .
     hostname: imap

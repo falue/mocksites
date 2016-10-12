@@ -1,1 +1,1 @@
-./sendmail hello_world ../websites/zwish_email/emails/email1.html
+./sendmail absender@gmail.com hello_world ../websites/zwish_email/emails/email1.html

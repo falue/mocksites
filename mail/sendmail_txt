@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+(
+  echo To: jonaswid_92@gmail.com
+  echo From: $1
+  echo Subject: $2
+  echo "MIME-Version: 1.0"
+  echo
+  echo $3
+) | docker exec -i mail sendmail -t
+echo "email send"

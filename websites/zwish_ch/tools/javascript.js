@@ -73,6 +73,7 @@ function chatbodystart(time_first, time_second) {
 function chatstart() {
 	var time_first = document.getElementById('chat_def_first').value*1000;
 	var time_second = document.getElementById('chat_def_second').value*1000;
+	document.getElementById('chatwindow').innerHTML = '';
 	/*document.getElementById('chatwindow').innerHTML = '<div class=\"speech_left left\">Hey Runner92, Ich bin eine begeisterte Bikerin und arbeite wie du in der Gastronomie. Zeigst du mir dein privates Album?</div><br>';*/
 	setTimeout(function () { typing(); }, time_first-1650);
 	setTimeout(function () { chat(1); }, time_first);

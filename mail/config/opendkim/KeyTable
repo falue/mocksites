@@ -1,0 +1,1 @@
+mail._domainkey.gmail.com gmail.com:mail:/etc/opendkim/keys/gmail.com/mail.private

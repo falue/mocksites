@@ -1,0 +1,2 @@
+mail._domainkey	IN	TXT	( "v=DKIM1; k=rsa; "
+	  "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6i3vilzDtnhdVpxnB0kj1aduI+QVLMDF2krq5g7VJeBvRaaf/UZzhFc1PQbHzozRDH3KY7Jiu+2aP4GurP0GaZq0MZNV6Dh7/8wZcQkAn7FaUoWZmP/1TIlUdPkccqZ2riFw5ho1oeLRikeHwNaSM7kzKcNhlFwLoZv0WcqpKAQIDAQAB" )  ; ----- DKIM key mail for gmail.com

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 (
   echo To: jonaswid_92@gmail.com
-  echo From: noreply@zwish.ch
+  echo From: $1
   echo "Content-Type: text/html; "
-  echo Subject: $1
+  echo Subject: $2
   echo "MIME-Version: 1.0"
   echo
-  cat $2
+  cat $3
 ) | docker exec -i mail sendmail -t
