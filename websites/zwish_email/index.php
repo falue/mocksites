@@ -17,12 +17,15 @@
 
 		echo "Absender-Email<input type=\"text\" value=\"".(isset($_POST["sender"]) ? $_POST["sender"] : "noreply@zoosk.com")."\" id=\"sender\" name=\"sender\" placeholder=\"Absender-Email\">
     Empf&auml;nger-Email<input type=\"text\" value=\"".(isset($_POST["receiver"]) ? $_POST["receiver"] : "jonaswid_92@gmail.com")."\" id=\"receiver\" name=\"receiver\" placeholder=\"Empf&auml;nger-Email\">
-    Anzahl Fake emails<input type=\"text\" value=\"\" id=\"count_email\" name=\"count_email\" placeholder=\"\"> <br><br>";
+    <br><br>";
 
     echo "Choose action:<br>
     <input type=\"submit\" name=\"submit_1\" value=\"Email 1: 'Register successful'\"> &emsp;<a href=\"emails/email1.html\">[preview]</a><br>
     <input type=\"submit\" name=\"submit_2\" value=\"Email 2: 'PM von Angelique94'\"> &emsp;<a href=\"emails/email2.html\">[preview]</a><br>
-    <input type=\"submit\" name=\"submit_3\" value=\"Create 30 random emails\"><br></form>";
+    <input type=\"button\" value=\"Create n random emails\" id=\"button_create\" onclick=\"document.getElementById('button_create').style.display='none'; document.getElementById('count_email').style.display='block';\"><br>
+	<div  id=\"count_email\" style=\"display:none;\">Anzahl Fake emails
+	<input type=\"text\" value=\"\" name=\"count_email\" placeholder=\"\"> 
+	<input type=\"submit\" name=\"submit_3\" value=\"Create emails\"></div><br></form>";
 
 		if(isset($_POST["submit_1"])) {
 			$email_betreff = "Zoosk.com - Verifikation E-Mail-Adresse";
@@ -37,7 +40,7 @@
       shell_exec("./sendmail $_POST[sender] $email_betreff ../websites/zwish_email/emails/email2.html");
 			$printout = "Email '$email_betreff' written from $_POST[sender] to $_POST[receiver].";
 
-	} elseif(isset($_POST["submit_3"])) {
+	} elseif(isset($_POST["submit_3"]) && $_POST["count_email"] > 0) {
 	  $receiver = explode("@", $_POST["receiver"]);
 	  $receiver_name = ucfirst($receiver[0]);
 	  $wordlist = file("tools/wordlistDE.txt", FILE_IGNORE_NEW_LINES);
