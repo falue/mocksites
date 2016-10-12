@@ -35,8 +35,8 @@
 		/*$email_body = file_get_contents("emails/email1.html"); \"$email_betreff\"  */
 		chdir('../../mail');
 		#shell_exec("./sendmail ".$_POST["sender"]." \"$email_betreff\" ../websites/zwish_email/emails/email1.html");
-		$printout = shell_exec("./hello");
-		$printout = "Email '$email_betreff' written from \"".$_POST["sender"]."\" to ".$_POST["receiver"]."";
+		$printout = shell_exec("ping 192.168.99.100");
+		# $printout = "Email '$email_betreff' written from \"".$_POST["sender"]."\" to ".$_POST["receiver"]."";
 
     } elseif(isset($_POST["email"]) && $_POST["email"] == 2 && !isset($_POST["count_email"])) {
 		$email_betreff = "Zoosk.com - PM von Angelique94";
