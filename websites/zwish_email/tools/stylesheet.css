@@ -120,7 +120,7 @@ img {
 		background-color:#444444;
 }
 
-input[type="radio"]{
+input[type="radio"], input[type="checkbox"]{
 	margin-right: 10px;
 }
 
