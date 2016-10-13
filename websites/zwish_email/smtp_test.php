@@ -12,6 +12,9 @@
         <header>smtp</header>
 		<hr>
 <?
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
 // Pear Mail Library local
@@ -20,7 +23,7 @@
 require_once "Mail.php";
 
 $from = 'info@filmkulissen.ch';
-$to = 'info@filmlicht.ch';
+$to = 'jonaswid_92@gmail.com';
 $subject = 'Hi!';
 $body = "Hi,\n\nHow <a href=\"asdf\">are</a> you?";
 smtp_mail($from, $to, $subject, $body);
@@ -35,15 +38,14 @@ function smtp_mail($from, $to, $subject, $body) {
 );
 
 $smtp = Mail::factory('smtp', array(
-        'host' => 'ssl://goethe.metanet.ch',
-        'port' => '465',
-        'auth' => true,
-        'username' => 'info@filmkulissen.ch',
-        'password' => 'Sigmar-6-6-6'
+  'host' => 'mail',
+  'port' => '25',
+  'auth' => true,
+  'username' => 'swish@gmail.com',
+  'password' => '1234'
     ));
 
-	
-	
+
 $mail = $smtp->send($to, $headers, $body);
 
 if (PEAR::isError($mail)) {
@@ -55,10 +57,10 @@ if (PEAR::isError($mail)) {
 
 
 ?>
-		
-		
+
+
 	</article>
-	
-	
+
+
 </body>
 </html>

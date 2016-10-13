@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd $(dirname $0)
 mkdir -p config
 touch config/postfix-accounts.cf
 docker run --rm \

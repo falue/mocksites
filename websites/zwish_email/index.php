@@ -19,10 +19,10 @@
 	error_reporting(E_ALL);
 	echo "Absender-Email
 	<input type=\"text\" value=\"".(isset($_POST["sender"]) ? $_POST["sender"] : "noreply@zoosk.com")."\" id=\"sender\" name=\"sender\" placeholder=\"Absender-Email\">
-	
+
 	Empf&auml;nger-Email
 	<input type=\"text\" value=\"".(isset($_POST["receiver"]) ? $_POST["receiver"] : "jonaswid_92@gmail.com")."\" id=\"receiver\" name=\"receiver\" placeholder=\"Empf&auml;nger-Email\">
-	
+
 	Sendeverz&ouml;gerung (s)
 	<input type=\"text\" id=\"delay\" name=\"delay\" value=\"".(isset($_POST["delay"]) ? $_POST["delay"] : "")."\" placeholder=\"n\"><br><br>
 	<label><input type=\"radio\" name=\"email\" value=\"1\" checked=\"checked\">Email 1: 'Register successful'</label> <a href=\"emails/email1.html\">[preview]</a><br>
@@ -32,10 +32,10 @@
 	<a href=\"#\" onclick=\"window.location.href='index.php?write_saved=true&to='+document.getElementById('receiver').value\"><input type=\"button\" name=\"submit_5\" id=\"submit_5\" value=\"Gespeicherte Emails erneut senden\"></a><br>
 	<input type=\"button\" value=\"Mock Emails erstellen\" id=\"button_create\" onclick=\"document.getElementById('button_create').style.display='none'; document.getElementById('count_email').style.display='block';\"><br>
 	<div  id=\"count_email\" style=\"display:none;\">Anzahl Mock emails
-	<input type=\"text\" value=\"\" name=\"count_email\" placeholder=\"n\"> 
+	<input type=\"text\" value=\"\" name=\"count_email\" placeholder=\"n\">
 	<input type=\"submit\" name=\"submit_3\" value=\"Emails generieren\"></div>
 	</form>";
-	
+
 	if(isset($_POST["email"]) && $_POST["email"] == 1 && $_POST["count_email"] == null) {
 		$from = $_POST["sender"];
 		$to = $_POST["receiver"];
@@ -70,7 +70,7 @@
 				$betreff .= $wordlist[rand(0,$keys)]." ";
 			}
 
-			
+
 			if(rand(0,10) < 5 ) {
 				$betreff = rand(0,10) < 5 ? "RE: ".$betreff :
 				"AW: ".$betreff;
@@ -107,12 +107,12 @@
 		<input type=\"hidden\" name=\"save\" value=\"no\">
 		<label><input type=\"checkbox\" name=\"save\" value=\"yes\">Mails als Dateien speichern</label><br>
 		<input type=\"submit\" name=\"submit_4\" value=\"Send ".$_POST["count_email"]." emails\"></form>";
-		
+
 		echo "<br><span style=\"color:green;\">Passiert ist folgendes:</span><br>";
 		echo $printout;
 	}
 
-	
+
 	if(isset($_POST["submit_4"])) {
 		echo "<br><span style=\"color:green;\">Passiert ist folgendes:</span><br>";
 		echo "An: ".$_POST["to"]."<br>";
@@ -128,7 +128,7 @@
 			smtp_mail(htmlentities($_POST["from"][$m]), $_POST["to"], $_POST["betreff"][$m], nl2br($_POST["text"][$m]), $save);
 		}
 	}
-	
+
 	if(isset($_GET["write_saved"])) {
 		echo "<br><span style=\"color:green;\">Passiert ist folgendes:</span><br>";
 		$to = $_GET["to"];
@@ -145,7 +145,7 @@
 		echo "<hr>$count Emails an $to geschickt.";
 		}
 
-	
+
 	function clean($string) {
 		$string = str_replace('-', '.', $string);
 		// Replaces all spaces with hyphens.
@@ -153,7 +153,7 @@
 		// Removes special chars.
 	}
 
-	
+
 	function smtp_mail($from, $to, $subject, $body, $save=False) {
 		# require_once "tools/pear/Mail.php";
 		require_once "Mail.php";
@@ -164,24 +164,24 @@
 		'Subject' => $subject,
 		'Content-Type' => "text/html"
 		);
-		
-		$smtp = Mail::factory('smtp', array(
-				'host' => 'ssl://goethe.metanet.ch',
-				'port' => '465',
-				'auth' => true,
-				'username' => 'info@filmkulissen.ch',
-				'password' => 'Sigmar-6-6-6'
-			));
-		
+
+    $smtp = Mail::factory('smtp', array(
+      'host' => 'mail',
+      'port' => '25',
+      'auth' => true,
+      'username' => 'swish@gmail.com',
+      'password' => '1234'
+        ));
+
 		$mail = $smtp->send($to, $headers, $body);
-		
+
 		if (PEAR::isError($mail)) {
 			echo('<p>Error: ' . $mail->getMessage() . '</p>');
 		} else {
 			echo "&rarr; Von: ".htmlentities($from).", An: $to, Subject: '$subject'<br>";
 		}
-		
-		
+
+
 		if($save){
 			$mail = "$from\n$to\n$subject\n".trim(preg_replace('/\s+/', ' ', $body));
 			$myfile = fopen("mockmails/".urlencode($from).".txt", "w") or die("Unable to open file!");

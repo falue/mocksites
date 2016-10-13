@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  mail:
+    restart: always
+    image: tvial/docker-mailserver:latest
+    # build: .
+    hostname: imap
+    domainname: gmail.com
+    ports:
+      - "25:25"
+      - "143:143"
+      - "587:587"
+      - "993:993"
+    volumes:
+      - maildata:/var/mail
+      - ./mail/config/:/tmp/docker-mailserver/
+      - ./websites/zwish_email/emails/:/mails/
+      - ./mail/config/main.cf:/etc/postfix/main.cf
+
+  web:
+    restart: always
+    build: .
+    volumes:
+      - ~/mocksites/:/var/www/html
+      - ~/mocksites/sites:/etc/nginx/sites-enabled/
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - mail
+
+volumes:
+  maildata:
+    driver: local

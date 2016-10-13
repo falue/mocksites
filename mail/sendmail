@@ -7,4 +7,4 @@
   echo "MIME-Version: 1.0"
   echo
   cat $3
-) | docker exec -i mail sendmail -t
+) | docker exec -i mocksites_mail_1 sendmail -t
