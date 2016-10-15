@@ -18,7 +18,7 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	echo "Absender-Email
-	<input type=\"text\" value=\"".(isset($_POST["sender"]) ? $_POST["sender"] : "noreply@zoosk.com")."\" id=\"sender\" name=\"sender\" placeholder=\"Absender-Email\">
+	<input type=\"text\" value=\"".(isset($_POST["sender"]) ? $_POST["sender"] : "noreply@zwish.com")."\" id=\"sender\" name=\"sender\" placeholder=\"Absender-Email\">
 
 	Empf&auml;nger-Email
 	<input type=\"text\" value=\"".(isset($_POST["receiver"]) ? $_POST["receiver"] : "jonaswid_92@gmail.com")."\" id=\"receiver\" name=\"receiver\" placeholder=\"Empf&auml;nger-Email\">
